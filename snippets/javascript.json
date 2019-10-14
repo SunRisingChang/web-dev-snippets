@@ -1,0 +1,1522 @@
+{
+  "Array.from(arrayLike[, mapFn[, thisArg]])": {
+    "prefix": "arrfro",
+    "body": "Array.from($1)",
+    "description": "Array.from() 方法有一个可选参数 mapFn，让你可以在最后生成的数组上再执行一次 map 方法后再返回。也就是说 Array.from(obj, mapFn, thisArg) 就相当于 Array.from(obj).map(mapFn, thisArg), 除非创建的不是可用的中间数组。 这对一些数组的子类,如  typed arrays 来说很重要, 因为中间数组的值在调用 map() 时需要是适当的类型。"
+  },
+  "Array.isArray(obj)": {
+    "prefix": "arris",
+    "body": "Array.isArray($1)",
+    "description": "如果对象是 Array ，则返回true，否则为false。"
+  },
+  "Array.of(element0[, element1[, ...[, elementN]]])": {
+    "prefix": "arrof",
+    "body": "Array.of($1)",
+    "description": "任意个参数，将按顺序成为返回数组中的元素。"
+  },
+  "Array.concat(value1[, value2[, ...[, valueN]]])": {
+    "prefix": "arrcon",
+    "body": "$1.concat($2)",
+    "description": "concat() 方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。"
+  },
+  "Array.entries()": {
+    "prefix": "arrent",
+    "body": "$1.entries($2)",
+    "description": "一个新的 Array 迭代器对象。"
+  },
+  "Array.every(callback[, thisArg])": {
+    "prefix": "arreve",
+    "body": "$1.every(value=>{$2})",
+    "description": "every() 方法测试数组的所有元素是否都通过了指定函数的测试。"
+  },
+  "Array.fill(value[, start[, end]])": {
+    "prefix": "arrfill",
+    "body": "$1.fill($2)",
+    "description": "fill() 方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。"
+  },
+  "Array.filter(callback(element[, index[, array]])[, thisArg])": {
+    "prefix": "arrfilt",
+    "body": "$1.filter(value=>{$2})",
+    "description": "filter() 方法创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。 "
+  },
+  "Array.find(callback[, thisArg])": {
+    "prefix": "arrfind",
+    "body": "$1.find(value=>{$2})",
+    "description": "find() 方法返回数组中满足提供的测试函数的第一个元素的值。否则返回 undefined。"
+  },
+  "Array.findIndex(callback[, thisArg])": {
+    "prefix": "arrfindin",
+    "body": "$1.findIndex(value=>{$2})",
+    "description": "findIndex()方法返回数组中满足提供的测试函数的第一个元素的索引。否则返回-1。"
+  },
+  "Array.forEach(callback[, thisArg, index])": {
+    "prefix": "arrfore",
+    "body": "$1.forEach((value,index)=>{$2})",
+    "description": "find() 方法返回数组中满足提供的测试函数的第一个元素的值。否则返回 undefined。"
+  },
+  "Array.includes(searchElement)": {
+    "prefix": "arrincl",
+    "body": "$1.includes($2)",
+    "description": "includes() 方法用来判断一个数组是否包含一个指定的值，根据情况，如果包含则返回 true，否则返回false。"
+  },
+  "Array.indexOf(searchElement)": {
+    "prefix": "arrindexof",
+    "body": "$1.indexOf($2)",
+    "description": "indexOf()方法返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1。"
+  },
+  "Array.join(separator)": {
+    "prefix": "arrjoin",
+    "body": "$1.join($2)",
+    "description": "join() 方法将一个数组（或一个类数组对象）的所有元素连接成一个字符串并返回这个字符串。"
+  },
+  "Array.keys()": {
+    "prefix": "arrkey",
+    "body": "$1.keys()",
+    "description": "keys() 方法返回一个包含数组中每个索引键的Array Iterator对象。"
+  },
+  "Array.lastIndexOf(searchElement[, fromIndex = arr.length - 1])": {
+    "prefix": "arrlastin",
+    "body": "$1.lastIndexOf($2)",
+    "description": "lastIndexOf() 方法返回指定元素（也即有效的 JavaScript 值或变量）在数组中的最后一个的索引，如果不存在则返回 -1。从数组的后面向前查找，从 fromIndex 处开始。"
+  },
+  "Array.map(callback(currentValue[, index[, array]]))": {
+    "prefix": "arrmap",
+    "body": "$1.map($2)",
+    "description": "map() 方法创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。"
+  },
+  "Array.pop()": {
+    "prefix": "arrpop",
+    "body": "$1.pop()",
+    "description": "pop()方法从数组中删除最后一个元素，并返回该元素的值。此方法更改数组的长度。"
+  },
+  "Array.push(element1, ..., elementN)": {
+    "prefix": "arrpush",
+    "body": "$1.push($2)",
+    "description": "push() 方法将一个或多个元素添加到数组的末尾，并返回该数组的新长度。"
+  },
+  "Array.reduce(callback[initialValue])": {
+    "prefix": "arrredu",
+    "body": "$1.reduce($2)",
+    "description": "reduce() 方法对数组中的每个元素执行一个由您提供的reducer函数(升序执行)，将其结果汇总为单个返回值。"
+  },
+  "Array.reduceRight(callback[, initialValue])": {
+    "prefix": "arrredu",
+    "body": "$1.reduceRight($2)",
+    "description": "reduceRight() 方法接受一个函数作为累加器（accumulator）和数组的每个值（从右到左）将其减少为单个值。"
+  },
+  "Array.reverse()": {
+    "prefix": "arrrev",
+    "body": "$1.reverse()",
+    "description": "reverse() 方法将数组中元素的位置颠倒。"
+  },
+  "Array.shift()": {
+    "prefix": "arrshift",
+    "body": "$1.shift()",
+    "description": "shift() 方法从数组中删除第一个元素，并返回该元素的值。此方法更改数组的长度。"
+  },
+  "Array.slice(begin, end)": {
+    "prefix": "arrslice",
+    "body": "$1.slice($2,$3)",
+    "description": "slice() 方法返回一个新的数组对象，这一对象是一个由 begin和 end（不包括end）决定的原数组的浅拷贝。原始数组不会被改变。"
+  },
+  "Array.some(callback[element[, index[, array]]), thisArg])": {
+    "prefix": "arrsome",
+    "body": "$1.some($2)",
+    "description": "some() 方法测试数组中的某些元素是否通过由提供的函数实现的测试。"
+  },
+  "Array.sort([compareFunction])": {
+    "prefix": "arrsort",
+    "body": "$1.sort($2)",
+    "description": "sort() 方法用原地算法对数组的元素进行排序，并返回数组。排序算法现在是稳定的。默认排序顺序是根据字符串Unicode码点。"
+  },
+  "Array.splice(start[, deleteCount[, item1[, item2[, ...]]]])": {
+    "prefix": "arrsplice",
+    "body": "$1.splice($1,$2)",
+    "description": "splice()方法通过删除现有元素和/或添加新元素来修改数组,并以数组返回原数组中被修改的内容。"
+  },
+  "Array.toLocaleString([locales[,options]])": {
+    "prefix": "arrtolo",
+    "body": "$1.toLocaleString($2)",
+    "description": "toLocaleString() 返回一个字符串表示数组中的元素。数组中的元素将使用各自的 toLocaleString 方法转成字符串，这些字符串将使用一个特定语言环境的字符串（例如一个逗号 ','）隔开。"
+  },
+  "Array.toString()": {
+    "prefix": "arrtostring",
+    "body": "$1.toString()",
+    "description": "toString() 返回一个字符串，表示指定的数组及其元素。"
+  },
+  "Array.unshift(element1, ..., elementN)": {
+    "prefix": "arrunsh",
+    "body": "$1.unshift($2)",
+    "description": "unshift() 方法将一个或多个元素添加到数组的开头，并返回该数组的新长度。"
+  },
+  "Array.values()": {
+    "prefix": "arrvalu",
+    "body": "$1.values()",
+    "description": "values() 方法返回一个新的 Array Iterator 对象，该对象包含数组每个索引的值。"
+  },
+  "console.assert()": {
+    "prefix": "assert",
+    "body": "console.assert(${1:assertion}, ${2:obj1|msg [, obj2|subst1, ..., objN|substN]})",
+    "description": "assertion : 一个布尔表达式。如果assertion为假，消息将会被输出到控制台之中。\r\n obj1 ... objN : 被用来输出的Javascript对象列表，最后输出的字符串是各个对象依次拼接的结果。\r\n msg : 一个包含零个或多个子串的Javascript字符串。\r\n subst1 ... substN : 各个消息作为字串的Javascript对象。这个参数可以让你能够控制输出的格式。"
+  },
+  "console.log()": {
+    "prefix": "log",
+    "body": "console.log($1);$0",
+    "description": "向 Web 控制台输出一条消息"
+  },
+  "console.warn()": {
+    "prefix": "warn",
+    "body": "console.warn($1);$0",
+    "description": "向控制台输出警告信息"
+  },
+  "console.error()": {
+    "prefix": "error",
+    "body": "console.error($1);$0",
+    "description": "向控制台输出错误信息"
+  },
+  "async": {
+    "prefix": "async",
+    "body": "async",
+    "description": "方法同步，方法中有await时使用"
+  },
+  "await": {
+    "prefix": "await",
+    "body": "await",
+    "description": "承诺等待"
+  },
+  "length": {
+    "prefix": "length",
+    "body": "length",
+    "description": "长度"
+  },
+  "prototype": {
+    "prefix": "prototype",
+    "body": "prototype",
+    "description": "原型"
+  },
+  "const": {
+    "prefix": "const",
+    "body": "const",
+    "description": "常量"
+  },
+  "height": {
+    "prefix": "height",
+    "body": "height",
+    "description": "高度"
+  },
+  "string": {
+    "prefix": "string",
+    "body": "String",
+    "description": "[TypeScript基础类型]String"
+  },
+  "symbol": {
+    "prefix": "symbol",
+    "body": "Symbol('${1:name}')",
+    "description": "[TypeScript基础类型]Symbol"
+  },
+  "boolean": {
+    "prefix": "boolean",
+    "body": "Boolean",
+    "description": "[TypeScript基础类型]Boolean"
+  },
+  "number": {
+    "prefix": "number",
+    "body": "Number",
+    "description": "[TypeScript基础类型]Number"
+  },
+  "object": {
+    "prefix": "object",
+    "body": "Object",
+    "description": "[TypeScript基础类型]Object"
+  },
+  "array": {
+    "prefix": "array",
+    "body": "Array",
+    "description": "[TypeScript基础类型]Array"
+  },
+  "date": {
+    "prefix": "date",
+    "body": "Date",
+    "description": "[TypeScript基础类型]Date"
+  },
+  "extends": {
+    "prefix": "extends",
+    "body": [
+      "extends"
+    ],
+    "description": "Allows declaratively extending another component (could be either a plain options object or a constructor) without having to use Vue.extend. "
+  },
+  "typeof": {
+    "prefix": "typeof",
+    "body": "typeof",
+    "description": "typeof操作符返回一个字符串，表示未经计算的操作数的类型。"
+  },
+  "instanceof": {
+    "prefix": "instanceof",
+    "body": "instanceof",
+    "description": "instanceof 运算符用于测试构造函数的 prototype 属性是否出现在对象的原型链中的任何位置"
+  },
+  "then": {
+    "prefix": "then",
+    "body": "then",
+    "description": "承诺成功。"
+  },
+  "catch": {
+    "prefix": "catch",
+    "body": "catch",
+    "description": "承诺失败。"
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+      "if (${1:true}) {",
+      "\t$2",
+      "}"
+    ],
+    "description": "控制语句if"
+  },
+  "if … else": {
+    "prefix": "ife",
+    "body": [
+      "if (${1:true}) {",
+      "\t$2",
+      "} else {",
+      "\t$3",
+      "}"
+    ],
+    "description": "控制语句if … else"
+  },
+  "else": {
+    "prefix": "else",
+    "body": [
+      "else {",
+      "\t$1",
+      "}"
+    ],
+    "description": "控制语句else"
+  },
+  "else if": {
+    "prefix": "elseif",
+    "body": [
+      "else if (${1:true}) {",
+      "\t$2",
+      "}"
+    ],
+    "description": "控制语句else if"
+  },
+  "for": {
+    "prefix": "for",
+    "body": [
+      "for (var ${2:i} = 0; ${2:i} < ${1:array}.length; ${2:i}++) {",
+      "\t${1:array}[${2:i}]$3",
+      "}"
+    ],
+    "description": "控制语句for"
+  },
+  "for in": {
+    "prefix": "forin",
+    "body": [
+      "for (var ${1:variable} in ${2:object}) {",
+      "\t${3:if (${2:object}.hasOwnProperty(${1:variable})) {",
+      "\t\t$4",
+      "\t\\}}",
+      "}"
+    ],
+    "description": "控制语句for"
+  },
+  "for of": {
+    "prefix": "forof",
+    "body": [
+      "for (${1:variable} of ${2:iterable}) {",
+      "\t$3",
+      "}"
+    ],
+    "description": "控制语句for"
+  },
+  "do": {
+    "prefix": "do",
+    "body": [
+      "do {",
+      "\t$2",
+      "} while (${1:true});"
+    ],
+    "description": "控制语句do...while"
+  },
+  "switch": {
+    "prefix": "switch",
+    "body": [
+      "switch (${1:expression}) {",
+      "\tcase ${2:expression}:",
+      "\t\t$4",
+      "\t\tbreak;$5",
+      "\tdefault:",
+      "\t\t$3",
+      "}"
+    ],
+    "description": "控制语句"
+  },
+  "case": {
+    "prefix": "case",
+    "body": [
+      "case ${1:expression}:",
+      "\t$2",
+      "\tbreak;"
+    ],
+    "description": "控制语句"
+  },
+  "try/catch": {
+    "prefix": "tc",
+    "body": "try {\n  ${1}\n} catch (${2:err}) {\n  ${3}\n}",
+    "description": "try/catch 异常处理"
+  },
+  "try/finally": {
+    "prefix": "tf",
+    "body": "try {\n  ${1}\n} finally {\n  ${2}\n}",
+    "description": "try/finally 异常处理"
+  },
+  "try/catch/finally": {
+    "prefix": "tcf",
+    "body": "try {\n  ${1}\n} catch (${2:err}) {\n  ${3}\n} finally {\n  ${4}\n}",
+    "description": "try/catch/finally 异常处理"
+  },
+  "while": {
+    "prefix": "while",
+    "body": [
+      "while (${1:true}) {",
+      "\t$2",
+      "}"
+    ],
+    "description": "控制语句"
+  },
+  "JSON.parse(text[, reviver])": {
+    "prefix": "jsonpar",
+    "body": "JSON.parse($1)",
+    "description": "JSON.parse() 方法用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。提供可选的reviver函数用以在返回之前对所得到的对象执行变换(操作)。"
+  },
+  "JSON.stringify(value[, replacer [, space]])": {
+    "prefix": "jsonstr",
+    "body": "JSON.stringify($1);$0",
+    "description": "JSON.stringify() 方法是将一个JavaScript值(对象或者数组)转换为一个 JSON字符串，如果指定了replacer是一个函数，则可以替换值，或者如果指定了replacer是一个数组，可选的仅包括指定的属性。"
+  },
+  "Object.assign(target, ...sources)": {
+    "prefix": "objass",
+    "body": "Object.assign($0, $1);$2",
+    "description": "Object.assign() 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象"
+  },
+  "Object.prototype": {
+    "prefix": "objpro",
+    "body": "Object.prototype=$0",
+    "description": "Object.prototype 属性表示 Object 的原型对象,可以为所有 Object 类型的对象添加属性。"
+  },
+  "Object.create(proto, [propertiesObject])": {
+    "prefix": "objpro",
+    "body": "Object.prototype=$0",
+    "description": "Object.prototype 属性表示 Object 的原型对象,可以为所有 Object 类型的对象添加属性。"
+  },
+  "export module": {
+    "prefix": "modex",
+    "body": "module.exports = ${1:name};",
+    "description": "[Nodejs]模块暴露接口"
+  },
+  "new Promise": {
+    "prefix": "newprom",
+    "body": [
+      "new Promise((resolve, reject)=> {",
+      "\t$1",
+      "});$0"
+    ],
+    "description": "对象的状态不受外界影响。Promise 对象代表一个异步操作，有三种状态：Pending（进行中）、Resolved（已完成，又称 Fulfilled）和 Rejected（已失败）。只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。这也是 Promise 这个名字的由来，它的英语意思就是「承诺」，表示其他手段无法改变。"
+  },
+  "CommonJS require": {
+    "prefix": "require",
+    "body": "const ${1:module} = require('${1:module}');",
+    "description": "导入文件到对象"
+  },
+  "Class": {
+    "prefix": "class",
+    "body": [
+      "class ${1:ClassName} {",
+      "\tconstructor($2) {",
+      "\t\t$3",
+      "\t}",
+      "}"
+    ],
+    "description": "创建Class类对象"
+  },
+  "export function": {
+    "prefix": "expfun",
+    "body": [
+      "exports.${1:functionName} = function ($2) {",
+      "\t${3:// body...}",
+      "};"
+    ],
+    "description": "[ES6]对外接口"
+  },
+  "class constructor (ES6)": {
+    "prefix": "constructor",
+    "body": "constructor(${1:arguments}) {\n\tsuper(${1:arguments});${0}\n}",
+    "description": "[ES6]Class构造函数"
+  },
+  "export default (ES6)": {
+    "prefix": "expd",
+    "body": "export default ${1:member};",
+    "description": "[ES6]对外接口"
+  },
+  "String.fromCharCode(num1, ..., numN) ": {
+    "prefix": "strfromcharcode",
+    "body": "${1:str}.fromCharCode($2)",
+    "description": "静态 String.fromCharCode() 方法返回使用指定的Unicode值序列创建的字符串。"
+  },
+  "String.fromCodePoint(num1[, ...[, numN]])": {
+    "prefix": "strfromcodepoint",
+    "body": "${1:str}.fromCodePoint($2)",
+    "description": "String.fromCodePoint() 静态方法返回使用指定的代码点序列创建的字符串。"
+  },
+  "String.charAt(index)": {
+    "prefix": "strcharat",
+    "body": "${1:str}.charAt($2)",
+    "description": "charAt() 方法从一个字符串中返回指定的字符。"
+  },
+  "String.charCodeAt(index)": {
+    "prefix": "strcharcodeat",
+    "body": "${1:str}.charCodeAt($2)",
+    "description": "charCodeAt() 方法返回0到65535之间的整数，表示给定索引处的UTF-16代码单元 (在 Unicode 编码单元表示一个单一的 UTF-16 编码单元的情况下，UTF-16 编码单元匹配 Unicode 编码单元。但在——例如 Unicode 编码单元 > 0x10000 的这种——不能被一个 UTF-16 编码单元单独表示的情况下，只能匹配 Unicode 代理对的第一个编码单元) 。如果你想要整个代码点的值，使用 codePointAt()。"
+  },
+  "String.codePointAt(pos)": {
+    "prefix": "strcodepointat",
+    "body": "${1:str}.codePointAt($2)",
+    "description": "codePointAt() 方法返回 一个 Unicode 编码点值的非负整数。"
+  },
+  "String.concat(string2, string3[, ..., stringN])": {
+    "prefix": "strconcat",
+    "body": "${1:str}.concat($2)",
+    "description": "concat() 方法将一个或多个字符串与原字符串连接合并，形成一个新的字符串并返回。"
+  },
+  "String.endsWith(searchString [, position]);": {
+    "prefix": "strendswith",
+    "body": "${1:str}.endsWith($2)",
+    "description": "endsWith()方法用来判断当前字符串是否是以另外一个给定的子字符串“结尾”的，根据判断结果返回 true 或 false。"
+  },
+  "String.includes(searchString[, position])": {
+    "prefix": "strincludes",
+    "body": "${1:str}.includes($2)",
+    "description": "includes() 方法用于判断一个字符串是否包含在另一个字符串中，根据情况返回 true 或 false。"
+  },
+  "String.indexOf(searchValue[, fromIndex])": {
+    "prefix": "strindexof",
+    "body": "${1:str}.indexOf($2)",
+    "description": "indexOf() 方法返回调用  String 对象中第一次出现的指定值的索引，开始在 fromIndex进行搜索。如果未找到该值，则返回- 1。"
+  },
+  "String.lastIndexOf(searchValue[, fromIndex])": {
+    "prefix": "strlastindexof",
+    "body": "${1:str}.lastIndexOf($2)",
+    "description": "lastIndexOf() 方法返回指定值在调用该方法的字符串中最后出现的位置，如果没找到则返回 -1。从该字符串的后面向前查找，从 fromIndex 处开始。"
+  },
+  "String.localeCompare(compareString[, locales[, options]])": {
+    "prefix": "strlocalecompare",
+    "body": "${1:str}.localeCompare($2)",
+    "description": "localeCompare() 方法返回一个数字来指示一个参考字符串是否在排序顺序前面或之后或与给定字符串相同。"
+  },
+  "String.match(regexp);": {
+    "prefix": "strmatch",
+    "body": "${1:str}.match($2)",
+    "description": "当一个字符串与一个正则表达式匹配时， match()方法检索匹配项。"
+  },
+  "String.normalize([form]);": {
+    "prefix": "strnormalize",
+    "body": "${1:str}.normalize($2)",
+    "description": "normalize() 方法会按照指定的一种 Unicode 正规形式将当前字符串正规化."
+  },
+  "String.padEnd(targetLength [, padString])": {
+    "prefix": "strpadend",
+    "body": "${1:str}.padEnd($2)",
+    "description": "padEnd()  方法会用一个字符串填充当前字符串（如果需要的话则重复填充），返回填充后达到指定长度的字符串。从当前字符串的末尾（右侧）开始填充。"
+  },
+  "String.padStart(targetLength [, padString])": {
+    "prefix": "strpadstart",
+    "body": "${1:str}.padStart($2)",
+    "description": "padStart() 方法用另一个字符串填充当前字符串(重复，如果需要的话)，以便产生的字符串达到给定的长度。填充从当前字符串的开始(左侧)应用的。"
+  },
+  "String.repeat(count)": {
+    "prefix": "strrepeat",
+    "body": "${1:str}.repeat($2)",
+    "description": "repeat() 构造并返回一个新字符串，该字符串包含被连接在一起的指定数量的字符串的副本。"
+  },
+  "String.replace(regexp|substr, newSubStr|function)": {
+    "prefix": "strreplace",
+    "body": "${1:str}.replace($2)",
+    "description": "replace() 方法返回一个由替换值替换一些或所有匹配的模式后的新字符串。模式可以是一个字符串或者一个正则表达式, 替换值可以是一个字符串或者一个每次匹配都要调用的函数。"
+  },
+  "String.search(regexp)": {
+    "prefix": "strsearch",
+    "body": "${1:str}.search($2)",
+    "description": "search() 方法执行正则表达式和 String对象之间的一个搜索匹配。"
+  },
+  "String.slice(beginSlice[, endSlice])": {
+    "prefix": "strslice",
+    "body": "${1:str}.slice($2)",
+    "description": "slice() 方法提取一个字符串的一部分，并返回一新的字符串。"
+  },
+  "String.split([separator[, limit]])": {
+    "prefix": "strsplit",
+    "body": "${1:str}.split($2)",
+    "description": "split() 方法使用指定的分隔符字符串将一个String对象分割成字符串数组，以将字符串分隔为子字符串，以确定每个拆分的位置。 "
+  },
+  "String.startsWith(searchString [, position]);": {
+    "prefix": "strstartswith",
+    "body": "${1:str}.startsWith($2)",
+    "description": "startsWith()方法用来判断当前字符串是否是以另外一个给定的子字符串“开头”的，根据判断结果返回 true 或 false。"
+  },
+  "String.substring(indexStart[, indexEnd])": {
+    "prefix": "strsubstring",
+    "body": "${1:str}.substring($2)",
+    "description": "substring() 方法返回一个字符串在开始索引到结束索引之间的一个子集, 或从开始索引直到字符串的末尾的一个子集。"
+  },
+  "String.toLocaleLowerCase()": {
+    "prefix": "strtolocalelowercase",
+    "body": "${1:str}.toLocaleLowerCase()",
+    "description": "toLocaleLowerCase()方法根据任何特定于语言环境的案例映射，返回调用字符串值转换为小写的值。"
+  },
+  "String.toLocaleUpperCase()": {
+    "prefix": "strtolocaleuppercase",
+    "body": "${1:str}.toLocaleUpperCase()",
+    "description": "toLocaleUpperCase() 使用本地化（locale-specific）的大小写映射规则将输入的字符串转化成大写形式并返回结果字符串。"
+  },
+  "String.toLowerCase()": {
+    "prefix": "strtolowercase",
+    "body": "${1:str}.toLowerCase()",
+    "description": "toLowerCase() 会将调用该方法的字符串值转为小写形式，并返回。"
+  },
+  "String.toString()": {
+    "prefix": "strtostring",
+    "body": "${1:str}.toString()",
+    "description": "toString() 方法返回指定对象的字符串形式。"
+  },
+  "String.toUpperCase()": {
+    "prefix": "strtouppercase",
+    "body": "${1:str}.toUpperCase()",
+    "description": "toUpperCase() 将调用该方法的字符串值转换为大写形式，并返回。"
+  },
+  "String.trim()": {
+    "prefix": "strtrim",
+    "body": "${1:str}.trim()",
+    "description": "trim() 方法会从一个字符串的两端删除空白字符。在这个上下文中的空白字符是所有的空白字符 (space, tab, no-break space 等) 以及所有行终止符字符（如 LF，CR）。"
+  },
+  "String.valueOf()": {
+    "prefix": "strvalueof",
+    "body": "${1:str}.valueOf()",
+    "description": "valueOf() 方法返回一个String对象的原始值（primitive value）。"
+  },
+  "alert": {
+    "prefix": "alert",
+    "body": "alert($1);$0",
+    "description": "弹出提示信息。"
+  },
+  "getElementsByClassName": {
+    "prefix": "getbycname",
+    "body": "getElementsByClassName(${1:'${2:className}'})$3",
+    "description": "通过ClassName 获取 DOM 结构"
+  },
+  "getElementsByName": {
+    "prefix": "getbyname",
+    "body": "getElementsByName(${1:'${2:name}'})$3",
+    "description": "通过 Name 获取 DOM 结构"
+  },
+  "getElementsByTagName": {
+    "prefix": "getbytname",
+    "body": "getElementsByTagName(${1:'${2:tagName}'})$3",
+    "description": "通过TagName获取DOM结构"
+  },
+  "getElementById": {
+    "prefix": "getbyid",
+    "body": "getElementById(${1:'${2:id}'})$3",
+    "description": "通过Id获取DOM结构"
+  },
+  "querySelector": {
+    "prefix": "querysel",
+    "body": "querySelector(${1:'${2:query}'})$3",
+    "description": "方法返回文档中匹配指定 CSS 选择器的一个元素。注意： querySelector() 方法仅仅返回匹配指定选择器的第一个元素。如果你需要返回所有的元素，请使用 querySelectorAll() 方法替代。"
+  },
+  "querySelectorAll": {
+    "prefix": "querysall",
+    "body": "querySelectorAll(${1:'${2:query}'})$3",
+    "description": "方法返回文档中匹配指定 CSS 选择器的一个元素"
+  },
+  "setinterval": {
+    "prefix": "setint",
+    "body": [
+      "setInterval(${2: ()=> {",
+      "\t$3",
+      "\\}}, ${1:10});"
+    ],
+    "description": "setInterval() 方法可按照指定的周期（以毫秒计）来调用函数或计算表达式。setInterval() 方法会不停地调用函数，直到 clearInterval() 被调用或窗口被关闭。由 setInterval() 返回的 ID 值可用作 clearInterval() 方法的参数。"
+  },
+  "setTimeout": {
+    "prefix": "settimeout",
+    "body": [
+      "setTimeout(${2:function () {",
+      "\t$3",
+      "\\}}, ${1:10});"
+    ],
+    "description": "setTimeout() 方法用于在指定的毫秒数后调用函数或计算表达式。"
+  },
+  "message": {
+    "prefix": "msg",
+    "body": [
+      "this.\\$message({",
+      "\tmessage: '${1:text}',",
+      "\ttype: '${2:info}'",
+      "});"
+    ],
+    "description": "message"
+  },
+  "msgbox-alert": {
+    "prefix": "alert",
+    "body": [
+      "this.\\$alert('${1:content}', '${2:title}', {",
+      "\tconfirmButtonText: '${3:confirm}',",
+      "\tcallback: ${4:action} => {",
+      "\t\t",
+      "\t}",
+      "});"
+    ],
+    "description": "alert"
+  },
+  "msgbox-confirm": {
+    "prefix": "confirm",
+    "body": [
+      "this.\\$confirm('${1:content}', '${2:title}', {",
+      "\tconfirmButtonText: '${3:confirm}',",
+      "\tcancelButtonText: '${4:cancel}',",
+      "\ttype: '${5:warning}'",
+      "}).then(() => {",
+      "\t",
+      "}).catch(() => {});"
+    ],
+    "description": "confirm"
+  },
+  "msgbox-prompt": {
+    "prefix": "prompt",
+    "body": [
+      "this.\\$prompt('${1:content}', '${2:title}', {",
+      "\tconfirmButtonText: '${3:confirm}',",
+      "\tcancelButtonText: '${4:cancel}',",
+      "\tinputPattern: /${5:regExp}/,",
+      "\tinputErrorMessage: '${6:errormsg}'",
+      "}).then(({ value }) => {",
+      "\t",
+      "}).catch(() => {});"
+    ],
+    "description": "prompt"
+  },
+  "msgbox": {
+    "prefix": "msgb",
+    "body": [
+      "this.\\$msgbox({",
+      "\ttitle: '${1:title}',",
+      "\tmessage: '${2:string|VNode}',",
+      "\tshowCancelButton: ${3:true},",
+      "\tconfirmButtonText: '${4:confirm}',",
+      "\tcancelButtonText: '${5:cancel}',",
+      "\tbeforeClose: (action, instance, done) => {}",
+      "}).then(action => {",
+      "\t",
+      "});"
+    ],
+    "description": "msgbox"
+  },
+  "notification": {
+    "prefix": "notify",
+    "body": [
+      "this.\\$notify({",
+      "\ttitle: '${1:title}',",
+      "\tmessage: '${2:string|VNode}'",
+      "});"
+    ],
+    "description": "notify"
+  },
+  "vue": {
+    "prefix": "Vue",
+    "body": [
+      "new Vue({\n\t$1\n})"
+    ],
+    "description": "Create a vue instance"
+  },
+  "VueConfigSilent": {
+    "prefix": "VueConfigSilent",
+    "body": [
+      "Vue.config.silent = ${1:true}"
+    ],
+    "description": "Suppress all Vue logs and warnings."
+  },
+  "optionMergeStrategies": {
+    "prefix": "VueConfigOptionMergeStrategies",
+    "body": [
+      "Vue.config.optionMergeStrategies$0"
+    ],
+    "description": "Define custom merging strategies for options.The merge strategy receives the value of that option defined on the parent and child instances as the first and second arguments, respectively. The context Vue instance is passed as the third argument."
+  },
+  "devtools": {
+    "prefix": "VueConfigDevtools",
+    "body": [
+      "Vue.config.devtools = ${1:true}"
+    ],
+    "description": "Configure whether to allow vue-devtools inspection. This option’s default value is true in development builds and false in production builds. You can set it to true to enable inspection for production builds"
+  },
+  "errorHandler": {
+    "prefix": "VueConfigErrorHandler",
+    "body": [
+      "Vue.config.errorHandler = function (err, vm) {\n\t${1:// handle error}\n\t$0\n}"
+    ],
+    "description": "Assign a handler for uncaught errors during component render and watchers. The handler gets called with the error and the Vue instance."
+  },
+  "ignoredElements": {
+    "prefix": "VueConfigIgnoredElements",
+    "body": [
+      "Vue.config.ignoredElements = [$0]"
+    ],
+    "description": "Make Vue ignore custom elements defined outside of Vue (e.g., using the Web Components APIs). Otherwise, it will throw a warning about an Unknown custom element, assuming that you forgot to register a global component or misspelled a component name."
+  },
+  "keyCodes": {
+    "prefix": "VueConfigKeyCodes",
+    "body": [
+      "Vue.config.keyCodes = {$0}"
+    ],
+    "description": "Define custom key alias(es) for v-on."
+  },
+  "extend": {
+    "prefix": "vueExtend",
+    "body": [
+      "Vue.extend({\n\ttemplate: ${1:template}\n})"
+    ],
+    "description": "Create a “subclass” of the base Vue constructor. The argument should be an object containing component options."
+  },
+  "nextTick": {
+    "prefix": "VueNextTick",
+    "body": [
+      "Vue.nextTick({\n\t$1\n})"
+    ],
+    "description": "Defer the callback to be executed after the next DOM update cycle. Use it immediately after you’ve changed some data to wait for the DOM update."
+  },
+  "set": {
+    "prefix": "VueSet",
+    "body": [
+      "Vue.set({${1:object}, ${1:key}, ${1:value})"
+    ],
+    "description": "Set a property on an object. If the object is reactive, ensure the property is created as a reactive property and trigger view updates. This is primarily used to get around the limitation that Vue cannot detect property additions."
+  },
+  "delete": {
+    "prefix": "VueDelete",
+    "body": [
+      "Vue.delete(${1:object}, ${1:key})"
+    ],
+    "description": "Delete a property on an object. If the object is reactive, ensure the deletion triggers view updates. This is primarily used to get around the limitation that Vue cannot detect property deletions, but you should rarely need to use it."
+  },
+  "directive": {
+    "prefix": "VueDirective",
+    "body": [
+      "Vue.directive(${1:id}, ${1:[definition]})"
+    ],
+    "description": "Register or retrieve a global directive."
+  },
+  "filter": {
+    "prefix": "VueFilter",
+    "body": [
+      "Vue.filter(${1:id}, ${1:[definition]})"
+    ],
+    "description": "Register or retrieve a global filter"
+  },
+  "component": {
+    "prefix": "VueComponent",
+    "body": [
+      "Vue.component(${1:id}, ${1:[definition]})"
+    ],
+    "description": "Register or retrieve a global component. Registration also automatically sets the component’s name with the given id"
+  },
+  "use": {
+    "prefix": "VueUse",
+    "body": [
+      "Vue.use(${1:plugin})"
+    ],
+    "description": "Install a Vue.js plugin. If the plugin is an Object, it must expose an install method. If it is a function itself, it will be treated as the install method. The install method will be called with Vue as the argument"
+  },
+  "mixin": {
+    "prefix": "VueMixin",
+    "body": [
+      "Vue.mixin(${1:mixin})"
+    ],
+    "description": "Apply a mixin globally, which affects every Vue instance created afterwards. This can be used by plugin authors to inject custom behavior into components. Not recommended in application code"
+  },
+  "compile": {
+    "prefix": "VueCompile",
+    "body": [
+      "Vue.compile(${1:template})"
+    ],
+    "description": "Compiles a template string into a render function. Only available in the standalone build."
+  },
+  "data": {
+    "prefix": "data",
+    "body": [
+      "data () {\n\treturn {\n\t\t$0\n\t}\n}"
+    ],
+    "description": "The data object for the Vue instance. Vue will recursively convert its properties into getter/setters to make it “reactive”. The object must be plain: native objects such as browser API objects and prototype properties are ignored. A rule of thumb is that data should just be data - it is not recommended to observe objects with its own stateful behavior."
+  },
+  "props": {
+    "prefix": "props",
+    "body": [
+      "props: [${1:String}]"
+    ],
+    "description": "A list/hash of attributes that are exposed to accept data from the parent component. It has a simple Array-based syntax and an alternative Object-based syntax that allows advanced configurations such as type checking, custom validation and default values"
+  },
+  "propsData": {
+    "prefix": "propsData",
+    "body": [
+      "propsData"
+    ],
+    "description": "Pass props to an instance during its creation. This is primarily intended to make unit testing easier"
+  },
+  "computed": {
+    "prefix": "computed",
+    "body": [
+      "computed: {\n\t$0\n}"
+    ],
+    "description": "Computed properties to be mixed into the Vue instance. All getters and setters have their this context automatically bound to the Vue instance."
+  },
+  "methods": {
+    "prefix": "methods",
+    "body": [
+      "methods: {\n\t$0\n}"
+    ],
+    "description": "Methods to be mixed into the Vue instance. You can access these methods directly on the VM instance, or use them in directive expressions. All methods will have their this context automatically bound to the Vue instance"
+  },
+  "watch": {
+    "prefix": "watch",
+    "body": [
+      "watch: {\n\t$0\n}"
+    ],
+    "description": "An object where keys are expressions to watch and values are the corresponding callbacks. The value can also be a string of a method name, or an Object that contains additional options. The Vue instance will call $watch() for each entry in the object at instantiation"
+  },
+  "el": {
+    "prefix": "el",
+    "body": [
+      "el"
+    ],
+    "description": "Provide the Vue instance an existing DOM element to mount on. It can be a CSS selector string or an actual HTMLElement."
+  },
+  "template": {
+    "prefix": "template",
+    "body": [
+      "<template>\n\t$0\n</template>"
+    ],
+    "description": "A string template to be used as the markup for the Vue instance. The template will replace the mounted element. Any existing markup inside the mounted element will be ignored, unless content distribution slots are present in the template"
+  },
+  "render": {
+    "prefix": "render",
+    "body": [
+      "render: function (${1:createElement}, ${1:context}) {\n\t$0\n}"
+    ],
+    "description": "An alternative to string templates allowing you to leverage the full programmatic power of JavaScript. The render function receives a createElement method as it’s first argument used to create VNodes."
+  },
+  "beforeCreate": {
+    "prefix": "beforeCreate",
+    "body": [
+      "beforeCreate () {\n\t$0\n}"
+    ],
+    "description": "Called synchronously after the instance has just been initialized, before data observation and event/watcher setup."
+  },
+  "created": {
+    "prefix": "created",
+    "body": [
+      "created () {\n\t$0\n}"
+    ],
+    "description": "Called synchronously after the instance is created. At this stage, the instance has finished processing the options which means the following have been set up: data observation, computed properties, methods, watch/event callbacks. However, the mounting phase has not been started, and the $el property will not be available yet"
+  },
+  "beforeMount": {
+    "prefix": "beforeMount",
+    "body": [
+      "beforeMount () {\n\t$0\n}"
+    ],
+    "description": "Called right before the mounting begins: the render function is about to be called for the first time."
+  },
+  "mounted": {
+    "prefix": "mounted",
+    "body": [
+      "mounted () {\n\t$0\n}"
+    ],
+    "description": "Called after the instance has just been mounted where el is replaced by the newly created vm.$el. If the root instance is mounted to an in-document element, vm.$el will also be in-document when mounted is called."
+  },
+  "beforeUpdate": {
+    "prefix": "beforeUpdate",
+    "body": [
+      "beforeUpdate () {\n\t$0\n}"
+    ],
+    "description": "Called when the data changes, before the virtual DOM is re-rendered and patched.(This hook is not called during server-side rendering.)"
+  },
+  "updated": {
+    "prefix": "updated",
+    "body": [
+      "updated () {\n\t$0\n}"
+    ],
+    "description": "Called after a data change causes the virtual DOM to be re-rendered and patched.(This hook is not called during server-side rendering.)"
+  },
+  "activated": {
+    "prefix": "activated",
+    "body": [
+      "activated () {\n\t$0\n}"
+    ],
+    "description": "Called when a kept-alive component is activated.(This hook is not called during server-side rendering.)"
+  },
+  "deactivated": {
+    "prefix": "deactivated",
+    "body": [
+      "deactivated () {\n\t$0\n}"
+    ],
+    "description": "Called when a kept-alive component is deactivated.(This hook is not called during server-side rendering.)"
+  },
+  "beforeDestroy": {
+    "prefix": "beforeDestroy",
+    "body": [
+      "beforeDestroy () {\n\t$0\n}"
+    ],
+    "description": "Called right before a Vue instance is destroyed. At this stage the instance is still fully functional.(This hook is not called during server-side rendering.)"
+  },
+  "destroyed": {
+    "prefix": "destroyed",
+    "body": [
+      "destroyed () {\n\t$0\n}"
+    ],
+    "description": "Called after a Vue instance has been destroyed. When this hook is called, all directives of the Vue instance have been unbound, all event listeners have been removed, and all child Vue instances have also been destroyed.(This hook is not called during server-side rendering.)"
+  },
+  "directives": {
+    "prefix": "directives",
+    "body": [
+      "directives: {\n\t$0\n}"
+    ],
+    "description": "A hash of directives to be made available to the Vue instance."
+  },
+  "filters": {
+    "prefix": "filters",
+    "body": [
+      "filters: {\n\t$0\n}"
+    ],
+    "description": "A hash of filters to be made available to the Vue instance."
+  },
+  "components": {
+    "prefix": "components",
+    "body": [
+      "components: {\n\t$0\n}"
+    ],
+    "description": "A hash of components to be made available to the Vue instance."
+  },
+  "parent": {
+    "prefix": "parent",
+    "body": [
+      "parent"
+    ],
+    "description": "Specify the parent instance for the instance to be created. Establishes a parent-child relationship between the two. "
+  },
+  "mixins": {
+    "prefix": "mixins",
+    "body": [
+      "mixins: [$0]"
+    ],
+    "description": "The mixins option accepts an array of mixin objects. These mixin objects can contain instance options just like normal instance objects, and they will be merged against the eventual options using the same option merging logic in Vue.extend()."
+  },
+  "delimiters": {
+    "prefix": "delimiters",
+    "body": [
+      "delimiters"
+    ],
+    "description": "Change the plain text interpolation delimiters. This option is only available in the standalone build."
+  },
+  "functional": {
+    "prefix": "functional",
+    "body": [
+      "functional"
+    ],
+    "description": "Causes a component to be stateless (no data) and instanceless (no this context)."
+  },
+  "vm.$data": {
+    "prefix": "vm$data",
+    "body": [
+      "${1:this}.\\$data"
+    ],
+    "description": "The data object that the Vue instance is observing. The Vue instance proxies access to the properties on its data object."
+  },
+  "vm.$el": {
+    "prefix": "$el",
+    "body": [
+      "${1:this}.\\$el"
+    ],
+    "description": "The root DOM element that the Vue instance is managing."
+  },
+  "vm.$options": {
+    "prefix": "vm$options",
+    "body": [
+      "${1:this}.\\$options"
+    ],
+    "description": "The instantiation options used for the current Vue instance. This is useful when you want to include custom properties in the options"
+  },
+  "vm.$parent": {
+    "prefix": "vm$parent",
+    "body": [
+      "${1:this}.\\$parent"
+    ],
+    "description": "The parent instance, if the current instance has one."
+  },
+  "vm.$root": {
+    "prefix": "vm$root",
+    "body": [
+      "${1:this}.\\$root"
+    ],
+    "description": "The root Vue instance of the current component tree. If the current instance has no parents this value will be itself."
+  },
+  "vm.$children": {
+    "prefix": "vm$children",
+    "body": [
+      "${1:this}.\\$children"
+    ],
+    "description": "The direct child components of the current instance. (Note there’s no order guarantee for $children, and it is not reactive.)"
+  },
+  "vm.$slots": {
+    "prefix": "vm$slots",
+    "body": [
+      "${1:this}.\\$slots"
+    ],
+    "description": "Used to programmatically access content distributed by slots. Each named slot has its own corresponding property"
+  },
+  "vm.$scopedSlots": {
+    "prefix": "vm$scopedSlots",
+    "body": [
+      "${1:this}.\\$scopedSlots"
+    ],
+    "description": "Used to programmatically access scoped slots. For each slot, including the default one, the object contains a corresponding function that returns VNodes."
+  },
+  "vm.$refs": {
+    "prefix": "vm$refs",
+    "body": [
+      "${1:this}.\\$refs"
+    ],
+    "description": "An object that holds child components that have ref registered."
+  },
+  "vm.$isServer": {
+    "prefix": "vm$isServer",
+    "body": [
+      "${1:this}.\\$isServer"
+    ],
+    "description": "Whether the current Vue instance is running on the server."
+  },
+  "vm.$watch": {
+    "prefix": "vm$watch",
+    "body": [
+      "${1:this}.\\$watch(${1:expOrFn}, ${1:callback}, { ${1:options} }$0)"
+    ],
+    "description": "Watch an expression or a computed function on the Vue instance for changes. The callback gets called with the new value and the old value. "
+  },
+  "vm.$set": {
+    "prefix": "vm$set",
+    "body": [
+      "${1:this}.\\$set(${1:object}, ${1:key}, ${1:value})"
+    ],
+    "description": "This is the alias of the global Vue.set."
+  },
+  "vm.$delete": {
+    "prefix": "vm$delete",
+    "body": [
+      "${1:this}.\\$delete(${1:object}, ${1:key})"
+    ],
+    "description": "This is the alias of the global Vue.delete."
+  },
+  "vm.$on": {
+    "prefix": "vm$on",
+    "body": [
+      "${1:this}.\\$on(${1:event}, ${1:callback})"
+    ],
+    "description": "Listen for a custom event on the current vm. Events can be triggered by vm.$emit. The callback will receive all the additional arguments passed into these event-triggering methods."
+  },
+  "vm.$once": {
+    "prefix": "vm$once",
+    "body": [
+      "${1:this}.\\$once(${1:event}, ${1:callback})"
+    ],
+    "description": "Listen for a custom event, but only once. The listener will be removed once it triggers for the first time."
+  },
+  "vm.$off": {
+    "prefix": "vm$off",
+    "body": [
+      "${1:this}.\\$off(${1:event}, ${1:callback})"
+    ],
+    "description": "Remove event listener(s)."
+  },
+  "vm.$emit": {
+    "prefix": "vm$emit",
+    "body": [
+      "${1:this}.\\$emit(${1:event}, ${1:[…args]})"
+    ],
+    "description": "Trigger an event on the current instance. Any additional arguments will be passed into the listener’s callback function."
+  },
+  "vm.$mount": {
+    "prefix": "vm$mount",
+    "body": [
+      "${1:this}.\\$mount(${1:elementOrSelector})"
+    ],
+    "description": "If a Vue instance didn’t receive the el option at instantiation, it will be in “unmounted” state, without an associated DOM element. vm.$mount() can be used to manually start the mounting of an unmounted Vue instance."
+  },
+  "vm.$forceUpdate": {
+    "prefix": "vm$forceUpdate",
+    "body": [
+      "${1:this}.\\$forceUpdate()"
+    ],
+    "description": "Force the Vue instance to re-render. Note it does not affect all child components, only the instance itself and child components with inserted slot content."
+  },
+  "vm.$nextTick": {
+    "prefix": "vm$nextTick",
+    "body": [
+      "${1:this}.\\$nextTick(${1:callback})"
+    ],
+    "description": "Defer the callback to be executed after the next DOM update cycle. "
+  },
+  "vm.$destroy": {
+    "prefix": "vm$destroy",
+    "body": [
+      "${1:this}.\\$destroy()"
+    ],
+    "description": "Completely destroy a vm. Clean up its connections with other existing vms, unbind all its directives, turn off all event listeners."
+  },
+  "VR": {
+    "prefix": "VR",
+    "body": [
+      "import Vue from 'vue'\nimport Router from 'vue-router'\n\nVue.use(Router)\n\nexport default new Router({\n\tmode: '${1:history}',\n\tbase: ${1:__dirname},\n\troutes: [$0]\n})"
+    ],
+    "description": "[router]VueRouter master file template"
+  },
+  "path": {
+    "prefix": "Path",
+    "body": [
+      "{ path: '$1', component: ${1:2:component} }"
+    ],
+    "description": "[router]Basic Routes"
+  },
+  "pathNamed": {
+    "prefix": "PathNamed",
+    "body": [
+      "{ path: '$1', name: '$2', component: ${1:3:component} }"
+    ],
+    "description": "[router]Named Routes"
+  },
+  "pathAsync": {
+    "prefix": "PathAsync",
+    "body": [
+      "{ path: '$1', name: '$2', component: resolve => require(['$3'], resolve) }"
+    ],
+    "description": "[router] Async Component Routes"
+  },
+  "pathChildren": {
+    "prefix": "PathChildren",
+    "body": [
+      "{ path: '$1', name: '$2', component: ${1:3:component},\n\tchildren: [\n\t\t$4\n\t]\n}"
+    ],
+    "description": "[router]Nested Routes"
+  },
+  "scrollBehavior": {
+    "prefix": "scrollBehavior",
+    "body": [
+      "scrollBehavior (to, from, savedPosition){\n\t${1://return desired position}\n\t$0\n}"
+    ],
+    "description": "[router]Scroll Behavior(this feature only works in HTML5 history mode)"
+  },
+  "alias": {
+    "prefix": "alias",
+    "body": [
+      "alias: $0"
+    ],
+    "description": "[router]alias"
+  },
+  "redirect": {
+    "prefix": "redirect",
+    "body": [
+      "redirect: $0"
+    ],
+    "description": "[router]redirect"
+  },
+  "meta": {
+    "prefix": "meta",
+    "body": [
+      "meta: { ${1:options} }"
+    ],
+    "description": "[router]Route Meta Fields"
+  },
+  "router.app": {
+    "prefix": "router.app",
+    "body": [
+      "router.app"
+    ],
+    "description": "[router]The root Vue instance the router was injected into."
+  },
+  "router.currentRoute": {
+    "prefix": "router.currentRoute",
+    "body": [
+      "router.currentRoute"
+    ],
+    "description": "[router]The current route represented as a Route Object."
+  },
+  "router.mode": {
+    "prefix": "router.mode",
+    "body": [
+      "router.mode"
+    ],
+    "description": "[router]The mode the router is using."
+  },
+  "router.push": {
+    "prefix": "router.push",
+    "body": [
+      "router.push(${1:path})"
+    ],
+    "description": "[router]To navigate to a different URL.(This method pushes a new entry into the history stack)"
+  },
+  "router.replace": {
+    "prefix": "router.replace",
+    "body": [
+      "router.replace(${1:path})"
+    ],
+    "description": "[router]To replaces the current URL."
+  },
+  "router.go": {
+    "prefix": "router.go",
+    "body": [
+      "router.go(${1:number})"
+    ],
+    "description": "[router]This method takes a single integer as parameter that indicates by how many steps to go forwards or go backwards in the history stack, similar to window.history.go(n)"
+  },
+  "router.getMatchedComponents": {
+    "prefix": "router.getMatchedComponents",
+    "body": [
+      "router.getMatchedComponents(${1:path})"
+    ],
+    "description": "[router]Returns an Array of the components (definition/constructor, not instances) matched by the provided location or the current route."
+  },
+  "router.resolve": {
+    "prefix": "router.resolve",
+    "body": [
+      "router.resolve(${1:path})"
+    ],
+    "description": "[router]Reverse URL resolving. Given location in form same as used in <router-link/>, returns object with the following resolved properties:"
+  },
+  "router.beforeEach": {
+    "prefix": "router.beforeEach",
+    "body": [
+      "router.beforeEach((to, from, next) => {\n\t${1://to and from are Route Object,next() must be called to resolve the hook}\n\t$0\n})"
+    ],
+    "description": "[router] register global before guards"
+  },
+  "router.afterEach": {
+    "prefix": "router.afterEach",
+    "body": [
+      "router.afterEach( ${1:route} => {\n\t${1://these hooks do not get a next function and cannot affect the navigation}\n\t$0\n})"
+    ],
+    "description": "[router] register global after guards"
+  },
+  "beforeRouteEnter": {
+    "prefix": "beforeRouteEnter",
+    "body": [
+      "beforeRouteEnter((to, from, next) => {\n\t${1://does NOT have access to `this` component instance}\n\t$0\n})"
+    ],
+    "description": "[router]define beforeEnter guards directly on a route's configuration object:"
+  },
+  "beforeRouteLeave": {
+    "prefix": "beforeRouteLeave",
+    "body": [
+      "beforeRouteLeave((to, from, next) => {\n\t${1://has access to `this` component instance}\n\t$0\n})"
+    ],
+    "description": "[router]define beforeEnter guards directly on a route's configuration object:"
+  },
+  "$route.path": {
+    "prefix": "vm$route.path",
+    "body": [
+      "${1:this}.\\$route.path"
+    ],
+    "description": "[router]A string that equals the path of the current route, always resolved as an absolute path. "
+  },
+  "$route.params": {
+    "prefix": "vm$route.params",
+    "body": [
+      "${1:this}.\\$route.params"
+    ],
+    "description": "[router]An object that contains key/value pairs of dynamic segments and star segments. If there are no params the value will be an empty object."
+  },
+  "$route.query": {
+    "prefix": "vm$route.query",
+    "body": [
+      "${1:this}.\\$route.query"
+    ],
+    "description": "[router]An object that contains key/value pairs of the query string. "
+  },
+  "$route.hash": {
+    "prefix": "vm$route.hash",
+    "body": [
+      "${1:this}.\\$route.hash"
+    ],
+    "description": "[router]The hash of the current route (without #), if it has one. If no hash is present the value will be an empty string."
+  },
+  "$route.fullPath": {
+    "prefix": "vm$route.fullPath",
+    "body": [
+      "${1:this}.\\$route.fullPath"
+    ],
+    "description": "[router]The full resolved URL including query and hash."
+  },
+  "$route.matched": {
+    "prefix": "vm$route.matched",
+    "body": [
+      "${1:this}.\\$route.matched"
+    ],
+    "description": "[router]An Array containing route records for all nested path segments of the current route. Route records are the copies of the objects in the routes configuration Array"
+  },
+  "$route.name": {
+    "prefix": "vm$route.name",
+    "body": [
+      "${1:this}.\\$route.name"
+    ],
+    "description": "[router]The name of the current route, if it has one."
+  },
+  "Vuex": {
+    "prefix": "VX",
+    "body": [
+      "import Vue from 'vue'\nimport Vuex from 'vuex'\n\nVue.use(Vuex)\n\nexport default new Vuex.Store({\n\tstrict: process.env.NODE_ENV !== 'production',\n\t$0\n})"
+    ],
+    "description": "[vuex]Vuex master file template"
+  },
+  "state": {
+    "prefix": "state",
+    "body": [
+      "state: {\n\t$0\n}"
+    ],
+    "description": "[vuex]The application level state"
+  },
+  "mutations": {
+    "prefix": "mutations",
+    "body": [
+      "mutations: {\n\t$0\n}"
+    ],
+    "description": "[vuex]The only way to actually change state in a Vuex store"
+  },
+  "actions": {
+    "prefix": "actions",
+    "body": [
+      "actions: {\n\t$0\n}"
+    ],
+    "description": "[vuex]actions commit mutations,it can contain arbitrary asynchronous operations"
+  },
+  "getters": {
+    "prefix": "getters",
+    "body": [
+      "getters: {\n\t$0\n}"
+    ],
+    "description": "[vuex]computed properties for stores"
+  },
+  "modules": {
+    "prefix": "modules",
+    "body": [
+      "modules: {\n\t$0\n}"
+    ],
+    "description": "[vuex]store modules"
+  },
+  "store.commit": {
+    "prefix": "store.commit",
+    "body": [
+      "store.commit('${1:MUTATIONS}', ${1:payload})"
+    ],
+    "description": "[vuex]Commit a mutation"
+  },
+  "store.dispatch": {
+    "prefix": "store.dispatch",
+    "body": [
+      "store.dispatch('${1:action}', ${1:payload})"
+    ],
+    "description": "[vuex]Dispatch an action."
+  },
+  "store.replaceState": {
+    "prefix": "store.replaceState",
+    "body": [
+      "store.replaceState(${1:state})"
+    ],
+    "description": "[vuex]Replace the store's root state. Use this only for state hydration / time-travel purposes."
+  },
+  "store.watch": {
+    "prefix": "store.watch",
+    "body": [
+      "store.watch(${1:getter}, ${1:handler})"
+    ],
+    "description": "[vuex]Reactively watch a getter function's return value, and call the callback when the value changes. "
+  },
+  "store.subscribe": {
+    "prefix": "store.subscribe",
+    "body": [
+      "store.subscribe(${1:handler})"
+    ],
+    "description": "[vuex]Subscribe to store mutations. The handler is called after every mutation and receives the mutation descriptor and post-mutation state as arguments:"
+  },
+  "store.registerModule": {
+    "prefix": "store.registerModule",
+    "body": [
+      "store.registerModule(${1:string}, ${1:Module})"
+    ],
+    "description": "[vuex]Register a dynamic module"
+  },
+  "store.unregisterModule": {
+    "prefix": "store.unregisterModule",
+    "body": [
+      "store.unregisterModule(${1:string})"
+    ],
+    "description": "[vuex]Unregister a dynamic module"
+  },
+  "store.hotUpdate": {
+    "prefix": "store.hotUpdate",
+    "body": [
+      "store.hotUpdate({$0})"
+    ],
+    "description": "[vuex]Hot swap new actions and mutations. "
+  },
+  "namespaced": {
+    "prefix": "namespaced",
+    "body": [
+      "namespaced: true"
+    ],
+    "description": "[vuex]If you want your modules to be more self-contained or reusable, you can mark it as namespaced with namespaced: true. When the module is registered, all of its getters, actions and mutations will be automatically namespaced based on the path the module is registered at"
+  },
+  "mapState": {
+    "prefix": "mapState",
+    "body": [
+      "mapState('${1:modulePath}', ${1:[]|{\\}})"
+    ],
+    "description": "[vuex]Create component computed options that return the sub tree of the Vuex store. "
+  },
+  "mapGetters": {
+    "prefix": "mapGetters",
+    "body": [
+      "mapGetters('${1:modulePath}', ${1:[]|{\\}})"
+    ],
+    "description": "[vuex]Create component computed options that return the evaluated value of a getter."
+  },
+  "mapActions": {
+    "prefix": "mapActions",
+    "body": [
+      "mapActions('${1:modulePath}', ${1:[]|{\\}})"
+    ],
+    "description": "[vuex]Create component methods options that dispatch an action."
+  },
+  "mapMutations": {
+    "prefix": "mapMutations",
+    "body": [
+      "mapMutations('${1:modulePath}', ${1:[]|{\\}})"
+    ],
+    "description": "[vuex]Create component methods options that commit a mutation"
+  },
+  "$store": {
+    "prefix": "vm$store",
+    "body": [
+      "${1:this}.\\$store"
+    ],
+    "description": "[router]$store"
+  }
+}

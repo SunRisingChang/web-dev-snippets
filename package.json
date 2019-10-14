@@ -1,0 +1,41 @@
+{
+  "name": "web-dev-snippets",
+  "displayName": "Web Dev Snippets",
+  "description": "Web 开发常用的代码片段。",
+  "version": "0.0.4",
+  "publisher": "SunRising",
+  "icon": "asset/logo.png",
+  "scripts": {
+    "build": "node src/out.js"
+  },
+  "engines": {
+    "vscode": "^1.30.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "html",
+        "path": "./snippets/html.json"
+      },
+      {
+        "language": "vue-html",
+        "path": "./snippets/html.json"
+      },
+      {
+        "language": "vue",
+        "path": "./snippets/html.json"
+      }
+    ]
+  }
+}

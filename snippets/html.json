@@ -1,0 +1,1666 @@
+{
+  "doctype": {
+    "prefix": "doctype",
+    "body": [
+      "<!DOCTYPE>",
+      "$1"
+    ],
+    "description": "HTML - Defines the document type"
+  },
+  "a": {
+    "prefix": "a",
+    "body": "<a href=\"$1\">$2</a>$3",
+    "description": "HTML - Defines a hyperlink"
+  },
+  "abbr": {
+    "prefix": "abbr",
+    "body": "<abbr title=\"$1\">$2</abbr>$3",
+    "description": "HTML - Defines an abbreviation"
+  },
+  "address": {
+    "prefix": "address",
+    "body": [
+      "<address>",
+      "$1",
+      "</address>"
+    ],
+    "description": "HTML - Defines an address element"
+  },
+  "area": {
+    "prefix": "area",
+    "body": "<area shape=\"$1\" coords=\"$2\" href=\"$3\" alt=\"$4\">$5",
+    "description": "HTML - Defines an area inside an image map"
+  },
+  "article": {
+    "prefix": "article",
+    "body": [
+      "<article>",
+      "\t$1",
+      "</article>"
+    ],
+    "description": "HTML - Defines an article"
+  },
+  "aside": {
+    "prefix": "aside",
+    "body": [
+      "<aside>",
+      "\t$1",
+      "</aside>$2"
+    ],
+    "description": "HTML - Defines content aside from the page content"
+  },
+  "audio": {
+    "prefix": "audio",
+    "body": [
+      "<audio controls>",
+      "\t$1",
+      "</audio>"
+    ],
+    "description": "HTML - Defines sounds content"
+  },
+  "b": {
+    "prefix": "b",
+    "body": "<b>$1</b>$2",
+    "description": "HTML - Defines bold text"
+  },
+  "base": {
+    "prefix": "base",
+    "body": "<base href=\"$1\" target=\"$2\">$3",
+    "description": "HTML - Defines a base URL for all the links in a page"
+  },
+  "bdi": {
+    "prefix": "bdi",
+    "body": "<bdi>$1</bdi>$2",
+    "description": "HTML - Used to isolate text that is of unknown directionality"
+  },
+  "bdo": {
+    "prefix": "bdo",
+    "body": [
+      "<bdo dir=\"$1\">",
+      "$2",
+      "</bdo>"
+    ],
+    "description": "HTML - Defines the direction of text display"
+  },
+  "big": {
+    "prefix": "big",
+    "body": "<big>$1</big>$2",
+    "description": "HTML - Used to make text bigger"
+  },
+  "blockquote": {
+    "prefix": "blockquote",
+    "body": [
+      "<blockquote cite=\"$2\">",
+      "\t$1",
+      "</blockquote>"
+    ],
+    "description": "HTML - Defines a long quotation"
+  },
+  "body": {
+    "prefix": "body",
+    "body": [
+      "<body>",
+      "\t$1",
+      "</body>"
+    ],
+    "description": "HTML - Defines the body element"
+  },
+  "br": {
+    "prefix": "br",
+    "body": "<br>",
+    "description": "HTML - Inserts a single line break"
+  },
+  "button": {
+    "prefix": "button",
+    "body": "<button type=\"$1\">$2</button>$3",
+    "description": "HTML - Defines a push button"
+  },
+  "canvas": {
+    "prefix": "canvas",
+    "body": "<canvas id=\"$1\">$2</canvas>$3",
+    "description": "HTML - Defines graphics"
+  },
+  "caption": {
+    "prefix": "caption",
+    "body": "<caption>$1</caption>$2",
+    "description": "HTML - Defines a table caption"
+  },
+  "cite": {
+    "prefix": "cite",
+    "body": "<cite>$1</cite>$2",
+    "description": "HTML - Defines a citation"
+  },
+  "code": {
+    "prefix": "code",
+    "body": "<code>$1</code>$2",
+    "description": "HTML - Defines computer code text"
+  },
+  "col": {
+    "prefix": "col",
+    "body": "<col>$2",
+    "description": "HTML - Defines attributes for table columns"
+  },
+  "colgroup": {
+    "prefix": "colgroup",
+    "body": [
+      "<colgroup>",
+      "\t$1",
+      "</colgroup>"
+    ],
+    "description": "HTML - Defines group of table columns"
+  },
+  "command": {
+    "prefix": "command",
+    "body": "<command>$1</command>$2",
+    "description": "HTML - Defines a command button [not supported]"
+  },
+  "datalist": {
+    "prefix": "datalist",
+    "body": [
+      "<datalist>",
+      "\t$1",
+      "</datalist>"
+    ],
+    "description": "HTML - Defines a dropdown list"
+  },
+  "dd": {
+    "prefix": "dd",
+    "body": "<dd>$1</dd>$2",
+    "description": "HTML - Defines a definition description"
+  },
+  "del": {
+    "prefix": "del",
+    "body": "<del>$1</del>$2",
+    "description": "HTML - Defines deleted text"
+  },
+  "details": {
+    "prefix": "details",
+    "body": [
+      "<details>",
+      "\t$1",
+      "</details>"
+    ],
+    "description": "HTML - Defines details of an element"
+  },
+  "dialog": {
+    "prefix": "dialog",
+    "body": "<dialog>$1</dialog>$2",
+    "description": "HTML - Defines a dialog (conversation)"
+  },
+  "dfn": {
+    "prefix": "dfn",
+    "body": "<dfn>$1</dfn>$2",
+    "description": "HTML - Defines a definition term"
+  },
+  "div": {
+    "prefix": "div",
+    "body": [
+      "<div>",
+      "\t$1",
+      "</div>"
+    ],
+    "description": "HTML - Defines a section in a document"
+  },
+  "dl": {
+    "prefix": "dl",
+    "body": [
+      "<dl>",
+      "\t$1",
+      "</dl>"
+    ],
+    "description": "HTML - Defines a definition list"
+  },
+  "dt": {
+    "prefix": "dt",
+    "body": "<dt>$1</dt>$2",
+    "description": "HTML - Defines a definition term"
+  },
+  "em": {
+    "prefix": "em",
+    "body": "<em>$1</em>$2",
+    "description": "HTML - Defines emphasized text"
+  },
+  "embed": {
+    "prefix": "embed",
+    "body": "<embed src=\"$1\">$2",
+    "description": "HTML - Defines external interactive content ot plugin"
+  },
+  "fieldset": {
+    "prefix": "fieldset",
+    "body": [
+      "<fieldset>",
+      "\t$1",
+      "</fieldset>"
+    ],
+    "description": "HTML - Defines a fieldset"
+  },
+  "figcaption": {
+    "prefix": "figcaption",
+    "body": "<figcaption>$1</figcaption>$2",
+    "description": "HTML - Defines a caption for a figure"
+  },
+  "figure": {
+    "prefix": "figure",
+    "body": [
+      "<figure>",
+      "\t$1",
+      "</figure>"
+    ],
+    "description": "HTML - Defines a group of media content, and their caption"
+  },
+  "footer": {
+    "prefix": "footer",
+    "body": [
+      "<footer>",
+      "\t$1",
+      "</footer>"
+    ],
+    "description": "HTML - Defines a footer for a section or page"
+  },
+  "form": {
+    "prefix": "form",
+    "body": [
+      "<form>",
+      "\t$1",
+      "</form>"
+    ],
+    "description": "HTML - Defines a form"
+  },
+  "h1": {
+    "prefix": "h1",
+    "body": "<h1>$1</h1>$2",
+    "description": "HTML - Defines header 1"
+  },
+  "h2": {
+    "prefix": "h2",
+    "body": "<h2>$1</h2>$2",
+    "description": "HTML - Defines header 2"
+  },
+  "h3": {
+    "prefix": "h3",
+    "body": "<h3>$1</h3>$2",
+    "description": "HTML - Defines header 3"
+  },
+  "h4": {
+    "prefix": "h4",
+    "body": "<h4>$1</h4>$2",
+    "description": "HTML - Defines header 4"
+  },
+  "h5": {
+    "prefix": "h5",
+    "body": "<h5>$1</h5>$2",
+    "description": "HTML - Defines header 5"
+  },
+  "h6": {
+    "prefix": "h6",
+    "body": "<h6>$1</h6>$2",
+    "description": "HTML - Defines header 6"
+  },
+  "head": {
+    "prefix": "head",
+    "body": [
+      "<head>",
+      "\t$1",
+      "</head>"
+    ],
+    "description": "HTML - Defines information about the document"
+  },
+  "header": {
+    "prefix": "header",
+    "body": [
+      "<header>",
+      "\t$1",
+      "</header>"
+    ],
+    "description": "HTML - Defines a header for a section of page"
+  },
+  "hgroup": {
+    "prefix": "hgroup",
+    "body": [
+      "<hgroup>",
+      "\t$1",
+      "</hgroup>"
+    ],
+    "description": "HTML - Defines information about a section in a document"
+  },
+  "hr": {
+    "prefix": "hr",
+    "body": "<hr>",
+    "description": "HTML - Defines a horizontal rule"
+  },
+  "html": {
+    "prefix": "html",
+    "body": [
+      "<html>",
+      "\t$1",
+      "</html>"
+    ],
+    "description": "HTML - Defines an html document"
+  },
+  "html5": {
+    "prefix": "html5",
+    "body": [
+      "<!DOCTYPE html>",
+      "<html lang=\"$1en\">",
+      "\t<head>",
+      "\t\t<title>$2</title>",
+      "\t\t<meta charset=\"UTF-8\">",
+      "\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+      "\t\t<link href=\"$3css/style.css\" rel=\"stylesheet\">",
+      "\t</head>",
+      "\t<body>",
+      "\t$4",
+      "\t</body>",
+      "</html>"
+    ],
+    "description": "HTML - Defines a template for a html5 document"
+  },
+  "i": {
+    "prefix": "i",
+    "body": "<i>$1</i>$2",
+    "description": "HTML - Defines italic text"
+  },
+  "iframe": {
+    "prefix": "iframe",
+    "body": "<iframe src=\"$1\">$2</iframe>$3",
+    "description": "HTML - Defines an inline sub window"
+  },
+  "img": {
+    "prefix": "img",
+    "body": "<img src=\"$1\" alt=\"$2\">$3",
+    "description": "HTML - Defines an image"
+  },
+  "input": {
+    "prefix": "input",
+    "body": "<input type=\"$1\" name=\"$2\" value=\"$3\">$4",
+    "description": "HTML - Defines an input field"
+  },
+  "ins": {
+    "prefix": "ins",
+    "body": "<ins>$1</ins>$2",
+    "description": "HTML - Defines inserted text"
+  },
+  "keygen": {
+    "prefix": "keygen",
+    "body": "<keygen name=\"$1\">$2",
+    "description": "HTML - Defines a generated key in a form"
+  },
+  "kbd": {
+    "prefix": "kbd",
+    "body": "<kbd>$1</kbd>$2",
+    "description": "HTML - Defines keyboard text"
+  },
+  "label": {
+    "prefix": "label",
+    "body": "<label for=\"$1\">$2</label>$3",
+    "description": "HTML - Defines an inline window"
+  },
+  "legend": {
+    "prefix": "legend",
+    "body": "<legend>$1</legend>$2",
+    "description": "HTML - Defines a title in a fieldset"
+  },
+  "li": {
+    "prefix": "li",
+    "body": "<li>$1</li>$2",
+    "description": "HTML - Defines a list item"
+  },
+  "link": {
+    "prefix": "link",
+    "body": "<link rel=\"$1\" type=\"$2\" href=\"$3\">$4",
+    "description": "HTML - Defines a resource reference"
+  },
+  "main": {
+    "prefix": "main",
+    "body": [
+      "<main>",
+      "\t$1",
+      "</main>"
+    ],
+    "description": "HTML - Defines an image map"
+  },
+  "map": {
+    "prefix": "map",
+    "body": [
+      "<map name=\"$1\">",
+      "\t$2",
+      "</map>"
+    ],
+    "description": "HTML - Defines an image map"
+  },
+  "mark": {
+    "prefix": "mark",
+    "body": "<mark>$1</mark>$2",
+    "description": "HTML - Defines marked text"
+  },
+  "menu": {
+    "prefix": "menu",
+    "body": [
+      "<menu>",
+      "\t$1",
+      "</menu>"
+    ],
+    "description": "HTML - Defines a menu list"
+  },
+  "menuitem": {
+    "prefix": "menuitem",
+    "body": "<menuitem>$1</menuitem>$2",
+    "description": "HTML - Defines a menu item [firefox only]"
+  },
+  "meta": {
+    "prefix": "meta",
+    "body": "<meta name=\"$1\" content=\"$2\">$3",
+    "description": "HTML - Defines meta information"
+  },
+  "meter": {
+    "prefix": "meter",
+    "body": "<meter value=\"$1\">$2</meter>$3",
+    "description": "HTML - Defines measurement within a predefined range"
+  },
+  "nav": {
+    "prefix": "nav",
+    "body": [
+      "<nav>",
+      "\t$1",
+      "</nav>"
+    ],
+    "description": "HTML - Defines navigation links"
+  },
+  "noscript": {
+    "prefix": "noscript",
+    "body": [
+      "<noscript>",
+      "$1",
+      "</noscript>"
+    ],
+    "description": "HTML - Defines a noscript section"
+  },
+  "object": {
+    "prefix": "object",
+    "body": "<object width=\"$1\" height=\"$2\" data=\"$3\">$4</object>$5",
+    "description": "HTML - Defines an embedded object"
+  },
+  "ol": {
+    "prefix": "ol",
+    "body": [
+      "<ol>",
+      "\t$1",
+      "</ol>"
+    ],
+    "description": "HTML - Defines an ordered list"
+  },
+  "optgroup": {
+    "prefix": "optgroup",
+    "body": [
+      "<optgroup>",
+      "\t$1",
+      "</optgroup>"
+    ],
+    "description": "HTML - Defines an option group"
+  },
+  "option": {
+    "prefix": "option",
+    "body": "<option value=\"$1\">$2</option>$3",
+    "description": "HTML - Defines an option in a drop-down list"
+  },
+  "output": {
+    "prefix": "output",
+    "body": "<output name=\"$1\" for=\"$2\">$3</output>$4",
+    "description": "HTML - Defines some types of output"
+  },
+  "p": {
+    "prefix": "p",
+    "body": "<p>$1</p>$2",
+    "description": "HTML - Defines a paragraph"
+  },
+  "param": {
+    "prefix": "param",
+    "body": "<param name=\"$1\" value=\"$2\">$3",
+    "description": "HTML - Defines a parameter for an object"
+  },
+  "pre": {
+    "prefix": "pre",
+    "body": [
+      "<pre>$1</pre>"
+    ],
+    "description": "HTML - Defines preformatted text"
+  },
+  "progress": {
+    "prefix": "progress",
+    "body": "<progress value=\"$1\" max=\"$2\">$3</progress>$4",
+    "description": "HTML - Defines progress of a task of any kind"
+  },
+  "q": {
+    "prefix": "q",
+    "body": "<q>$1</q>$2",
+    "description": "HTML - Defines a short quotation"
+  },
+  "rp": {
+    "prefix": "rp",
+    "body": "<rp>$1</rp>$2",
+    "description": "HTML - Used in ruby annotations to define what to show browsers that do not support the ruby element"
+  },
+  "rt": {
+    "prefix": "rt",
+    "body": "<rt>$1</rt>$2",
+    "description": "HTML - Defines explanation to ruby annotations"
+  },
+  "ruby": {
+    "prefix": "ruby",
+    "body": [
+      "<ruby>",
+      "$1",
+      "</ruby>"
+    ],
+    "description": "HTML - Defines ruby annotations"
+  },
+  "s": {
+    "prefix": "s",
+    "body": "<s>$1</s>$2",
+    "description": "HTML - Used to define strikethrough text"
+  },
+  "samp": {
+    "prefix": "samp",
+    "body": "<samp>$1</samp>$2",
+    "description": "HTML - Defines sample computer code"
+  },
+  "script": {
+    "prefix": "script",
+    "body": [
+      "<script>",
+      "\t$1",
+      "</script>"
+    ],
+    "description": "HTML - Defines a script"
+  },
+  "section": {
+    "prefix": "section",
+    "body": [
+      "<section>",
+      "\t$1",
+      "</section>"
+    ],
+    "description": "HTML - Defines a section"
+  },
+  "select": {
+    "prefix": "select",
+    "body": [
+      "<select>",
+      "\t$1",
+      "</select>"
+    ],
+    "description": "HTML - Defines a selectable list"
+  },
+  "small": {
+    "prefix": "small",
+    "body": "<small>$1</small>$2",
+    "description": "HTML - Defines small text"
+  },
+  "source": {
+    "prefix": "source",
+    "body": "<source src=\"$1\" type=\"$2\">$3",
+    "description": "HTML - Defines media resource"
+  },
+  "span": {
+    "prefix": "span",
+    "body": "<span>$1</span>$2",
+    "description": "HTML - Defines a section in a document"
+  },
+  "strong": {
+    "prefix": "strong",
+    "body": "<strong>$1</strong>$2",
+    "description": "HTML - Defines strong text"
+  },
+  "style": {
+    "prefix": "style",
+    "body": [
+      "<style>",
+      "$1",
+      "</style>"
+    ],
+    "description": "HTML - Defines a style definition"
+  },
+  "sub": {
+    "prefix": "sub",
+    "body": "<sub>$1</sub>$2",
+    "description": "HTML - Defines sub-scripted text"
+  },
+  "sup": {
+    "prefix": "sup",
+    "body": "<sup>$1</sup>$2",
+    "description": "HTML - Defines super-scripted text"
+  },
+  "summary": {
+    "prefix": "summary",
+    "body": "<summary>$1</summary>$2",
+    "description": "HTML - Defines a visible heading for the detail element [limited support]"
+  },
+  "table": {
+    "prefix": "table",
+    "body": [
+      "<table>",
+      "\t$1",
+      "</table>"
+    ],
+    "description": "HTML - Defines a table"
+  },
+  "tbody": {
+    "prefix": "tbody",
+    "body": [
+      "<tbody>",
+      "\t$1",
+      "</tbody>"
+    ],
+    "description": "HTML - Defines a table body"
+  },
+  "td": {
+    "prefix": "td",
+    "body": "<td>$1</td>$2",
+    "description": "HTML - Defines a table cell"
+  },
+  "textarea": {
+    "prefix": "textarea",
+    "body": "<textarea rows=\"$1\" cols=\"$2\">$3</textarea>$4",
+    "description": "HTML - Defines a text area"
+  },
+  "tfoot": {
+    "prefix": "tfoot",
+    "body": [
+      "<tfoot>",
+      "\t$1",
+      "</tfoot>"
+    ],
+    "description": "HTML - Defines a table footer"
+  },
+  "thead": {
+    "prefix": "thead",
+    "body": [
+      "<thead>",
+      "$1",
+      "</thead>"
+    ],
+    "description": "HTML - Defines a table head"
+  },
+  "th": {
+    "prefix": "th",
+    "body": "<th>$1</th>$2",
+    "description": "HTML - Defines a table header"
+  },
+  "time": {
+    "prefix": "time",
+    "body": "<time datetime=\"$1\">$2</time>$3",
+    "description": "HTML - Defines a date/time"
+  },
+  "title": {
+    "prefix": "title",
+    "body": "<title>$1</title>$2",
+    "description": "HTML - Defines the document title"
+  },
+  "tr": {
+    "prefix": "tr",
+    "body": "<tr>$1</tr>$2",
+    "description": "HTML - Defines a table row"
+  },
+  "track": {
+    "prefix": "track",
+    "body": "<track src=\"$1\" kind=\"$2\" srclang=\"$3\" label=\"$4\">$5",
+    "description": "HTML - Defines a table row"
+  },
+  "u": {
+    "prefix": "u",
+    "body": "<u>$1</u>$2",
+    "description": "HTML - Used to define underlined text"
+  },
+  "ul": {
+    "prefix": "ul",
+    "body": [
+      "<ul>",
+      "\t$1",
+      "</ul>"
+    ],
+    "description": "HTML - Defines an unordered list"
+  },
+  "var": {
+    "prefix": "var",
+    "body": "<var>$1</var>$2",
+    "description": "HTML - Defines a variable"
+  },
+  "video": {
+    "prefix": "video",
+    "body": [
+      "<video width=\"$1\" height=\"$2\" controls>",
+      "\t$3",
+      "</video>"
+    ],
+    "description": "HTML - Defines a video"
+  },
+  "Basic: Layout el-row": {
+    "prefix": "elrow",
+    "body": [
+      "<el-row>",
+      "\t<el-col :span=\"${1:12}\">${3}</el-col>",
+      "\t<el-col :span=\"${2:12}\">${4}</el-col>",
+      "</el-row>",
+      "${5}"
+    ],
+    "description": "Element UI <el-row> with <el-col>"
+  },
+  "Basic: Layout el-col": {
+    "prefix": "elcol",
+    "body": [
+      "<el-col :span=\"${1}\">${2}</el-col>",
+      "${3}"
+    ],
+    "description": "Element UI <el-col>"
+  },
+  "Basic: Container el-container": {
+    "prefix": "elcon",
+    "body": [
+      "<el-container>",
+      "\t<el-aside width=\"${1:200px}\">",
+      "\t\t${2:<!-- Aside content -->}",
+      "\t</el-aside>",
+      "\t<el-container>",
+      "\t\t<el-header height=\"$3\">",
+      "\t\t\t${4:<!-- Header content -->}",
+      "\t\t</el-header>",
+      "\t\t<el-main height=\"$5\">",
+      "\t\t\t${6:<!-- Main content -->}",
+      "\t\t</el-main>",
+      "\t</el-container>",
+      "</el-container>",
+      "${7}"
+    ],
+    "description": "Element UI <el-container>"
+  },
+  "Basic: Container el-header": {
+    "prefix": "elhe",
+    "body": [
+      "<el-header height=\"$1\">",
+      "\t${2:<!-- Header content -->}",
+      "</el-header>",
+      "${3}"
+    ],
+    "description": "Element UI <el-header>"
+  },
+  "Basic: Container el-aside": {
+    "prefix": "elas",
+    "body": [
+      "<el-aside width=\"${1:200px}\">",
+      "\t${2:<!-- Aside content -->}",
+      "</el-aside>",
+      "${3}"
+    ],
+    "description": "Element UI <el-aside>"
+  },
+  "Basic: Container el-main": {
+    "prefix": "elma",
+    "body": [
+      "<el-main height=\"${1}\">",
+      "\t${2:<!-- Main content -->}",
+      "</el-main>",
+      "${3}"
+    ],
+    "description": "Element UI <el-main>"
+  },
+  "Basic: Container el-footer": {
+    "prefix": "elfo",
+    "body": [
+      "<el-footer height=\"${1}\">",
+      "\t${2:<!-- Footer content -->}",
+      "</el-footer>",
+      "${3}"
+    ],
+    "description": "Element UI <el-footer>"
+  },
+  "Basic: Color blue": {
+    "prefix": "elcb",
+    "body": [
+      "#409EFF"
+    ],
+    "description": "Element UI Color Blue"
+  },
+  "Basic: Color danger": {
+    "prefix": "elcd",
+    "body": [
+      "#F56C6C"
+    ],
+    "description": "Element UI Color Danger"
+  },
+  "Basic: Color info": {
+    "prefix": "elci",
+    "body": [
+      "#909399"
+    ],
+    "description": "Element UI Color Info"
+  },
+  "Basic: Color success": {
+    "prefix": "elcs",
+    "body": [
+      "#67C23A"
+    ],
+    "description": "Element UI Color Success"
+  },
+  "Basic: Color waring": {
+    "prefix": "elcw",
+    "body": [
+      "#E6A23C"
+    ],
+    "description": "Element UI Color Waring"
+  },
+  "Basic: Typography": {
+    "prefix": "eltypo",
+    "body": [
+      "font-family: \"Helvetica Neue\",Helvetica,\"PingFang SC\",\"Hiragino Sans GB\",\"Microsoft YaHei\",\"微软雅黑\",Arial,sans-serif;"
+    ],
+    "description": "Element UI Font-family"
+  },
+  "Basic: el-button": {
+    "prefix": "elb",
+    "body": [
+      "<el-button type=\"${1:text}\" @click=\"$2\"></el-button>",
+      "${3}"
+    ],
+    "description": "Element UI <el-button>"
+  },
+  "Form: Radio": {
+    "prefix": "elr",
+    "body": [
+      "<el-radio v-model=\"${1}\" label=\"${2}\">$3</el-radio>",
+      "${4}"
+    ],
+    "description": "Element UI <el-radio>"
+  },
+  "Form: Radio Group": {
+    "prefix": "elrg",
+    "body": [
+      "<el-radio-group v-model=\"$1\">",
+      "\t<el-radio v-for=\"${2:item} in ${3:items}\" :key=\"${2:item}.${4:key}\" :label=\"${2:item}.${5:label}\">",
+      "\t\t{{${2:item}.${6:title}}}",
+      "\t</el-radio>",
+      "</el-radio-group>",
+      "${7}"
+    ],
+    "description": "Element UI <el-radio-group> with <el-radio>"
+  },
+  "Form: Checkbox": {
+    "prefix": "elc",
+    "body": [
+      "<el-checkbox v-model=\"${1}\" label=\"${2}\">$3</el-checkbox>",
+      "${4}"
+    ],
+    "description": "Element UI <el-checkbox>"
+  },
+  "Form: Checkbox Group": {
+    "prefix": "elcg",
+    "body": [
+      "<el-checkbox-group v-model=\"$1\">",
+      "\t<el-checkbox v-for=\"${2:item} in ${3:items}\" :key=\"${2:item}.${4:key}\" :label=\"${2:item}.${5:label}\"></el-checkbox>",
+      "</el-checkbox-group>",
+      "${6}"
+    ],
+    "description": "Element UI <el-checkbox-group> with <el-checkbox>"
+  },
+  "Form: Input": {
+    "prefix": "eli",
+    "body": [
+      "<el-input v-model=\"$1\" placeholder=\"$2\"></el-input>",
+      "${3}"
+    ],
+    "description": "Element UI <el-input>"
+  },
+  "Form: Textarea": {
+    "prefix": "elit",
+    "body": [
+      "<el-input type=\"textarea\" :rows=\"${1:2}\" v-model=\"$2\" placeholder=\"$3\"></el-input>",
+      "${4}"
+    ],
+    "description": "Element UI <el-input type=\"textarea\">"
+  },
+  "Form: InputNumber": {
+    "prefix": "elin",
+    "body": [
+      "<el-input-number v-model=\"$1\" :min=\"${2:1}\" :max=\"${3:10}\" label=\"$4\"></el-input-number>",
+      "${5}"
+    ],
+    "description": "Element UI <el-input-number>"
+  },
+  "Form: Select": {
+    "prefix": "elsel",
+    "body": [
+      "<el-select v-model=\"$1\" placeholder=\"$2\">",
+      "\t<el-option v-for=\"${3:item} in ${4:options}\"",
+      "\t\t:key=\"${3:item}.${5:value}\"",
+      "\t\t:label=\"${3:item}.${6:label}\"",
+      "\t\t:value=\"${3:item}.${5:value}\">",
+      "\t</el-option>",
+      "</el-select>",
+      "${7}"
+    ],
+    "description": "Element UI <el-select>"
+  },
+  "Form: Select Option": {
+    "prefix": "elop",
+    "body": [
+      "<el-option :label=\"$1\" :value=\"$2\"></el-option>",
+      "${3}"
+    ],
+    "description": "Element UI <el-option>"
+  },
+  "Form: Cascader": {
+    "prefix": "elca",
+    "body": [
+      "<el-cascader :options=\"${1:options}\" v-model=\"${2:selectedOptions}\" @change=\"${2:handleChange}\">",
+      "</el-cascader>",
+      "${3}"
+    ],
+    "description": "Element UI <el-cascader>"
+  },
+  "Form: Switch": {
+    "prefix": "elsw",
+    "body": [
+      "<el-switch v-model=\"$1\" active-text=\"$2\" inactive-text=\"$3\">",
+      "</el-switch>",
+      "${4}"
+    ],
+    "description": "Element UI <el-switch>"
+  },
+  "Form: TimePicker": {
+    "prefix": "eltp",
+    "body": [
+      "<el-time-picker v-model=\"$1\"",
+      "\t:picker-options=\"{",
+      "\t\tselectableRange: '${2:18:30:00} - ${3:20:30:00}'",
+      "\t}\"",
+      "\tplaceholder=\"${4:任意时间点}\">",
+      "</el-time-picker>",
+      "${5}"
+    ],
+    "description": "Element UI <el-time-picker>"
+  },
+  "Form: TimeSelector": {
+    "prefix": "elts",
+    "body": [
+      "<el-time-select v-model=\"$1\" :picker-options=\"$2\" placeholder=\"${3:选择时间}\">",
+      "</el-time-select>",
+      "${4}"
+    ],
+    "description": "Element UI <el-time-picker>"
+  },
+  "Form: DatePicker": {
+    "prefix": "eldp",
+    "body": [
+      "<el-date-picker v-model=\"$1\" type=\"date\" placeholder=\"${2:选择日期时间}\">",
+      "</el-date-picker>",
+      "${3}"
+    ],
+    "description": "Element UI <el-date-picker>"
+  },
+  "Form: DateTimePicker": {
+    "prefix": "eldtp",
+    "body": [
+      "<el-date-picker type=\"datetime\" v-model=\"$1\" placeholder=\"${2:选择日期时间}\">",
+      "</el-date-picker>",
+      "${3}"
+    ],
+    "description": "Element UI <el-date-picker type=\"datetime\">"
+  },
+  "Form: Upload": {
+    "prefix": "elu",
+    "body": [
+      "<el-upload",
+      "\taction=\"$1\"",
+      "\t:on-remove=\"$2\"",
+      "\tmultiple",
+      "\t:limit=\"${3:5}\"",
+      "\t:on-exceed=\"$4\"",
+      "\t:file-list=\"$5\">",
+      "\t<el-button size=\"small\" type=\"primary\">${6:点击上传}</el-button>",
+      "\t<div slot=\"tip\" class=\"el-upload__tip\">${7:只能上传jpg/png文件，且不超过500kb}</div>",
+      "</el-upload>",
+      "${8}"
+    ],
+    "description": "Element UI <el-upload>"
+  },
+  "Form: Rate": {
+    "prefix": "elra",
+    "body": [
+      "<el-rate v-model=\"$1\"></el-rate>",
+      "${2}"
+    ],
+    "description": "Element UI <el-rate>"
+  },
+  "Form: ColorPicker": {
+    "prefix": "elcp",
+    "body": [
+      "<el-color-picker v-model=\"$1\"></el-color-picker>",
+      "${2}"
+    ],
+    "description": "Element UI <el-color-picker>"
+  },
+  "Form: Transfer": {
+    "prefix": "eltr",
+    "body": [
+      "<el-transfer v-model=\"$1\" :data=\"$2\"></el-transfer>",
+      "${3}"
+    ],
+    "description": "Element UI <el-transfer>"
+  },
+  "Form: Form": {
+    "prefix": "elf",
+    "body": [
+      "<el-form :model=\"${1:form}\" ref=\"${1:form}\" label-width=\"80px\">",
+      "\t<el-form-item label=\"$2\">",
+      "\t\t<el-input v-model=\"${1:form}.${3}\"></el-input>",
+      "\t</el-form-item>",
+      "\t<el-form-item>",
+      "\t\t<el-button type=\"primary\" @click=\"onSubmit\">${4:立即创建}</el-button>",
+      "\t\t<el-button>${5:取消}</el-button>",
+      "\t</el-form-item>",
+      "</el-form>",
+      "${6}"
+    ],
+    "description": "Element UI <el-form>"
+  },
+  "Form: Form Item": {
+    "prefix": "elfi",
+    "body": [
+      "<el-form-item label=\"$1\">",
+      "\t$2",
+      "</el-form-item>",
+      "${3}"
+    ],
+    "description": "Element UI <el-form-item>"
+  },
+  "Data: Table": {
+    "prefix": "elta",
+    "body": [
+      "<el-table :data=\"$1\">",
+      "\t<el-table-column v-for=\"${2:col} in ${3:columns}\"",
+      "\t\t:prop=\"${2:col}.${4:id}\"",
+      "\t\t:key=\"${2:col}.${4:id}\"",
+      "\t\t:label=\"${2:col}.${5:label}\"",
+      "\t\t:width=\"${2:col}.${6:width}\">",
+      "\t</el-table-column>",
+      "</el-table>",
+      "${7}"
+    ],
+    "description": "Element UI <el-table>"
+  },
+  "Data: Table Column": {
+    "prefix": "eltac",
+    "body": [
+      "<el-table-column",
+      "\t:prop=\"${1:col}.${2:id}\"",
+      "\t:label=\"${1:col}.${3:label}\"",
+      "\t:width=\"${1:col}.${4:width}\">",
+      "</el-table-column>",
+      "${5}"
+    ],
+    "description": "Element UI <el-table-column>"
+  },
+  "Data: Tag": {
+    "prefix": "eltag",
+    "body": [
+      "<el-tag type=\"${1|danger,info,success,warning|}\" closable>$2</el-tag>",
+      "${3}"
+    ],
+    "description": "Element UI <el-tag>"
+  },
+  "Data: Progress": {
+    "prefix": "elpr",
+    "body": [
+      "<el-progress type=\"${1|line,circle|}\" :percentage=\"$2\" :status=\"$3\"></el-progress>",
+      "${4}"
+    ],
+    "description": "Element UI <el-progress>"
+  },
+  "Data: Tree": {
+    "prefix": "eltree",
+    "body": [
+      "<el-tree :data=\"$1\" :props=\"$2\" @node-click=\"$3\"></el-tree>",
+      "${4}"
+    ],
+    "description": "Element UI <el-tree>"
+  },
+  "Data: Pagination": {
+    "prefix": "elpa",
+    "body": [
+      "<el-pagination",
+      "\t@size-change=\"${1:sizeChange}\"",
+      "\t@current-change=\"${2:currentChange}\"",
+      "\t:current-page=\"${3:currentPage}\"",
+      "\t:page-sizes=\"${4:[20, 40, 80, 100]}\"",
+      "\t:page-size=\"${5:pageSize}\"",
+      "\tlayout=\"total, sizes, prev, pager, next, jumper\"",
+      "\t:total=\"${6:totalNum}\" background>",
+      "</el-pagination>",
+      "${7}"
+    ],
+    "description": "Element UI <el-pagination>"
+  },
+  "Data: Badge": {
+    "prefix": "elba",
+    "body": [
+      "<el-badge :value=\"$1\">",
+      "\t$2",
+      "</el-badge>",
+      "${3}"
+    ],
+    "description": "Element UI <el-badge>"
+  },
+  "Notice: Alert": {
+    "prefix": "elal",
+    "body": [
+      "<el-alert :title=\"$1\" type=\"${2|info,success,warning,error|}\" show-icon></el-alert>",
+      "${3}"
+    ],
+    "description": "Element UI <el-alert>"
+  },
+  "Notice: Loading": {
+    "prefix": "elloads",
+    "body": [
+      "element-loading-text=\"${1:拼命加载中}\"",
+      "element-loading-spinner=\"${2:el-icon-loading}\"",
+      "element-loading-background=\"${3:rgba(0, 0, 0, 0.8)}\"",
+      "${4}"
+    ],
+    "description": "Element UI loading options"
+  },
+  "Notice: Message": {
+    "prefix": "elme",
+    "body": [
+      "this.\\$message({",
+      "\tmessage: '$1',",
+      "\ttype: '${2|info,success,warning,error|}',",
+      "\tshowClose: ${3:true},",
+      "});",
+      "${4}"
+    ],
+    "description": "Element UI $message"
+  },
+  "Notice: Messagebox": {
+    "prefix": "elmebox",
+    "body": [
+      "this.\\$msgbox({",
+      "\ttitle: '$1',",
+      "\tmessage: '${2}',",
+      "\tshowCancelButton: true,",
+      "\tconfirmButtonText: '${3:确定}',",
+      "\tcancelButtonText: '${4:取消}',",
+      "\tbeforeClose: (action, instance, done) => {",
+      "\t\t${5}",
+      "\t}).then(action => {",
+      "\t\t${6}",
+      "\t});",
+      "});",
+      "${7}"
+    ],
+    "description": "Element UI $msgbox"
+  },
+  "Notice: Messagebox Alert": {
+    "prefix": "elmeal",
+    "body": [
+      "this.\\$alert('${1:内容}', '${2:标题}', {",
+      "\tconfirmButtonText: '${3:确定}',",
+      "\tcallback: action => {",
+      "\t\t${4}",
+      "\t}",
+      "});",
+      "${5}"
+    ],
+    "description": "Element UI $alert"
+  },
+  "Notice: Messagebox Confirm": {
+    "prefix": "elmecon",
+    "body": [
+      "this.\\$confirm('${1:内容}', '${2:标题}', {",
+      "\tconfirmButtonText: '${3:确定}',",
+      "\tcancelButtonText: '${4:取消}',",
+      "\ttype: '${5|success,info,warning,erro|}',",
+      "\tcallback: action => {",
+      "\t\t${6}",
+      "\t}",
+      "});",
+      "${7}"
+    ],
+    "description": "Element UI $confirm"
+  },
+  "Notice: Messagebox Prompt": {
+    "prefix": "elmepro",
+    "body": [
+      "this.\\$prompt('${1:内容}', '${2:标题}', {",
+      "\tconfirmButtonText: '${3:确定}',",
+      "\tcancelButtonText: '${4:取消}',",
+      "\tinputPattern: '${5}',",
+      "\tinputErrorMessage: '${6}',",
+      "\tcallback: action => {",
+      "\t\t${7}",
+      "\t}",
+      "});",
+      "${8}"
+    ],
+    "description": "Element UI $prompt"
+  },
+  "Notice: Notification": {
+    "prefix": "elnoti",
+    "body": [
+      "this.\\$notify({",
+      "\ttitle: '${1}',",
+      "\tmessage: '${2}',",
+      "\ttype: '${3|info,success,warning,error|}',",
+      "\tduration: '${4|4500, 0|}',",
+      "\tposition: '${5|top-right,top-left,bottom-right,bottom-left|}'",
+      "});",
+      "${6}"
+    ],
+    "description": "Element UI $notify"
+  },
+  "Navigation: NavMenu Menu": {
+    "prefix": "elmen",
+    "body": [
+      "<el-menu mode=\"${1:horizontal}\" :default-active=\"$2\" @select=\"$3\">",
+      "\t<el-submenu v-for=\"(${4:submenus}, ${5:index}) in ${6:menus}\"",
+      "\t\t:index=\"${5:index} + 1\"",
+      "\t\t:key=\"${4:submenus}.${5:key}\">",
+      "\t\t<template slot=\"title\">${4:submenus}.${6:title}</template>",
+      "\t\t<el-menu-item v-for=\"(${7:item}, ${8:subIndex}) in ${4:submenus}\"",
+      "\t\t\t:index=\"(${5:index} + 1) + '-' + (${8:subIndex} + 1)\">",
+      "\t\t\t\t{{${7:item}.${9:title}}}",
+      "\t\t</el-menu-item>",
+      "\t</el-submenu>",
+      "</el-menu>",
+      "${10}"
+    ],
+    "description": "Element UI <el-menu> with <el-submenu> and <el-menu-item>"
+  },
+  "Navigation: NavMenu subMenu": {
+    "prefix": "elsubmen",
+    "body": [
+      "<el-submenu :index=\"$1\">",
+      "\t<template slot=\"title\">$2</template>",
+      "\t<el-menu-item v-for=\"(${3:item}, ${4:subIndex}) in $5\"",
+      "\t\t:index=\"${4:subIndex} + 1\"",
+      "\t\t:key=\"${5:item}.${6:key}\">>",
+      "\t\t\t{{${3:item}.$7}}",
+      "\t</el-menu-item>",
+      "</el-submenu>",
+      "${8}"
+    ],
+    "description": "Element UI <el-submenu> with <el-menu-item>"
+  },
+  "Navigation: NavMenu Menu Item": {
+    "prefix": "elmeni",
+    "body": [
+      "<el-menu-item :index=\"$1\">$2</el-menu-item>",
+      "${3}"
+    ],
+    "description": "Element UI <el-menu-item>"
+  },
+  "Navigation: Tabs": {
+    "prefix": "eltabs",
+    "body": [
+      "<el-tabs v-model=\"$1\"",
+      "\ttype=\"${2:card}\">",
+      "\t<el-tab-pane v-for=\"${3:item} in items\"",
+      "\t\t:key=\"${3:item}.${4:key}\"",
+      "\t\t:label = \"${3:item}.${5:label}\"",
+      "\t\t:name=\"${3:item}.${6:id}\">",
+      "\t\t$7",
+      "\t</el-tab-pane>",
+      "</el-tabs>",
+      "${8}"
+    ],
+    "description": "Element UI <el-tabs> with <el-tab-pane>"
+  },
+  "Navigation: Tabs tab pane": {
+    "prefix": "eltabp",
+    "body": [
+      "<el-tab-pane :label=\"$1\" :name=\"$2\">",
+      "\t$3",
+      "</el-tab-pane>",
+      "${4}"
+    ],
+    "description": "Element UI <el-tab-pane>"
+  },
+  "Navigation: Breadcrumb": {
+    "prefix": "elbr",
+    "body": [
+      "<el-breadcrumb separator-class=\"${1:el-icon-arrow-right}\">",
+      "\t<el-breadcrumb-item :to=\"{ path: '$2', name: '$3' }\">$4</el-breadcrumb-item>",
+      "\t<el-breadcrumb-item :to=\"{ path: '$5', name: '$6' }\">$7</el-breadcrumb-item>",
+      "</el-breadcrumb>",
+      "${8}"
+    ],
+    "description": "Element UI <el-breadcrumb>"
+  },
+  "Navigation: Breadcrumb Item": {
+    "prefix": "elbri",
+    "body": [
+      "<el-breadcrumb-item :to=\"{ path: '$1', name: '$2' }\">$3</el-breadcrumb-item>",
+      "${4}"
+    ],
+    "description": "Element UI <el-breadcrumb-item>"
+  },
+  "Navigation: Dropdown": {
+    "prefix": "eldr",
+    "body": [
+      "<el-dropdown trigger=\"${1:click}\" @command=\"$2\">",
+      "\t<span>",
+      "\t\t<i class=\"el-icon-arrow-down el-icon--right\"></i>",
+      "\t</span>",
+      "\t<el-dropdown-menu slot=\"dropdown\">",
+      "\t\t<el-dropdown-item v-for=\"${3:item} in ${4:items}\"",
+      "\t\t\t:key=\"${3:item}.${5:key}\" :command=\"${3:item}.${6:command}\">",
+      "\t\t\t{{${3:item}.${7:title}}}",
+      "\t\t</el-dropdown-item>",
+      "\t</el-dropdown-menu>",
+      "</el-dropdown>",
+      "${8}"
+    ],
+    "description": "Element UI <el-dropdown> with <el-dropdown-item>"
+  },
+  "Navigation: Dropdown Item": {
+    "prefix": "eldri",
+    "body": [
+      "<el-dropdown-item :command=\"$1\">$2</el-dropdown-item>",
+      "${3}"
+    ],
+    "description": "Element UI <el-dropdown-item>"
+  },
+  "Navigation: Steps": {
+    "prefix": "elsts",
+    "body": [
+      "<el-steps :active=\"$1\">",
+      "\t<el-step v-for=\"${2:item} in ${3:items}\"",
+      "\t\t:key=\"${2:item}.${4:key}\"",
+      "\t\t:title=\"${2:item}.${5:title}\"",
+      "\t\t:description=\"${2:item}.${6:description}\"",
+      "\t\t:icon=\"${2:item}.${7:icon}\">",
+      "\t</el-step>",
+      "</el-steps>",
+      "${8}"
+    ],
+    "description": "Element UI <el-steps> with <el-step>"
+  },
+  "Navigation: Steps Step": {
+    "prefix": "elst",
+    "body": [
+      "<el-step :title=\"$1\" :description=\"$2\" :icon=\"$3\"></el-step>",
+      "${4}"
+    ],
+    "description": "Element UI <el-step>"
+  },
+  "Others: Dialog": {
+    "prefix": "eldi",
+    "body": [
+      "<el-dialog",
+      "\ttitle=\"$1\"",
+      "\t:visible.sync=\"$2\"",
+      "\twidth=\"${3:30%}\"",
+      "\t@close=\"$4\">",
+      "\t$5",
+      "\t<span slot=\"footer\">",
+      "\t\t<el-button @click=\"$2 = false\">取 消</el-button>",
+      "\t\t<el-button type=\"primary\" @click=\"$6\">确 定</el-button>",
+      "\t</span>",
+      "</el-dialog>",
+      "${7}"
+    ],
+    "description": "Element UI <el-dialog>"
+  },
+  "Others: Tooltip": {
+    "prefix": "elto",
+    "body": [
+      "<el-tooltip content=\"$1\" placement=\"$2\" effect=\"${3:dark}\">",
+      "\t${4:<!-- content to trigger tooltip here -->}",
+      "</el-tooltip>",
+      "${5}"
+    ],
+    "description": "Element UI <el-tooltip>"
+  },
+  "Others: Popover": {
+    "prefix": "elpop",
+    "body": [
+      "<el-popover",
+      "\t:ref=\"$1\"",
+      "\tplacement=\"$2\"",
+      "\t:title=\"$3\"",
+      "\twidth=\"$4\"",
+      "\ttrigger=\"${5:click}\"",
+      "\tcontent=\"$6\">",
+      "\t${7: <!-- <el-button slot=\"reference\">content</el-button> -->}",
+      "</el-popover>",
+      "${8}"
+    ],
+    "description": "Element UI <el-popover>"
+  },
+  "Others: Card": {
+    "prefix": "elcard",
+    "body": [
+      "<el-card :body-style=\"${1:{ padding: '0px' }}\">",
+      "\t<div slot=\"header\">",
+      "\t\t<span>${2:<!-- card title -->}</span>",
+      "\t</div>",
+      "\t${3:<!-- card body -->}",
+      "</el-card>",
+      "${4}"
+    ],
+    "description": "Element UI <el-card>"
+  },
+  "Others: Carousel": {
+    "prefix": "elcaro",
+    "body": [
+      "<el-carousel trigger=\"${1:hover}\" height=\"${2:150px}\">",
+      "\t<el-carousel-item v-for=\"${3:item} in ${4:items}\" :key=\"${3:item}.${5:key}\">",
+      "\t\t${6:<!-- content -->}",
+      "\t</el-carousel-item>",
+      "</el-carousel>",
+      "${7}"
+    ],
+    "description": "Element UI <el-carousel> with <el-carousel-item>"
+  },
+  "Others: Carousel Item": {
+    "prefix": "elcaroi",
+    "body": [
+      "<el-carousel-item>",
+      "\t${1:<!-- content -->}",
+      "</el-carousel-item>",
+      "${2}"
+    ],
+    "description": "Element UI <el-carousel-item>"
+  },
+  "Others: Collapse": {
+    "prefix": "elcolla",
+    "body": [
+      "<el-collapse v-model=\"${1:activeNames}\" :accordion=\"${2:false}\" @change=\"$3\">",
+      "\t<el-collapse-item v-for=\"${4:item} in ${5:items}\"",
+      "\t\t:key=\"${4:item}.${6:id}\"",
+      "\t\t:title=\"${4:item}.${7:title}\"",
+      "\t\t:name=\"${4:item}.${6:id}\">",
+      "\t\t${8:<!-- content -->}",
+      "\t</el-collapse-item>",
+      "</el-collapse>",
+      "${9}"
+    ],
+    "description": "Element UI <el-collapse> with <el-collapse-item>"
+  },
+  "Others: Collapse Item": {
+    "prefix": "elcollai",
+    "body": [
+      "<el-collapse-item :title=\"$1\" :name=\"$2\">",
+      "\t${3:<!-- content -->}",
+      "</el-collapse-item>",
+      "${4}"
+    ],
+    "description": "Element UI <el-collapse-item>"
+  },
+  "V-templates": {
+    "prefix": "V",
+    "body": [
+      "<template>\n\t<div id='${1:id}'>\n\t\t$0\n\t</div>\n</template>\n\n<script>\nexport default {\n\tname: '${1:id:name}'\n\n}\n</script>\n\n<style scoped>\n\n</style>"
+    ],
+    "description": "Quickly generate vue component templates"
+  },
+  "template": {
+    "prefix": "template",
+    "body": [
+      "<template>\n\t$0\n</template>"
+    ],
+    "description": "A string template to be used as the markup for the Vue instance. The template will replace the mounted element. Any existing markup inside the mounted element will be ignored, unless content distribution slots are present in the template"
+  },
+  "v-text": {
+    "prefix": "vText",
+    "body": [
+      "v-text=\"${1:msg}\""
+    ],
+    "description": "Updates the element’s textContent. If you need to update the part of textContent, you should use {{ Mustache }} interpolations."
+  },
+  "v-html": {
+    "prefix": "vHtml",
+    "body": [
+      "v-html=\"${1:html}\""
+    ],
+    "description": "Updates the element’s innerHTML. (Note that the contents are inserted as plain HTML - they will not be compiled as Vue templates.) "
+  },
+  "v-if": {
+    "prefix": "vIf",
+    "body": [
+      "v-if=\"${1:condition}\""
+    ],
+    "description": "Conditionally render the element based on the truthy-ness of the expression value. "
+  },
+  "v-show": {
+    "prefix": "vShow",
+    "body": [
+      "v-show=\"${1:condition}\""
+    ],
+    "description": "Toggle’s the element’s display CSS property based on the truthy-ness of the expression value."
+  },
+  "v-else": {
+    "prefix": "vElse",
+    "body": [
+      "v-else"
+    ],
+    "description": "Denote the “else block” for v-if or a v-if/v-else-if chain."
+  },
+  "v-else-if": {
+    "prefix": "vElseIf",
+    "body": [
+      "v-else-if=\"${1:condition}\""
+    ],
+    "description": "Denote the “else block” for v-if or a v-if/v-else-if chain."
+  },
+  "v-for": {
+    "prefix": "vFor",
+    "body": [
+      "v-for=\"(${1:item},index) in ${1:items}\""
+    ],
+    "description": "Render the element or template block multiple times based on the source data. "
+  },
+  "v-on": {
+    "prefix": "vOn",
+    "body": [
+      "v-on:${1:event}=\"${1:handle}\""
+    ],
+    "description": "Attaches an event listener to the element. The event type is denoted by the argument. "
+  },
+  "v-bind": {
+    "prefix": "vBind",
+    "body": [
+      "v-bind:${1:argument}=\"${1:optional}\""
+    ],
+    "description": "Dynamically bind one or more attributes, or a component prop to an expression."
+  },
+  "v-model": {
+    "prefix": "vModel",
+    "body": [
+      "v-model=\"${1:msg}\""
+    ],
+    "description": "Create a two-way binding on a form input element or a component. "
+  },
+  "v-pre": {
+    "prefix": "vPre",
+    "body": [
+      "v-pre"
+    ],
+    "description": "Skip compilation for this element and all its children. You can use this for displaying raw mustache tags. "
+  },
+  "v-cloak": {
+    "prefix": "vCloak",
+    "body": [
+      "v-cloak"
+    ],
+    "description": "This directive will remain on the element until the associated Vue instance finishes compilation."
+  },
+  "v-once": {
+    "prefix": "vOnce",
+    "body": [
+      "v-once"
+    ],
+    "description": "Render the element and component once only. On subsequent re-renders, the element/component and all its children will be treated as static content and skipped. This can be used to optimize update performance."
+  },
+  "key": {
+    "prefix": "key",
+    "body": [
+      "key=\"$1\""
+    ],
+    "description": "The key special attribute is primarily used as a hint for Vue’s virtual DOM algorithm to identify VNodes when diffing the new list of nodes against the old list. "
+  },
+  "ref": {
+    "prefix": "ref",
+    "body": [
+      "ref=\"$1\""
+    ],
+    "description": "ref is used to register a reference to an element or a child component."
+  },
+  "slotName": {
+    "prefix": "slotName",
+    "body": [
+      "<slot name=\"$1\"></slot>"
+    ],
+    "description": "Used on content inserted into child components to indicate which named slot the content belongs to."
+  },
+  "slot": {
+    "prefix": "slot",
+    "body": [
+      "slot=\"$1\""
+    ],
+    "description": "Used on content inserted into child components to indicate which named slot the content belongs to."
+  },
+  "keep-alive": {
+    "prefix": "keepAlive",
+    "body": [
+      "<keep-alive include=\"$1\">\n\t$0\n</keep-alive>"
+    ],
+    "description": "When wrapped around a dynamic component, <keep-alive> caches the inactive component instances without destroying them. "
+  },
+  "transition": {
+    "prefix": "transition",
+    "body": [
+      "<transition name=\"$1\" mode=\"$2\">\n\t$0\n</transition>"
+    ],
+    "description": "<transition> serve as transition effects for single element/component. "
+  },
+  "transition-group": {
+    "prefix": "transitionGroup",
+    "body": [
+      "<transition-group tag=\"$1\" name=\"$2\">\n\t$0\n</transition-group>"
+    ],
+    "description": " <transition-group> serve as transition effects for multiple elements/components"
+  },
+  "router-link": {
+    "prefix": "router-link",
+    "body": [
+      "<router-link to=\"${1:path}\"></router-link>"
+    ],
+    "description": "[router]<router-link> is the component for enabling user navigation in a router-enabled app. "
+  },
+  "router-view": {
+    "prefix": "router-view",
+    "body": [
+      "<router-view name=\"${1:path}\"></router-view>"
+    ],
+    "description": "[router]The <router-view> component is a functional component that renders the matched component for the given path. "
+  }
+}
