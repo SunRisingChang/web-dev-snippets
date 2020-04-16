@@ -1,3 +1,10 @@
+/**
+ * @Author: Sun Rising 
+ * @Date: 2020-04-16 13:29:27 
+ * @Last Modified by: Sun Rising 
+ * @Last Modified time: 2020-04-16 13:29:27 
+ * @Description: 
+ */
 module.exports = {
   "String.fromCharCode(num1, ..., numN) ": {
     prefix: "strfromcharcode",
@@ -67,6 +74,11 @@ module.exports = {
     prefix: "strmatch",
     body: "${1:str}.match($2)",
     description: "当一个字符串与一个正则表达式匹配时， match()方法检索匹配项。"
+  },
+  "String.matchAll(regexp);": {
+    prefix: "strmatchall",
+    body: "${1:str}.matchAll($2)",
+    description: "matchAll() 方法返回一个包含所有匹配正则表达式的结果及分组捕获组的迭代器。"
   },
   "String.normalize([form]);": {
     prefix: "strnormalize",
@@ -159,9 +171,26 @@ module.exports = {
     description:
       "trim() 方法会从一个字符串的两端删除空白字符。在这个上下文中的空白字符是所有的空白字符 (space, tab, no-break space 等) 以及所有行终止符字符（如 LF，CR）。"
   },
+  "String.trimEnd()": {
+    prefix: "strtrimend",
+    body: "${1:str}.trimEnd()",
+    description:
+      "trimEnd() 方法从一个字符串的末端移除空白字符。trimRight() 是这个方法的别名。"
+  },
+  "String.trimStart()": {
+    prefix: "strtrimstart",
+    body: "${1:str}.trimStart()",
+    description:
+      "trimStart() 方法从字符串的开头删除空格。trimLeft() 是此方法的别名。"
+  },
   "String.valueOf()": {
     prefix: "strvalueof",
     body: "${1:str}.valueOf()",
     description: "valueOf() 方法返回一个String对象的原始值（primitive value）。"
+  },
+  "String.raw(callSite, ...substitutions)": {
+    prefix: "strraw",
+    body: "${1:str}.raw(${2:callSite})",
+    description: "String.raw() 是一个模板字符串的标签函数，它的作用类似于 Python 中的字符串前缀 r 和 C# 中的字符串前缀 @（还是有点区别的，详见隔壁 Chromium 那边的这个 issue），是用来获取一个模板字符串的原始字符串的，比如说，占位符（例如 ${foo}）会被处理为它所代表的其他字符串，而转义字符（例如 \n）不会。"
   }
 };

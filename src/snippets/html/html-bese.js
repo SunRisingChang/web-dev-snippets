@@ -578,5 +578,40 @@ module.exports = {
     prefix: "video",
     body: ['<video width="$1" height="$2" controls>', "\t$3", "</video>"],
     description: "HTML - Defines a video"
+  },
+  data: {
+    prefix: "data",
+    body: ['<data value="$1">', "\t$2", "</data>"],
+    description: "HTML - <data> 元素将一个指定内容和机器可读的翻译联系在一起。但是，如果内容是与时间或者日期相关的，则一定要使用 <time>。"
+  },
+  picture: {
+    prefix: "picture",
+    body: ['<picture>', "\t$1", "</picture>"],
+    description: "HTML - <picture> 元素通过包含零或多个 <source> 元素和一个 <img> 元素来为不同的显示/设备场景提供图像版本"
+  },
+  rb: {
+    prefix: "rb",
+    body: ['<rb>', "\t$1", "</rb>"],
+    description: "HTML - 元素用于分隔<ruby>注释的基本文本组件（即正在注释的文本）"
+  },
+  rtc: {
+    prefix: "rtc",
+    body: ['<rtc>', "\t$1", "</rtc>"],
+    description: "HTML - <rtc> 元素包含文字的语义注解，它们在 <rb> 元素中展示"
+  },
+  slot: {
+    prefix: "slot",
+    body: ['<slot name="$1">', "\t$2", "</slot>"],
+    description: "HTML - <slot> 元素 ，作为 Web Components 技术套件的一部分，是Web组件内的一个占位符。该占位符可以在后期使用自己的标记语言填充，这样您就可以创建单独的DOM树，并将它与其它的组件组合在一起"
+  },
+  template: {
+    prefix: "template",
+    body: ['<template>', "\t$1", "</template>"],
+    description: "HTML - <template> 元素是一种用于保存客户端内容机制，该内容在加载页面时不会呈现，但随后可以(原文为 may be)在运行时使用JavaScript实例化"
+  },
+  wbr: {
+    prefix: "wbr",
+    body: ['<wbr>'],
+    description: "HTML - <wbr> 元素  — 一个文本中的位置，其中浏览器可以选择来换行，虽然它的换行规则可能不会在这里换行"
   }
 };

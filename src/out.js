@@ -30,14 +30,7 @@ function readFileList(path, filesList, reg) {
  * @param {*} file_obj 写入对象
  */
 function writeFile(path, languageId, file_obj) {
-  //删除文件夹
-  // deleteFolder(path);
   let write_path = path + "/" + languageId + ".json";
-  // let mkdir = fs.mkdirSync("snippets");
-  // if (mkdir) {
-  //   console.log("文件夹 snippets 创建失败! " + mkdir);
-  //   return;
-  // }
   let writeFile = fs.writeFileSync(
     write_path,
     JSON.stringify(file_obj, null, 2),
@@ -48,25 +41,6 @@ function writeFile(path, languageId, file_obj) {
     return;
   }
   console.log("文件 " + write_path + " 写入成功! ");
-}
-
-/**
- * 删除文件夹及子文件
- * @param {*} path 文件夹路径
- */
-function deleteFolder(path) {
-  if (fs.existsSync(path)) {
-    let files = fs.readdirSync(path);
-    files.forEach(function(file, index) {
-      var curPath = path + "/" + file;
-      if (fs.statSync(curPath).isDirectory()) {
-        deleteFolder(curPath);
-      } else {
-        fs.unlinkSync(curPath);
-      }
-    });
-    fs.rmdirSync(path);
-  }
 }
 
 /**

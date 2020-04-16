@@ -1,3 +1,10 @@
+/**
+ * @Author: Sun Rising 
+ * @Date: 2020-04-16 13:29:08 
+ * @Last Modified by: Sun Rising 
+ * @Last Modified time: 2020-04-16 13:29:08 
+ * @Description: 
+ */
 module.exports = {
   "Array.from(arrayLike[, mapFn[, thisArg]])": {
     prefix: "arrfro",
@@ -20,6 +27,12 @@ module.exports = {
     body: "$1.concat($2)",
     description:
       "concat() 方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。"
+  },
+  "Array.copyWithin(target[, start[, end]])": {
+    prefix: "arrcopy",
+    body: "$1.copyWithin($2)",
+    description:
+      "copyWithin() 方法浅复制数组的一部分到同一数组中的另一个位置，并返回它，不会改变原数组的长度。"
   },
   "Array.entries()": {
     prefix: "arrent",
@@ -54,6 +67,18 @@ module.exports = {
     body: "$1.findIndex(value=>{$2})",
     description:
       "findIndex()方法返回数组中满足提供的测试函数的第一个元素的索引。否则返回-1。"
+  },
+  "Array.flat([depth])": {
+    prefix: "arrflat",
+    body: "$1.flat({$2})",
+    description:
+      "flat() 方法会按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回。flat() 方法会移除数组中的空项。"
+  },
+  "Array.flatMap(function callback(currentValue[, index[, array]]) {}[, thisArg])": {
+    prefix: "arrflatmap",
+    body: "$1.flatMap({$2})",
+    description:
+      "flatMap() 方法首先使用映射函数映射每个元素，然后将结果压缩成一个新数组。它与 map 连着深度值为1的 flat 几乎相同，但 flatMap 通常在合并成一种方法的效率稍微高一些。"
   },
   "Array.forEach(callback[, thisArg, index])": {
     prefix: "arrfore",
