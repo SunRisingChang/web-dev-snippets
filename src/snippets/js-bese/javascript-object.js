@@ -2,7 +2,7 @@
  * @Author: Sun Rising 
  * @Date: 2020-04-16 13:40:36 
  * @Last Modified by: Sun Rising
- * @Last Modified time: 2020-04-16 14:07:13
+ * @Last Modified time: 2020-04-17 10:48:19
  * @Description: 
  */
 module.exports = {
@@ -77,79 +77,74 @@ module.exports = {
     body: "Object.is(${1},${2})",
     description: "Object.is() 方法判断两个值是否是相同的值。"
   },
-  "Object.isExtensible()": {
+  "Object.isExtensible(obj)": {
     prefix: "objisextensible",
     body: "Object.isExtensible(${1})",
-    description: ""
+    description: "Object.isExtensible() 方法判断一个对象是否是可扩展的（是否可以在它上面添加新的属性）。"
   },
-  "Object.isFrozen()": {
+  "Object.isFrozen(obj)": {
     prefix: "objisfrozen",
     body: "Object.isFrozen(${1})",
-    description: ""
+    description: "Object.isFrozen()方法判断一个对象是否被冻结。"
   },
-  "Object.isSealed()": {
+  "Object.isSealed(obj)": {
     prefix: "objissealed",
     body: "Object.isSealed(${1})",
-    description: ""
+    description: "Object.isSealed() 方法判断一个对象是否被密封。"
   },
-  "Object.keys()": {
+  "Object.keys(obj)": {
     prefix: "objkeys",
     body: "Object.keys(${1})",
-    description: ""
+    description: "Object.keys() 方法会返回一个由一个给定对象的自身可枚举属性组成的数组，数组中属性名的排列顺序和使用 for...in 循环遍历该对象时返回的顺序一致 。"
   },
-  "Object.preventExtensions()": {
+  "Object.preventExtensions(obj)": {
     prefix: "objpreventextensions",
     body: "Object.preventExtensions(${1})",
-    description: ""
+    description: "Object.preventExtensions()方法让一个对象变的不可扩展，也就是永远不能再添加新的属性。"
   },
-  "Object.prototype.hasOwnProperty()": {
+  "Object.prototype.hasOwnProperty(prop)": {
     prefix: "objhasownproperty",
     body: "Object.prototype.hasOwnProperty(${1})",
-    description: ""
+    description: "hasOwnProperty() 方法会返回一个布尔值，指示对象自身属性中是否具有指定的属性（也就是，是否有指定的键）。"
   },
-  "Object.prototype.isPrototypeOf()": {
+  "Object.prototype.isPrototypeOf(object)": {
     prefix: "objisprototypeof",
     body: "Object.prototype.isPrototypeOf(${1})",
-    description: ""
+    description: "isPrototypeOf() 方法用于测试一个对象是否存在于另一个对象的原型链上。"
   },
-  "Object.prototype.propertyIsEnumerable()": {
+  "Object.prototype.propertyIsEnumerable(prop)": {
     prefix: "objpropertyisenumerable",
     body: "Object.prototype.propertyIsEnumerable(${1})",
-    description: ""
+    description: "propertyIsEnumerable() 方法返回一个布尔值，表示指定的属性是否可枚举。"
   },
   "Object.prototype.toLocaleString()": {
     prefix: "objtolocalestring",
-    body: "Object.prototype.toLocaleString(${1})",
-    description: ""
+    body: "Object.prototype.toLocaleString()",
+    description: "toLocaleString() 方法返回一个该对象的字符串表示。此方法被用于派生对象为了特定语言环境的目的（locale-specific purposes）而重载使用。"
   },
   "Object.prototype.toString()": {
     prefix: "objtostring",
-    body: "Object.prototype.toString(${1})",
-    description: ""
+    body: "Object.prototype.toString()",
+    description: "toString() 方法返回一个表示该对象的字符串。"
   },
   "Object.prototype.valueOf()": {
     prefix: "objvalueof",
-    body: "Object.prototype.valueOf(${1})",
-    description: ""
+    body: "Object.prototype.valueOf()",
+    description: "valueOf() 方法返回指定对象的原始值。"
   },
-  "Object.prototype.watch()": {
-    prefix: "objwatch",
-    body: "Object.prototype.watch(${1})",
-    description: ""
-  },
-  "Object.seal()": {
+  "Object.seal(obj)": {
     prefix: "objseal",
     body: "Object.seal(${1})",
-    description: ""
+    description: "Object.seal()方法封闭一个对象，阻止添加新属性并将所有现有属性标记为不可配置。当前属性的值只要原来是可写的就可以改变。"
   },
-  "Object.setPrototypeOf()": {
+  "Object.setPrototypeOf(obj, prototype)": {
     prefix: "objsetprototypeof",
-    body: "Object.setPrototypeOf(${1})",
-    description: ""
+    body: "Object.setPrototypeOf(${1},${2})",
+    description: "Object.setPrototypeOf() 方法设置一个指定的对象的原型 ( 即, 内部[[Prototype]]属性）到另一个对象或  null。"
   },
-  "Object.values()": {
+  "Object.values(obj)": {
     prefix: "objvalues",
     body: "Object.values(${1})",
-    description: ""
+    description: "Object.values()方法返回一个给定对象自身的所有可枚举属性值的数组，值的顺序与使用for...in循环的顺序相同 ( 区别在于 for-in 循环枚举原型链中的属性 )。"
   }
 };

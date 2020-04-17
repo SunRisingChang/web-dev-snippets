@@ -19,6 +19,11 @@
     "body": "$1.concat($2)",
     "description": "concat() 方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。"
   },
+  "Array.copyWithin(target[, start[, end]])": {
+    "prefix": "arrcopy",
+    "body": "$1.copyWithin($2)",
+    "description": "copyWithin() 方法浅复制数组的一部分到同一数组中的另一个位置，并返回它，不会改变原数组的长度。"
+  },
   "Array.entries()": {
     "prefix": "arrent",
     "body": "$1.entries($2)",
@@ -48,6 +53,16 @@
     "prefix": "arrfindin",
     "body": "$1.findIndex(value=>{$2})",
     "description": "findIndex()方法返回数组中满足提供的测试函数的第一个元素的索引。否则返回-1。"
+  },
+  "Array.flat([depth])": {
+    "prefix": "arrflat",
+    "body": "$1.flat({$2})",
+    "description": "flat() 方法会按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回。flat() 方法会移除数组中的空项。"
+  },
+  "Array.flatMap(function callback(currentValue[, index[, array]]) {}[, thisArg])": {
+    "prefix": "arrflatmap",
+    "body": "$1.flatMap({$2})",
+    "description": "flatMap() 方法首先使用映射函数映射每个元素，然后将结果压缩成一个新数组。它与 map 连着深度值为1的 flat 几乎相同，但 flatMap 通常在合并成一种方法的效率稍微高一些。"
   },
   "Array.forEach(callback[, thisArg, index])": {
     "prefix": "arrfore",
@@ -388,6 +403,241 @@
     ],
     "description": "控制语句"
   },
+  "Date.UTC()": {
+    "prefix": "dateutc",
+    "body": "Date.UTC(${1})",
+    "description": "Date - Date.UTC()"
+  },
+  "Date.now()": {
+    "prefix": "datenow",
+    "body": "Date.now(${1})",
+    "description": "Date - Date.now()"
+  },
+  "Date.parse()": {
+    "prefix": "dateparse",
+    "body": "Date.parse(${1})",
+    "description": "Date - Date.parse()"
+  },
+  "Date.prototype.getDate()": {
+    "prefix": "dategetdate",
+    "body": "${1:date}.getDate(${2})",
+    "description": "Date - Date.prototype.getDate()"
+  },
+  "Date.prototype.getDay()": {
+    "prefix": "dategetday",
+    "body": "${1:date}.getDay(${2})",
+    "description": "Date - Date.prototype.getDay()"
+  },
+  "Date.prototype.getFullYear()": {
+    "prefix": "dategetfullyear",
+    "body": "${1:date}.getFullYear(${2})",
+    "description": "Date - Date.prototype.getFullYear()"
+  },
+  "Date.prototype.getHours()": {
+    "prefix": "dategethours",
+    "body": "${1:date}.getHours(${2})",
+    "description": "Date - Date.prototype.getHours()"
+  },
+  "Date.prototype.getMilliseconds()": {
+    "prefix": "dategetmilliseconds",
+    "body": "${1:date}.getMilliseconds(${2})",
+    "description": "Date - Date.prototype.getMilliseconds()"
+  },
+  "Date.prototype.getMinutes()": {
+    "prefix": "dategetminutes",
+    "body": "${1:date}.getMinutes(${2})",
+    "description": "Date - Date.prototype.getMinutes()"
+  },
+  "Date.prototype.getMonth()": {
+    "prefix": "dategetmonth",
+    "body": "${1:date}.getMonth(${2})",
+    "description": "Date - Date.prototype.getMonth()"
+  },
+  "Date.prototype.getSeconds()": {
+    "prefix": "dategetseconds",
+    "body": "${1:date}.getSeconds(${2})",
+    "description": "Date - Date.prototype.getSeconds()"
+  },
+  "Date.prototype.getTime()": {
+    "prefix": "dategettime",
+    "body": "${1:date}.getTime(${2})",
+    "description": "Date - Date.prototype.getTime()"
+  },
+  "Date.prototype.getTimezoneOffset()": {
+    "prefix": "dategettimezoneoffset",
+    "body": "${1:date}.getTimezoneOffset(${2})",
+    "description": "Date - Date.prototype.getTimezoneOffset()"
+  },
+  "Date.prototype.getUTCDate()": {
+    "prefix": "dategetutcdate",
+    "body": "${1:date}.getUTCDate(${2})",
+    "description": "Date - Date.prototype.getUTCDate()"
+  },
+  "Date.prototype.getUTCDay()": {
+    "prefix": "dategetutcday",
+    "body": "${1:date}.getUTCDay(${2})",
+    "description": "Date - Date.prototype.getUTCDay()"
+  },
+  "Date.prototype.getUTCFullYear()": {
+    "prefix": "dategetutcfullyear",
+    "body": "${1:date}.getUTCFullYear(${2})",
+    "description": "Date - Date.prototype.getUTCFullYear()"
+  },
+  "Date.prototype.getUTCHours()": {
+    "prefix": "dategetutchours",
+    "body": "${1:date}.getUTCHours(${2})",
+    "description": "Date - Date.prototype.getUTCHours()"
+  },
+  "Date.prototype.getUTCMilliseconds()": {
+    "prefix": "dategetutcmilliseconds",
+    "body": "${1:date}.getUTCMilliseconds(${2})",
+    "description": "Date - Date.prototype.getUTCMilliseconds()"
+  },
+  "Date.prototype.getUTCMinutes()": {
+    "prefix": "dategetutcminutes",
+    "body": "${1:date}.getUTCMinutes(${2})",
+    "description": "Date - Date.prototype.getUTCMinutes()"
+  },
+  "Date.prototype.getUTCMonth()": {
+    "prefix": "dategetutcmonth",
+    "body": "${1:date}.getUTCMonth(${2})",
+    "description": "Date - Date.prototype.getUTCMonth()"
+  },
+  "Date.prototype.getUTCSeconds()": {
+    "prefix": "dategetutcseconds",
+    "body": "${1:date}.getUTCSeconds(${2})",
+    "description": "Date - Date.prototype.getUTCSeconds()"
+  },
+  "Date.prototype.setDate()": {
+    "prefix": "datesetdate",
+    "body": "${1:date}.setDate(${2})",
+    "description": "Date - Date.prototype.setDate()"
+  },
+  "Date.prototype.setFullYear()": {
+    "prefix": "datesetfullyear",
+    "body": "${1:date}.setFullYear(${2})",
+    "description": "Date - Date.prototype.setFullYear()"
+  },
+  "Date.prototype.setHours()": {
+    "prefix": "datesethours",
+    "body": "${1:date}.setHours(${2})",
+    "description": "Date - Date.prototype.setHours()"
+  },
+  "Date.prototype.setMilliseconds()": {
+    "prefix": "datesetmilliseconds",
+    "body": "${1:date}.setMilliseconds(${2})",
+    "description": "Date - Date.prototype.setMilliseconds()"
+  },
+  "Date.prototype.setMinutes()": {
+    "prefix": "datesetminutes",
+    "body": "${1:date}.setMinutes(${2})",
+    "description": "Date - Date.prototype.setMinutes()"
+  },
+  "Date.prototype.setMonth()": {
+    "prefix": "datesetmonth",
+    "body": "${1:date}.setMonth(${2})",
+    "description": "Date - Date.prototype.setMonth()"
+  },
+  "Date.prototype.setSeconds()": {
+    "prefix": "datesetseconds",
+    "body": "${1:date}.setSeconds(${2})",
+    "description": "Date - Date.prototype.setSeconds()"
+  },
+  "Date.prototype.setTime()": {
+    "prefix": "datesettime",
+    "body": "${1:date}.setTime(${2})",
+    "description": "Date - Date.prototype.setTime()"
+  },
+  "Date.prototype.setUTCDate()": {
+    "prefix": "datesetutcdate",
+    "body": "${1:date}.setUTCDate(${2})",
+    "description": "Date - Date.prototype.setUTCDate()"
+  },
+  "Date.prototype.setUTCFullYear()": {
+    "prefix": "datesetutcfullyear",
+    "body": "${1:date}.setUTCFullYear(${2})",
+    "description": "Date - Date.prototype.setUTCFullYear()"
+  },
+  "Date.prototype.setUTCHours()": {
+    "prefix": "datesetutchours",
+    "body": "${1:date}.setUTCHours(${2})",
+    "description": "Date - Date.prototype.setUTCHours()"
+  },
+  "Date.prototype.setUTCMilliseconds()": {
+    "prefix": "datesetutcmilliseconds",
+    "body": "${1:date}.setUTCMilliseconds(${2})",
+    "description": "Date - Date.prototype.setUTCMilliseconds()"
+  },
+  "Date.prototype.setUTCMinutes()": {
+    "prefix": "datesetutcminutes",
+    "body": "${1:date}.setUTCMinutes(${2})",
+    "description": "Date - Date.prototype.setUTCMinutes()"
+  },
+  "Date.prototype.setUTCMonth()": {
+    "prefix": "datesetutcmonth",
+    "body": "${1:date}.setUTCMonth(${2})",
+    "description": "Date - Date.prototype.setUTCMonth()"
+  },
+  "Date.prototype.setUTCSeconds()": {
+    "prefix": "datesetutcseconds",
+    "body": "${1:date}.setUTCSeconds(${2})",
+    "description": "Date - Date.prototype.setUTCSeconds()"
+  },
+  "Date.prototype.toDateString()": {
+    "prefix": "datetodatestring",
+    "body": "${1:date}.toDateString(${2})",
+    "description": "Date - Date.prototype.toDateString()"
+  },
+  "Date.prototype.toISOString()": {
+    "prefix": "datetoisostring",
+    "body": "${1:date}.toISOString(${2})",
+    "description": "Date - Date.prototype.toISOString()"
+  },
+  "Date.prototype.toJSON()": {
+    "prefix": "datetojson",
+    "body": "${1:date}.toJSON(${2})",
+    "description": "Date - Date.prototype.toJSON()"
+  },
+  "Date.prototype.toLocaleDateString()": {
+    "prefix": "datetolocaledatestring",
+    "body": "${1:date}.toLocaleDateString(${2})",
+    "description": "Date - Date.prototype.toLocaleDateString()"
+  },
+  "Date.prototype.toLocaleString()": {
+    "prefix": "datetolocalestring",
+    "body": "${1:date}.toLocaleString(${2})",
+    "description": "Date - Date.prototype.toLocaleString()"
+  },
+  "Date.prototype.toLocaleTimeString()": {
+    "prefix": "datetolocaletimestring",
+    "body": "${1:date}.toLocaleTimeString(${2})",
+    "description": "Date - Date.prototype.toLocaleTimeString()"
+  },
+  "Date.prototype.toSource()": {
+    "prefix": "datetosource",
+    "body": "${1:date}.toSource(${2})",
+    "description": "Date - Date.prototype.toSource()"
+  },
+  "Date.prototype.toString()": {
+    "prefix": "datetostring",
+    "body": "${1:date}.toString(${2})",
+    "description": "Date - Date.prototype.toString()"
+  },
+  "Date.prototype.toTimeString()": {
+    "prefix": "datetotimestring",
+    "body": "${1:date}.toTimeString(${2})",
+    "description": "Date - Date.prototype.toTimeString()"
+  },
+  "Date.prototype.toUTCString()": {
+    "prefix": "datetoutcstring",
+    "body": "${1:date}.toUTCString(${2})",
+    "description": "Date - Date.prototype.toUTCString()"
+  },
+  "Date.prototype.valueOf()": {
+    "prefix": "datevalueof",
+    "body": "${1:date}.valueOf(${2})",
+    "description": "Date - Date.prototype.valueOf()"
+  },
   "JSON.parse(text[, reviver])": {
     "prefix": "jsonpar",
     "body": "JSON.parse($1)",
@@ -398,20 +648,555 @@
     "body": "JSON.stringify($1);$0",
     "description": "JSON.stringify() 方法是将一个JavaScript值(对象或者数组)转换为一个 JSON字符串，如果指定了replacer是一个函数，则可以替换值，或者如果指定了replacer是一个数组，可选的仅包括指定的属性。"
   },
-  "Object.assign(target, ...sources)": {
-    "prefix": "objass",
-    "body": "Object.assign($0, $1);$2",
-    "description": "Object.assign() 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象"
+  "Map.prototype.clear()": {
+    "prefix": "mapclear",
+    "body": "${1:map}.clear(${2})",
+    "description": "Map - Map.prototype.clear()"
+  },
+  "Map.prototype.delete()": {
+    "prefix": "mapdelete",
+    "body": "${1:map}.delete(${2})",
+    "description": "Map - Map.prototype.delete()"
+  },
+  "Map.prototype.entries()": {
+    "prefix": "mapentries",
+    "body": "${1:map}.entries(${2})",
+    "description": "Map - Map.prototype.entries()"
+  },
+  "Map.prototype.forEach()": {
+    "prefix": "mapforeach",
+    "body": "${1:map}.forEach(${2})",
+    "description": "Map - Map.prototype.forEach()"
+  },
+  "Map.prototype.get()": {
+    "prefix": "mapget",
+    "body": "${1:map}.get(${2})",
+    "description": "Map - Map.prototype.get()"
+  },
+  "Map.prototype.has()": {
+    "prefix": "maphas",
+    "body": "${1:map}.has(${2})",
+    "description": "Map - Map.prototype.has()"
+  },
+  "Map.prototype.keys()": {
+    "prefix": "mapkeys",
+    "body": "${1:map}.keys(${2})",
+    "description": "Map - Map.prototype.keys()"
+  },
+  "Map.prototype.set()": {
+    "prefix": "mapset",
+    "body": "${1:map}.set(${2})",
+    "description": "Map - Map.prototype.set()"
+  },
+  "Map.prototype.values()": {
+    "prefix": "mapvalues",
+    "body": "${1:map}.values(${2})",
+    "description": "Map - Map.prototype.values()"
+  },
+  "Math.abs()": {
+    "prefix": "mathabs",
+    "body": "Math.abs(${1})",
+    "description": "Math - Math.abs()"
+  },
+  "Math.acos()": {
+    "prefix": "mathacos",
+    "body": "Math.acos(${1})",
+    "description": "Math - Math.acos()"
+  },
+  "Math.acosh()": {
+    "prefix": "mathacosh",
+    "body": "Math.acosh(${1})",
+    "description": "Math - Math.acosh()"
+  },
+  "Math.asin()": {
+    "prefix": "mathasin",
+    "body": "Math.asin(${1})",
+    "description": "Math - Math.asin()"
+  },
+  "Math.asinh()": {
+    "prefix": "mathasinh",
+    "body": "Math.asinh(${1})",
+    "description": "Math - Math.asinh()"
+  },
+  "Math.atan()": {
+    "prefix": "mathatan",
+    "body": "Math.atan(${1})",
+    "description": "Math - Math.atan()"
+  },
+  "Math.atan2()": {
+    "prefix": "mathatan2",
+    "body": "Math.atan2(${1})",
+    "description": "Math - Math.atan2()"
+  },
+  "Math.atanh()": {
+    "prefix": "mathatanh",
+    "body": "Math.atanh(${1})",
+    "description": "Math - Math.atanh()"
+  },
+  "Math.cbrt()": {
+    "prefix": "mathcbrt",
+    "body": "Math.cbrt(${1})",
+    "description": "Math - Math.cbrt()"
+  },
+  "Math.ceil()": {
+    "prefix": "mathceil",
+    "body": "Math.ceil(${1})",
+    "description": "Math - Math.ceil()"
+  },
+  "Math.clz32()": {
+    "prefix": "mathclz32",
+    "body": "Math.clz32(${1})",
+    "description": "Math - Math.clz32()"
+  },
+  "Math.cos()": {
+    "prefix": "mathcos",
+    "body": "Math.cos(${1})",
+    "description": "Math - Math.cos()"
+  },
+  "Math.cosh()": {
+    "prefix": "mathcosh",
+    "body": "Math.cosh(${1})",
+    "description": "Math - Math.cosh()"
+  },
+  "Math.exp()": {
+    "prefix": "mathexp",
+    "body": "Math.exp(${1})",
+    "description": "Math - Math.exp()"
+  },
+  "Math.expm1()": {
+    "prefix": "mathexpm1",
+    "body": "Math.expm1(${1})",
+    "description": "Math - Math.expm1()"
+  },
+  "Math.floor()": {
+    "prefix": "mathfloor",
+    "body": "Math.floor(${1})",
+    "description": "Math - Math.floor()"
+  },
+  "Math.fround()": {
+    "prefix": "mathfround",
+    "body": "Math.fround(${1})",
+    "description": "Math - Math.fround()"
+  },
+  "Math.hypot()": {
+    "prefix": "mathhypot",
+    "body": "Math.hypot(${1})",
+    "description": "Math - Math.hypot()"
+  },
+  "Math.imul()": {
+    "prefix": "mathimul",
+    "body": "Math.imul(${1})",
+    "description": "Math - Math.imul()"
+  },
+  "Math.log()": {
+    "prefix": "mathlog",
+    "body": "Math.log(${1})",
+    "description": "Math - Math.log()"
+  },
+  "Math.log10()": {
+    "prefix": "mathlog10",
+    "body": "Math.log10(${1})",
+    "description": "Math - Math.log10()"
+  },
+  "Math.log1p()": {
+    "prefix": "mathlog1p",
+    "body": "Math.log1p(${1})",
+    "description": "Math - Math.log1p()"
+  },
+  "Math.log2()": {
+    "prefix": "mathlog2",
+    "body": "Math.log2(${1})",
+    "description": "Math - Math.log2()"
+  },
+  "Math.max()": {
+    "prefix": "mathmax",
+    "body": "Math.max(${1})",
+    "description": "Math - Math.max()"
+  },
+  "Math.min()": {
+    "prefix": "mathmin",
+    "body": "Math.min(${1})",
+    "description": "Math - Math.min()"
+  },
+  "Math.pow()": {
+    "prefix": "mathpow",
+    "body": "Math.pow(${1})",
+    "description": "Math - Math.pow()"
+  },
+  "Math.random()": {
+    "prefix": "mathrandom",
+    "body": "Math.random()",
+    "description": "Math - Math.random()"
+  },
+  "Math.round()": {
+    "prefix": "mathround",
+    "body": "Math.round(${1})",
+    "description": "Math - Math.round()"
+  },
+  "Math.sign()": {
+    "prefix": "mathsign",
+    "body": "Math.sign(${1})",
+    "description": "Math - Math.sign()"
+  },
+  "Math.sin()": {
+    "prefix": "mathsin",
+    "body": "Math.sin(${1})",
+    "description": "Math - Math.sin()"
+  },
+  "Math.sinh()": {
+    "prefix": "mathsinh",
+    "body": "Math.sinh(${1})",
+    "description": "Math - Math.sinh()"
+  },
+  "Math.sqrt()": {
+    "prefix": "mathsqrt",
+    "body": "Math.sqrt(${1})",
+    "description": "Math - Math.sqrt()"
+  },
+  "Math.tan()": {
+    "prefix": "mathtan",
+    "body": "Math.tan(${1})",
+    "description": "Math - Math.tan()"
+  },
+  "Math.tanh()": {
+    "prefix": "mathtanh",
+    "body": "Math.tanh(${1})",
+    "description": "Math - Math.tanh()"
+  },
+  "Math.trunc()": {
+    "prefix": "mathtrunc",
+    "body": "Math.trunc(${1})",
+    "description": "Math - Math.trunc()"
+  },
+  "Number.isFinite()": {
+    "prefix": "numisfinite",
+    "body": "Number.isFinite(${1})",
+    "description": "Number - Number.isFinite()"
+  },
+  "Number.isInteger()": {
+    "prefix": "numisinteger",
+    "body": "Number.isInteger(${1})",
+    "description": "Number - Number.isInteger()"
+  },
+  "Number.isNaN()": {
+    "prefix": "numisnan",
+    "body": "Number.isNaN(${1})",
+    "description": "Number - Number.isNaN()"
+  },
+  "Number.isSafeInteger()": {
+    "prefix": "numissafeinteger",
+    "body": "Number.isSafeInteger(${1})",
+    "description": "Number - Number.isSafeInteger()"
+  },
+  "Number.parseFloat()": {
+    "prefix": "numparsefloat",
+    "body": "Number.parseFloat(${1})",
+    "description": "Number - Number.parseFloat()"
+  },
+  "Number.parseInt()": {
+    "prefix": "numparseint",
+    "body": "Number.parseInt(${1})",
+    "description": "Number - Number.parseInt()"
+  },
+  "Number.prototype.toExponential()": {
+    "prefix": "numtoexponential",
+    "body": "${1:number}.toExponential(${2})",
+    "description": "Number - Number.prototype.toExponential()"
+  },
+  "Number.prototype.toFixed()": {
+    "prefix": "numtofixed",
+    "body": "${1:number}.toFixed(${2})",
+    "description": "Number - Number.prototype.toFixed()"
+  },
+  "Number.prototype.toLocaleString()": {
+    "prefix": "numtolocalestring",
+    "body": "${1:number}.toLocaleString(${2})",
+    "description": "Number - Number.prototype.toLocaleString()"
+  },
+  "Number.prototype.toPrecision()": {
+    "prefix": "numtoprecision",
+    "body": "${1:number}.toPrecision(${2})",
+    "description": "Number - Number.prototype.toPrecision()"
+  },
+  "Number.prototype.toSource()": {
+    "prefix": "numtosource",
+    "body": "${1:number}.toSource(${2})",
+    "description": "Number - Number.prototype.toSource()"
+  },
+  "Number.prototype.toString()": {
+    "prefix": "numtostring",
+    "body": "${1:number}.toString(${2})",
+    "description": "Number - Number.prototype.toString()"
+  },
+  "Number.prototype.valueOf()": {
+    "prefix": "numvalueof",
+    "body": "${1:number}.valueOf(${2})",
+    "description": "Number - Number.prototype.valueOf()"
   },
   "Object.prototype": {
     "prefix": "objpro",
     "body": "Object.prototype=$0",
     "description": "Object.prototype 属性表示 Object 的原型对象,可以为所有 Object 类型的对象添加属性。"
   },
-  "Object.create(proto, [propertiesObject])": {
-    "prefix": "objpro",
-    "body": "Object.prototype=$0",
-    "description": "Object.prototype 属性表示 Object 的原型对象,可以为所有 Object 类型的对象添加属性。"
+  "Object.assign(target, ...sources)": {
+    "prefix": "objassign",
+    "body": "Object.assign(${1},${2})",
+    "description": "Object.assign() 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。"
+  },
+  "Object.create(proto[, propertiesObject])": {
+    "prefix": "objcreate",
+    "body": "Object.create(${1})",
+    "description": "Object.create() 方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__。"
+  },
+  "Object.defineProperties(obj, props)": {
+    "prefix": "objdefineproperties",
+    "body": "Object.defineProperties(${1},${2})",
+    "description": "Object.defineProperties() 方法直接在一个对象上定义新的属性或修改现有属性，并返回该对象。"
+  },
+  "Object.defineProperty(obj, prop, descriptor)": {
+    "prefix": "objdefineproperty",
+    "body": "Object.defineProperty(${1},${2},${3})",
+    "description": "Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象。"
+  },
+  "Object.entries(obj)": {
+    "prefix": "objentries",
+    "body": "Object.entries(${1})",
+    "description": "Object.entries()方法返回一个给定对象自身可枚举属性的键值对数组，其排列与使用 for...in 循环遍历该对象时返回的顺序一致（区别在于 for-in 循环还会枚举原型链中的属性）。"
+  },
+  "Object.freeze(obj)": {
+    "prefix": "objfreeze",
+    "body": "Object.freeze(${1})",
+    "description": "Object.freeze() 方法可以冻结一个对象。一个被冻结的对象再也不能被修改；冻结了一个对象则不能向这个对象添加新的属性，不能删除已有属性，不能修改该对象已有属性的可枚举性、可配置性、可写性，以及不能修改已有属性的值。此外，冻结一个对象后该对象的原型也不能被修改。freeze() 返回和传入的参数相同的对象。"
+  },
+  "Object.fromEntries(iterable)": {
+    "prefix": "objfromentries",
+    "body": "Object.fromEntries(${1})",
+    "description": "Object.fromEntries() 方法把键值对列表转换为一个对象。"
+  },
+  "Object.getOwnPropertyDescriptor(obj, prop)": {
+    "prefix": "objgetownpropertydescriptor",
+    "body": "Object.getOwnPropertyDescriptor(${1},${2})",
+    "description": "Object.getOwnPropertyDescriptor() 方法返回指定对象上一个自有属性对应的属性描述符。"
+  },
+  "Object.getOwnPropertyDescriptors(obj)": {
+    "prefix": "objgetownpropertydescriptors",
+    "body": "Object.getOwnPropertyDescriptors(${1})",
+    "description": "Object.getOwnPropertyDescriptors() 方法用来获取一个对象的所有自身属性的描述符。"
+  },
+  "Object.getOwnPropertyNames(obj)": {
+    "prefix": "objgetownpropertynames",
+    "body": "Object.getOwnPropertyNames(${1})",
+    "description": "Object.getOwnPropertyNames()方法返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性但不包括Symbol值作为名称的属性）组成的数组。"
+  },
+  "Object.getOwnPropertySymbols(obj)": {
+    "prefix": "objgetownpropertysymbols",
+    "body": "Object.getOwnPropertySymbols(${1})",
+    "description": "Object.getOwnPropertySymbols() 方法返回一个给定对象自身的所有 Symbol 属性的数组。"
+  },
+  "Object.getPrototypeOf(object)": {
+    "prefix": "objgetprototypeof",
+    "body": "Object.getPrototypeOf(${1})",
+    "description": "Object.getPrototypeOf() 方法返回指定对象的原型（内部[[Prototype]]属性的值）。"
+  },
+  "Object.is(value1, value2)": {
+    "prefix": "objis",
+    "body": "Object.is(${1},${2})",
+    "description": "Object.is() 方法判断两个值是否是相同的值。"
+  },
+  "Object.isExtensible(obj)": {
+    "prefix": "objisextensible",
+    "body": "Object.isExtensible(${1})",
+    "description": "Object.isExtensible() 方法判断一个对象是否是可扩展的（是否可以在它上面添加新的属性）。"
+  },
+  "Object.isFrozen(obj)": {
+    "prefix": "objisfrozen",
+    "body": "Object.isFrozen(${1})",
+    "description": "Object.isFrozen()方法判断一个对象是否被冻结。"
+  },
+  "Object.isSealed(obj)": {
+    "prefix": "objissealed",
+    "body": "Object.isSealed(${1})",
+    "description": "Object.isSealed() 方法判断一个对象是否被密封。"
+  },
+  "Object.keys(obj)": {
+    "prefix": "objkeys",
+    "body": "Object.keys(${1})",
+    "description": "Object.keys() 方法会返回一个由一个给定对象的自身可枚举属性组成的数组，数组中属性名的排列顺序和使用 for...in 循环遍历该对象时返回的顺序一致 。"
+  },
+  "Object.preventExtensions(obj)": {
+    "prefix": "objpreventextensions",
+    "body": "Object.preventExtensions(${1})",
+    "description": "Object.preventExtensions()方法让一个对象变的不可扩展，也就是永远不能再添加新的属性。"
+  },
+  "Object.prototype.hasOwnProperty(prop)": {
+    "prefix": "objhasownproperty",
+    "body": "Object.prototype.hasOwnProperty(${1})",
+    "description": "hasOwnProperty() 方法会返回一个布尔值，指示对象自身属性中是否具有指定的属性（也就是，是否有指定的键）。"
+  },
+  "Object.prototype.isPrototypeOf(object)": {
+    "prefix": "objisprototypeof",
+    "body": "Object.prototype.isPrototypeOf(${1})",
+    "description": "isPrototypeOf() 方法用于测试一个对象是否存在于另一个对象的原型链上。"
+  },
+  "Object.prototype.propertyIsEnumerable(prop)": {
+    "prefix": "objpropertyisenumerable",
+    "body": "Object.prototype.propertyIsEnumerable(${1})",
+    "description": "propertyIsEnumerable() 方法返回一个布尔值，表示指定的属性是否可枚举。"
+  },
+  "Object.prototype.toLocaleString()": {
+    "prefix": "objtolocalestring",
+    "body": "Object.prototype.toLocaleString()",
+    "description": "toLocaleString() 方法返回一个该对象的字符串表示。此方法被用于派生对象为了特定语言环境的目的（locale-specific purposes）而重载使用。"
+  },
+  "Object.prototype.toString()": {
+    "prefix": "objtostring",
+    "body": "Object.prototype.toString()",
+    "description": "toString() 方法返回一个表示该对象的字符串。"
+  },
+  "Object.prototype.valueOf()": {
+    "prefix": "objvalueof",
+    "body": "Object.prototype.valueOf()",
+    "description": "valueOf() 方法返回指定对象的原始值。"
+  },
+  "Object.seal(obj)": {
+    "prefix": "objseal",
+    "body": "Object.seal(${1})",
+    "description": "Object.seal()方法封闭一个对象，阻止添加新属性并将所有现有属性标记为不可配置。当前属性的值只要原来是可写的就可以改变。"
+  },
+  "Object.setPrototypeOf(obj, prototype)": {
+    "prefix": "objsetprototypeof",
+    "body": "Object.setPrototypeOf(${1},${2})",
+    "description": "Object.setPrototypeOf() 方法设置一个指定的对象的原型 ( 即, 内部[[Prototype]]属性）到另一个对象或  null。"
+  },
+  "Object.values(obj)": {
+    "prefix": "objvalues",
+    "body": "Object.values(${1})",
+    "description": "Object.values()方法返回一个给定对象自身的所有可枚举属性值的数组，值的顺序与使用for...in循环的顺序相同 ( 区别在于 for-in 循环枚举原型链中的属性 )。"
+  },
+  "decodeURI()": {
+    "prefix": "decodeuri",
+    "body": "decodeURI(${1})",
+    "description": "decodeURI()"
+  },
+  "decodeURIComponent()": {
+    "prefix": "decodeuricomponent",
+    "body": "decodeURIComponent(${1})",
+    "description": "decodeURIComponent()"
+  },
+  "encodeURI()": {
+    "prefix": "encodeuri",
+    "body": "encodeURI(${1})",
+    "description": "encodeURI()"
+  },
+  "encodeURIComponent()": {
+    "prefix": "encodeuricomponent",
+    "body": "encodeURIComponent(${1})",
+    "description": "encodeURIComponent()"
+  },
+  "eval()": {
+    "prefix": "eval",
+    "body": "eval(${1})",
+    "description": "eval()"
+  },
+  "globalThis": {
+    "prefix": "globalth",
+    "body": "globalThi${1}s",
+    "description": "globalThis"
+  },
+  "isFinite()": {
+    "prefix": "isfinite",
+    "body": "isFinite(${1})",
+    "description": "isFinite()"
+  },
+  "isNaN()": {
+    "prefix": "isnan",
+    "body": "isNaN(${1})",
+    "description": "isNaN()"
+  },
+  "parseFloat()": {
+    "prefix": "parsefloat",
+    "body": "parseFloat(${1})",
+    "description": "parseFloat()"
+  },
+  "parseInt()": {
+    "prefix": "parseint",
+    "body": "parseInt(${1})",
+    "description": "parseInt()"
+  },
+  "Promise.all()": {
+    "prefix": "promall",
+    "body": "Promise.all(${1})",
+    "description": "Promise - Promise.all()"
+  },
+  "Promise.allSettled()": {
+    "prefix": "promallSettled",
+    "body": "Promise.allSettled(${1})",
+    "description": "Promise - Promise.allSettled()"
+  },
+  "Promise.race()": {
+    "prefix": "promrace",
+    "body": "Promise.race(${1})",
+    "description": "Promise - Promise.race()"
+  },
+  "Promise.reject()": {
+    "prefix": "promreject",
+    "body": "Promise.reject(${1})",
+    "description": "Promise - Promise.reject()"
+  },
+  "Promise.resolve()": {
+    "prefix": "promresolve",
+    "body": "Promise.resolve(${1})",
+    "description": "Promise - Promise.resolve()"
+  },
+  "Promise.prototype.catch()": {
+    "prefix": "promcatch",
+    "body": "${1:promise}.catch(${2})",
+    "description": "Promise - Promise.prototype.catch()"
+  },
+  "Promise.prototype.finally()": {
+    "prefix": "promfinally",
+    "body": "${1:promise}.finally(${2})",
+    "description": "Promise - Promise.prototype.finally()"
+  },
+  "Promise.prototype.then()": {
+    "prefix": "promthen",
+    "body": "${1:promise}.then(${2})",
+    "description": "Promise - Promise.prototype.then()"
+  },
+  "Set.prototype.add()": {
+    "prefix": "setadd",
+    "body": "${1:set}.add(${2})",
+    "description": "Set - Set.prototype.add()"
+  },
+  "Set.prototype.clear()": {
+    "prefix": "setclear",
+    "body": "${1:set}.clear(${2})",
+    "description": "Set - Set.prototype.clear()"
+  },
+  "Set.prototype.delete()": {
+    "prefix": "setdelete",
+    "body": "${1:set}.delete(${2})",
+    "description": "Set - Set.prototype.delete()"
+  },
+  "Set.prototype.entries()": {
+    "prefix": "setentries",
+    "body": "${1:set}.entries(${2})",
+    "description": "Set - Set.prototype.entries()"
+  },
+  "Set.prototype.forEach()": {
+    "prefix": "setforEach",
+    "body": "${1:set}.forEach(${2})",
+    "description": "Set - Set.prototype.forEach()"
+  },
+  "Set.prototype.has()": {
+    "prefix": "sethas",
+    "body": "${1:set}.has(${2})",
+    "description": "Set - Set.prototype.has()"
+  },
+  "Set.prototype.values()": {
+    "prefix": "setvalues",
+    "body": "${1:set}.values(${2})",
+    "description": "Set - Set.prototype.values()"
   },
   "export module": {
     "prefix": "modex",
@@ -522,6 +1307,11 @@
     "body": "${1:str}.match($2)",
     "description": "当一个字符串与一个正则表达式匹配时， match()方法检索匹配项。"
   },
+  "String.matchAll(regexp);": {
+    "prefix": "strmatchall",
+    "body": "${1:str}.matchAll($2)",
+    "description": "matchAll() 方法返回一个包含所有匹配正则表达式的结果及分组捕获组的迭代器。"
+  },
   "String.normalize([form]);": {
     "prefix": "strnormalize",
     "body": "${1:str}.normalize($2)",
@@ -602,10 +1392,25 @@
     "body": "${1:str}.trim()",
     "description": "trim() 方法会从一个字符串的两端删除空白字符。在这个上下文中的空白字符是所有的空白字符 (space, tab, no-break space 等) 以及所有行终止符字符（如 LF，CR）。"
   },
+  "String.trimEnd()": {
+    "prefix": "strtrimend",
+    "body": "${1:str}.trimEnd()",
+    "description": "trimEnd() 方法从一个字符串的末端移除空白字符。trimRight() 是这个方法的别名。"
+  },
+  "String.trimStart()": {
+    "prefix": "strtrimstart",
+    "body": "${1:str}.trimStart()",
+    "description": "trimStart() 方法从字符串的开头删除空格。trimLeft() 是此方法的别名。"
+  },
   "String.valueOf()": {
     "prefix": "strvalueof",
     "body": "${1:str}.valueOf()",
     "description": "valueOf() 方法返回一个String对象的原始值（primitive value）。"
+  },
+  "String.raw(callSite, ...substitutions)": {
+    "prefix": "strraw",
+    "body": "${1:str}.raw(${2:callSite})",
+    "description": "String.raw() 是一个模板字符串的标签函数，它的作用类似于 Python 中的字符串前缀 r 和 C# 中的字符串前缀 @（还是有点区别的，详见隔壁 Chromium 那边的这个 issue），是用来获取一个模板字符串的原始字符串的，比如说，占位符（例如 ${foo}）会被处理为它所代表的其他字符串，而转义字符（例如 \n）不会。"
   },
   "alert": {
     "prefix": "alert",

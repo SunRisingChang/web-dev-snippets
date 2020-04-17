@@ -734,6 +734,63 @@
     ],
     "description": "HTML - Defines a video"
   },
+  "data": {
+    "prefix": "data",
+    "body": [
+      "<data value=\"$1\">",
+      "\t$2",
+      "</data>"
+    ],
+    "description": "HTML - <data> 元素将一个指定内容和机器可读的翻译联系在一起。但是，如果内容是与时间或者日期相关的，则一定要使用 <time>。"
+  },
+  "picture": {
+    "prefix": "picture",
+    "body": [
+      "<picture>",
+      "\t$1",
+      "</picture>"
+    ],
+    "description": "HTML - <picture> 元素通过包含零或多个 <source> 元素和一个 <img> 元素来为不同的显示/设备场景提供图像版本"
+  },
+  "rb": {
+    "prefix": "rb",
+    "body": [
+      "<rb>",
+      "\t$1",
+      "</rb>"
+    ],
+    "description": "HTML - 元素用于分隔<ruby>注释的基本文本组件（即正在注释的文本）"
+  },
+  "rtc": {
+    "prefix": "rtc",
+    "body": [
+      "<rtc>",
+      "\t$1",
+      "</rtc>"
+    ],
+    "description": "HTML - <rtc> 元素包含文字的语义注解，它们在 <rb> 元素中展示"
+  },
+  "slot": {
+    "prefix": "slot",
+    "body": [
+      "slot=\"$1\""
+    ],
+    "description": "Used on content inserted into child components to indicate which named slot the content belongs to."
+  },
+  "template": {
+    "prefix": "template",
+    "body": [
+      "<template>\n\t$0\n</template>"
+    ],
+    "description": "A string template to be used as the markup for the Vue instance. The template will replace the mounted element. Any existing markup inside the mounted element will be ignored, unless content distribution slots are present in the template"
+  },
+  "wbr": {
+    "prefix": "wbr",
+    "body": [
+      "<wbr>"
+    ],
+    "description": "HTML - <wbr> 元素  — 一个文本中的位置，其中浏览器可以选择来换行，虽然它的换行规则可能不会在这里换行"
+  },
   "Basic: Layout el-row": {
     "prefix": "elrow",
     "body": [
@@ -1502,13 +1559,6 @@
     ],
     "description": "Quickly generate vue component templates"
   },
-  "template": {
-    "prefix": "template",
-    "body": [
-      "<template>\n\t$0\n</template>"
-    ],
-    "description": "A string template to be used as the markup for the Vue instance. The template will replace the mounted element. Any existing markup inside the mounted element will be ignored, unless content distribution slots are present in the template"
-  },
   "v-text": {
     "prefix": "vText",
     "body": [
@@ -1618,13 +1668,6 @@
     "prefix": "slotName",
     "body": [
       "<slot name=\"$1\"></slot>"
-    ],
-    "description": "Used on content inserted into child components to indicate which named slot the content belongs to."
-  },
-  "slot": {
-    "prefix": "slot",
-    "body": [
-      "slot=\"$1\""
     ],
     "description": "Used on content inserted into child components to indicate which named slot the content belongs to."
   },

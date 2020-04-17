@@ -1,3 +1,10 @@
+/**
+ * @Author: Sun Rising 
+ * @Date: 2020-04-17 10:50:55 
+ * @Last Modified by: Sun Rising 
+ * @Last Modified time: 2020-04-17 10:50:55 
+ * @Description: 
+ */
 module.exports = {
   "JSON.parse(text[, reviver])": {
     prefix: "jsonpar",
