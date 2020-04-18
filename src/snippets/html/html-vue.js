@@ -1,6 +1,6 @@
 module.exports = {
   "V-templates": {
-    prefix: "V",
+    prefix: "v",
     body: [
       "<template>\n\t<div id='${1:id}'>\n\t\t$0\n\t</div>\n</template>\n\n<script>\nexport default {\n\tname: '${1:id:name}'\n\n}\n</script>\n\n<style scoped>\n\n</style>"
     ],
@@ -13,77 +13,77 @@ module.exports = {
       "A string template to be used as the markup for the Vue instance. The template will replace the mounted element. Any existing markup inside the mounted element will be ignored, unless content distribution slots are present in the template"
   },
   "v-text": {
-    prefix: "vText",
+    prefix: "vtext",
     body: ['v-text="${1:msg}"'],
     description:
       "Updates the element’s textContent. If you need to update the part of textContent, you should use {{ Mustache }} interpolations."
   },
   "v-html": {
-    prefix: "vHtml",
+    prefix: "vhtml",
     body: ['v-html="${1:html}"'],
     description:
       "Updates the element’s innerHTML. (Note that the contents are inserted as plain HTML - they will not be compiled as Vue templates.) "
   },
   "v-if": {
-    prefix: "vIf",
+    prefix: "vif",
     body: ['v-if="${1:condition}"'],
     description:
       "Conditionally render the element based on the truthy-ness of the expression value. "
   },
   "v-show": {
-    prefix: "vShow",
+    prefix: "vshow",
     body: ['v-show="${1:condition}"'],
     description:
       "Toggle’s the element’s display CSS property based on the truthy-ness of the expression value."
   },
   "v-else": {
-    prefix: "vElse",
+    prefix: "velse",
     body: ["v-else"],
     description: "Denote the “else block” for v-if or a v-if/v-else-if chain."
   },
   "v-else-if": {
-    prefix: "vElseIf",
+    prefix: "velseif",
     body: ['v-else-if="${1:condition}"'],
     description: "Denote the “else block” for v-if or a v-if/v-else-if chain."
   },
   "v-for": {
-    prefix: "vFor",
+    prefix: "vfor",
     body: ['v-for="(${1:item},index) in ${1:items}"'],
     description:
       "Render the element or template block multiple times based on the source data. "
   },
   "v-on": {
-    prefix: "vOn",
+    prefix: "von",
     body: ['v-on:${1:event}="${1:handle}"'],
     description:
       "Attaches an event listener to the element. The event type is denoted by the argument. "
   },
   "v-bind": {
-    prefix: "vBind",
+    prefix: "vbind",
     body: ['v-bind:${1:argument}="${1:optional}"'],
     description:
       "Dynamically bind one or more attributes, or a component prop to an expression."
   },
   "v-model": {
-    prefix: "vModel",
+    prefix: "vmodel",
     body: ['v-model="${1:msg}"'],
     description:
       "Create a two-way binding on a form input element or a component. "
   },
   "v-pre": {
-    prefix: "vPre",
+    prefix: "vpre",
     body: ["v-pre"],
     description:
       "Skip compilation for this element and all its children. You can use this for displaying raw mustache tags. "
   },
   "v-cloak": {
-    prefix: "vCloak",
+    prefix: "vcloak",
     body: ["v-cloak"],
     description:
       "This directive will remain on the element until the associated Vue instance finishes compilation."
   },
   "v-once": {
-    prefix: "vOnce",
+    prefix: "vonce",
     body: ["v-once"],
     description:
       "Render the element and component once only. On subsequent re-renders, the element/component and all its children will be treated as static content and skipped. This can be used to optimize update performance."
@@ -101,7 +101,7 @@ module.exports = {
       "ref is used to register a reference to an element or a child component."
   },
   slotName: {
-    prefix: "slotName",
+    prefix: "slotname",
     body: ['<slot name="$1"></slot>'],
     description:
       "Used on content inserted into child components to indicate which named slot the content belongs to."
@@ -113,7 +113,7 @@ module.exports = {
       "Used on content inserted into child components to indicate which named slot the content belongs to."
   },
   "keep-alive": {
-    prefix: "keepAlive",
+    prefix: "keepalive",
     body: ['<keep-alive include="$1">\n\t$0\n</keep-alive>'],
     description:
       "When wrapped around a dynamic component, <keep-alive> caches the inactive component instances without destroying them. "
@@ -125,7 +125,7 @@ module.exports = {
       "<transition> serve as transition effects for single element/component. "
   },
   "transition-group": {
-    prefix: "transitionGroup",
+    prefix: "transitiongroup",
     body: ['<transition-group tag="$1" name="$2">\n\t$0\n</transition-group>'],
     description:
       " <transition-group> serve as transition effects for multiple elements/components"

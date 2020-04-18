@@ -2,7 +2,7 @@
  * @Author: Sun Rising 
  * @Date: 2020-04-16 13:40:36 
  * @Last Modified by: Sun Rising
- * @Last Modified time: 2020-04-17 10:48:19
+ * @Last Modified time: 2020-04-18 21:29:04
  * @Description: 
  */
 module.exports = {
@@ -104,32 +104,32 @@ module.exports = {
   },
   "Object.prototype.hasOwnProperty(prop)": {
     prefix: "objhasownproperty",
-    body: "Object.prototype.hasOwnProperty(${1})",
+    body: "${1:object}.hasOwnProperty(${2})",
     description: "hasOwnProperty() 方法会返回一个布尔值，指示对象自身属性中是否具有指定的属性（也就是，是否有指定的键）。"
   },
   "Object.prototype.isPrototypeOf(object)": {
     prefix: "objisprototypeof",
-    body: "Object.prototype.isPrototypeOf(${1})",
+    body: "${1:object}.isPrototypeOf(${2})",
     description: "isPrototypeOf() 方法用于测试一个对象是否存在于另一个对象的原型链上。"
   },
   "Object.prototype.propertyIsEnumerable(prop)": {
     prefix: "objpropertyisenumerable",
-    body: "Object.prototype.propertyIsEnumerable(${1})",
+    body: "${1:object}.propertyIsEnumerable(${2})",
     description: "propertyIsEnumerable() 方法返回一个布尔值，表示指定的属性是否可枚举。"
   },
   "Object.prototype.toLocaleString()": {
     prefix: "objtolocalestring",
-    body: "Object.prototype.toLocaleString()",
+    body: "${1:object}.toLocaleString()",
     description: "toLocaleString() 方法返回一个该对象的字符串表示。此方法被用于派生对象为了特定语言环境的目的（locale-specific purposes）而重载使用。"
   },
   "Object.prototype.toString()": {
     prefix: "objtostring",
-    body: "Object.prototype.toString()",
+    body: "${1:object}.toString()",
     description: "toString() 方法返回一个表示该对象的字符串。"
   },
   "Object.prototype.valueOf()": {
     prefix: "objvalueof",
-    body: "Object.prototype.valueOf()",
+    body: "${1:object}.valueOf()",
     description: "valueOf() 方法返回指定对象的原始值。"
   },
   "Object.seal(obj)": {
