@@ -10,131 +10,123 @@ module.exports = {
     namespaced: {
         prefix: "vxnamespaced",
         body: ["namespaced: true"],
-        description:
-            "[vuex]If you want your modules to be more self-contained or reusable, you can mark it as namespaced with namespaced: true. When the module is registered, all of its getters, actions and mutations will be automatically namespaced based on the path the module is registered at"
+        description: "如果希望模块更加独立或可重用，则可以使用命名空间：true将其标记为命名空间。注册模块后，将根据模块在其上注册的路径自动为其所有的获取，操作和突变命名空间"
     },
     state: {
         prefix: "vxstate",
         body: ["state: {\n\t$0\n}"],
-        description: "[vuex]The application level state"
+        description: "应用程序级别状态"
     },
     mutations: {
         prefix: "vxmutations",
         body: ["mutations: {\n\t$0\n}"],
-        description: "[vuex]The only way to actually change state in a Vuex store"
+        description: "在Vuex商店中实际更改状态的唯一方法"
     },
     actions: {
         prefix: "vxactions",
         body: ["actions: {\n\t$0\n}"],
-        description:
-            "[vuex]actions commit mutations,it can contain arbitrary asynchronous operations"
+        description: "操作提交突变，它可以包含任意异步操作"
     },
     getters: {
         prefix: "vxgetters",
         body: ["getters: {\n\t$0\n}"],
-        description: "[vuex]computed properties for stores"
+        description: "商店的计算属性"
     },
     modules: {
         prefix: "vxmodules",
         body: ["modules: {\n\t$0\n}"],
-        description: "[vuex]store modules"
+        description: "存储模块"
     },
     plugins: {
         prefix: "vxplugins",
         body: ["plugins: [\n\t$0\n]"],
-        description: "[vuex]store plugins"
+        description: "商店插件"
     },
     strict: {
         prefix: "vxstrict",
         body: ["strict: ${1:true}"],
-        description: "[vuex]store strict"
+        description: "严格存储"
     },
     devtools: {
         prefix: "vxdevtools",
         body: ["devtools: ${1:true}"],
-        description: "[vuex]store devtools"
+        description: "商店devtools"
     },
     // ------------------ 构造器选项 结束 ----------------------
     // ------------------ 实例方法 开始 ----------------------
     "store.commit": {
         prefix: "vxstorecommit",
         body: ["store.commit('${1:MUTATIONS}', ${1:payload})"],
-        description: "[vuex]Commit a mutation"
+        description: "提交突变"
     },
     "store.dispatch": {
         prefix: "vxstoredispatch",
         body: ["store.dispatch('${1:action}', ${1:payload})"],
-        description: "[vuex]Dispatch an action."
+        description: "调度一个动作。"
     },
     "store.replaceState": {
         prefix: "vxstorereplacestate",
         body: ["store.replaceState(${1:state})"],
-        description:
-            "[vuex]Replace the store's root state. Use this only for state hydration / time-travel purposes."
+        description: "替换存储的根状态。仅将其用于状态水合/时间旅行目的。"
     },
     "store.watch": {
         prefix: "vxstorewatch",
         body: ["store.watch(${1:getter}, ${1:handler})"],
-        description:
-            "[vuex]Reactively watch a getter function's return value, and call the callback when the value changes. "
+        description: "被动地观察getter函数的返回值，并在值更改时调用回调。"
     },
     "store.subscribe": {
         prefix: "vxstoresubscribe",
         body: ["store.subscribe(${1:handler})"],
-        description:
-            "[vuex]Subscribe to store mutations. The handler is called after every mutation and receives the mutation descriptor and post-mutation state as arguments:"
+        description: "订阅存储突变。每次突变后都会调用处理程序，并接收突变描述符和突变后状态作为参数："
     },
     "store.registerModule": {
         prefix: "vxstoreregistermodule",
         body: ["store.registerModule(${1:string}, ${1:Module})"],
-        description: "[vuex]Register a dynamic module"
+        description: "注册动态模块"
     },
     "store.unregisterModule": {
         prefix: "vxstoreunregistermodule",
         body: ["store.unregisterModule(${1:string})"],
-        description: "[vuex]Unregister a dynamic module"
+        description: "注销动态模块"
     },
     "store.hotUpdate": {
         prefix: "vxstorehotupdate",
         body: ["store.hotUpdate({$0})"],
-        description: "[vuex]Hot swap new actions and mutations. "
+        description: "热插拔新动作和突变。"
     },
     // ------------------ 实例方法 结束 ----------------------
     // ------------------ 组件绑定的辅助函数 开始 ----------------------
     mapState: {
         prefix: "vxmapstate",
         body: ["mapState('${1:modulePath}', ${1:[]|{\\}})"],
-        description:
-            "[vuex]Create component computed options that return the sub tree of the Vuex store. "
+        description: "创建组件计算的选项，这些选项返回Vuex存储的子树。"
     },
     mapGetters: {
         prefix: "vxmapgetters",
         body: ["mapGetters('${1:modulePath}', ${1:[]|{\\}})"],
-        description:
-            "[vuex]Create component computed options that return the evaluated value of a getter."
+        description: "创建组件计算的选项，这些选项返回吸气剂的评估值。"
     },
     mapActions: {
         prefix: "vxmapactions",
         body: ["mapActions('${1:modulePath}', ${1:[]|{\\}})"],
-        description:
-            "[vuex]Create component methods options that dispatch an action."
+        description: "创建分派动作的组件方法选项。"
     },
     mapMutations: {
         prefix: "vxmapmutations",
         body: ["mapMutations('${1:modulePath}', ${1:[]|{\\}})"],
-        description: "[vuex]Create component methods options that commit a mutation"
+        description: "创建提交突变的组件方法选项"
     },
     // ------------------ 组件绑定的辅助函数 结束 ----------------------
     // ------------------ vm实例属性 开始 ----------------------
     "$store.getters": {
         prefix: "vmvxgetters",
         body: ["${1:this}.\\$store.getters"],
-        description: "[vuex]computed properties for stores"
+        description: "商店的计算属性"
     },
     "$store.state": {
         prefix: "vmvxstate",
         body: ["${1:this}.\\$store.state"],
-        description: "[vuex]The application level state"
+        description: "应用程序级别状态"
     },
     // ------------------ vm实例属性 结束 ----------------------
     // ------------------ vm实例方法 开始 ----------------------
@@ -146,12 +138,12 @@ module.exports = {
     "$store.commit": {
         prefix: "vmvxcommit",
         body: ["${1:this}.\\$store.commit('${1:MUTATIONS}', ${1:payload})"],
-        description: "[vuex]Commit a mutation"
+        description: "提交突变"
     },
     "$store.dispatch": {
         prefix: "vmvxdispatch",
         body: ["${1:this}.\\$store.dispatch('${1:action}', ${1:payload})"],
-        description: "[vuex]Dispatch an action."
+        description: "调度一个动作。"
     },
     // ------------------ vm实例方法 结束 ----------------------
 };

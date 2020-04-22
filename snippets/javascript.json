@@ -1,173 +1,2215 @@
 {
   "Array.from(arrayLike[, mapFn[, thisArg]])": {
-    "prefix": "arrfro",
-    "body": "Array.from($1)",
-    "description": "Array.from() 方法有一个可选参数 mapFn，让你可以在最后生成的数组上再执行一次 map 方法后再返回。也就是说 Array.from(obj, mapFn, thisArg) 就相当于 Array.from(obj).map(mapFn, thisArg), 除非创建的不是可用的中间数组。 这对一些数组的子类,如  typed arrays 来说很重要, 因为中间数组的值在调用 map() 时需要是适当的类型。"
+    "prefix": "arrfrom",
+    "body": [
+      "Array.from(${2})"
+    ],
+    "description": "Array.from() 方法从一个类似数组或可迭代对象创建一个新的，浅拷贝的数组实例。\nArray.from(arrayLike[, mapFn[, thisArg]])"
   },
   "Array.isArray(obj)": {
-    "prefix": "arris",
-    "body": "Array.isArray($1)",
-    "description": "如果对象是 Array ，则返回true，否则为false。"
+    "prefix": "arrisarray",
+    "body": [
+      "Array.isArray(${2})"
+    ],
+    "description": "Array.isArray() 用于确定传递的值是否是一个 Array。\nArray.isArray(obj)"
   },
-  "Array.of(element0[, element1[, ...[, elementN]]])": {
+  "Array.of(element0[, element1[, ...[, elementN]]])": {
     "prefix": "arrof",
-    "body": "Array.of($1)",
-    "description": "任意个参数，将按顺序成为返回数组中的元素。"
+    "body": [
+      "Array.of(${2})"
+    ],
+    "description": "Array.of() 方法创建一个具有可变数量参数的新数组实例，而不考虑参数的数量或类型。\nArray.of(element0[, element1[, ...[, elementN]]])"
   },
-  "Array.concat(value1[, value2[, ...[, valueN]]])": {
-    "prefix": "arrcon",
-    "body": "$1.concat($2)",
-    "description": "concat() 方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。"
+  "var new_array = old_array.concat(value1[, value2[, ...[, valueN]]])": {
+    "prefix": "arrconcat",
+    "body": [
+      "${1:array}.concat(${2})"
+    ],
+    "description": "concat() 方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。\nvar new_array = old_array.concat(value1[, value2[, ...[, valueN]]])"
   },
-  "Array.copyWithin(target[, start[, end]])": {
-    "prefix": "arrcopy",
-    "body": "$1.copyWithin($2)",
-    "description": "copyWithin() 方法浅复制数组的一部分到同一数组中的另一个位置，并返回它，不会改变原数组的长度。"
+  "arr.copyWithin(target[, start[, end]])": {
+    "prefix": "arrcopywithin",
+    "body": [
+      "${1:array}.copyWithin(${2})"
+    ],
+    "description": "The source for this interactive example is stored in a GitHub repository. If you'd like to contribute to the interactive examples project, please clone https://github.com/mdn/interactive-examples and send us a pull request.\narr.copyWithin(target[, start[, end]])"
   },
-  "Array.entries()": {
-    "prefix": "arrent",
-    "body": "$1.entries($2)",
-    "description": "一个新的 Array 迭代器对象。"
+  "arr.entries()": {
+    "prefix": "uinentries",
+    "body": [
+      "${1:uint8clampedarray}.entries()"
+    ],
+    "description": "The entries()返回新的Array Iterator对象，包含数组每个下标处的键值对。\narr.entries()"
   },
-  "Array.every(callback[, thisArg])": {
-    "prefix": "arreve",
-    "body": "$1.every(value=>{$2})",
-    "description": "every() 方法测试数组的所有元素是否都通过了指定函数的测试。"
+  "arr.every(callback[, thisArg])": {
+    "prefix": "arrevery",
+    "body": [
+      "${1:array}.every(${2})"
+    ],
+    "description": "every() 方法测试一个数组内的所有元素是否都能通过某个指定函数的测试。它返回一个布尔值。\narr.every(callback[, thisArg])"
   },
-  "Array.fill(value[, start[, end]])": {
+  "arr.fill(value[, start[, end]])": {
     "prefix": "arrfill",
-    "body": "$1.fill($2)",
-    "description": "fill() 方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。"
+    "body": [
+      "${1:array}.fill(${2})"
+    ],
+    "description": "fill() 方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。\narr.fill(value[, start[, end]])"
   },
-  "Array.filter(callback(element[, index[, array]])[, thisArg])": {
-    "prefix": "arrfilt",
-    "body": "$1.filter(value=>{$2})",
-    "description": "filter() 方法创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。 "
+  "var newArray = arr.filter(callback(element[, index[, array]])[, thisArg])": {
+    "prefix": "arrfilter",
+    "body": [
+      "${1:array}.filter(${2})"
+    ],
+    "description": "filter() 方法创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。\nvar newArray = arr.filter(callback(element[, index[, array]])[, thisArg])"
   },
-  "Array.find(callback[, thisArg])": {
+  "arr.find(callback[, thisArg])": {
     "prefix": "arrfind",
-    "body": "$1.find(value=>{$2})",
-    "description": "find() 方法返回数组中满足提供的测试函数的第一个元素的值。否则返回 undefined。"
+    "body": [
+      "${1:array}.find(${2})"
+    ],
+    "description": "find() 方法返回数组中满足提供的测试函数的第一个元素的值。否则返回 undefined。\narr.find(callback[, thisArg])"
   },
-  "Array.findIndex(callback[, thisArg])": {
-    "prefix": "arrfindin",
-    "body": "$1.findIndex(value=>{$2})",
-    "description": "findIndex()方法返回数组中满足提供的测试函数的第一个元素的索引。否则返回-1。"
+  "arr.findIndex(callback[, thisArg])": {
+    "prefix": "arrfindindex",
+    "body": [
+      "${1:array}.findIndex(${2})"
+    ],
+    "description": "findIndex()方法返回数组中满足提供的测试函数的第一个元素的索引。否则返回-1。\narr.findIndex(callback[, thisArg])"
   },
-  "Array.flat([depth])": {
+  "var newArray = arr.flat([depth])": {
     "prefix": "arrflat",
-    "body": "$1.flat({$2})",
-    "description": "flat() 方法会按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回。flat() 方法会移除数组中的空项。"
+    "body": [
+      "${1:array}.flat(${2})"
+    ],
+    "description": "flat() 方法会按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回。\nvar newArray = arr.flat([depth])"
   },
-  "Array.flatMap(function callback(currentValue[, index[, array]]) {}[, thisArg])": {
+  "var new_array = arr.flatMap(function callback(currentValue[, index[, array]]) {\n    // return element for new_array\n}[, thisArg])": {
     "prefix": "arrflatmap",
-    "body": "$1.flatMap({$2})",
-    "description": "flatMap() 方法首先使用映射函数映射每个元素，然后将结果压缩成一个新数组。它与 map 连着深度值为1的 flat 几乎相同，但 flatMap 通常在合并成一种方法的效率稍微高一些。"
+    "body": [
+      "${1:array}.flatMap(${2})"
+    ],
+    "description": "flatMap() 方法首先使用映射函数映射每个元素，然后将结果压缩成一个新数组。它与 map 连着深度值为1的 flat 几乎相同，但 flatMap 通常在合并成一种方法的效率稍微高一些。\nvar new_array = arr.flatMap(function callback(currentValue[, index[, array]]) {\n    // return element for new_array\n}[, thisArg])"
   },
-  "Array.forEach(callback[, thisArg, index])": {
-    "prefix": "arrfore",
-    "body": "$1.forEach((value,index)=>{$2})",
-    "description": "find() 方法返回数组中满足提供的测试函数的第一个元素的值。否则返回 undefined。"
+  "arr.forEach(callback(currentValue [, index [, array]])[, thisArg])": {
+    "prefix": "arrforeach",
+    "body": [
+      "${1:array}.forEach((value,index)=>{${2}})"
+    ],
+    "description": "forEach() 方法对数组的每个元素执行一次给定的函数。\narr.forEach(callback(currentValue [, index [, array]])[, thisArg])"
   },
-  "Array.includes(searchElement)": {
-    "prefix": "arrincl",
-    "body": "$1.includes($2)",
-    "description": "includes() 方法用来判断一个数组是否包含一个指定的值，根据情况，如果包含则返回 true，否则返回false。"
+  "arr.includes(valueToFind[, fromIndex])": {
+    "prefix": "arrincludes",
+    "body": [
+      "${1:array}.includes(${2})"
+    ],
+    "description": "includes() 方法用来判断一个数组是否包含一个指定的值，根据情况，如果包含则返回 true，否则返回false。\narr.includes(valueToFind[, fromIndex])"
   },
-  "Array.indexOf(searchElement)": {
+  "arr.indexOf(searchElement[, fromIndex])": {
     "prefix": "arrindexof",
-    "body": "$1.indexOf($2)",
-    "description": "indexOf()方法返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1。"
+    "body": [
+      "${1:array}.indexOf(${2})"
+    ],
+    "description": "indexOf()方法返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1。\narr.indexOf(searchElement[, fromIndex])"
   },
-  "Array.join(separator)": {
+  "arr.join([separator])": {
     "prefix": "arrjoin",
-    "body": "$1.join($2)",
-    "description": "join() 方法将一个数组（或一个类数组对象）的所有元素连接成一个字符串并返回这个字符串。"
+    "body": [
+      "${1:array}.join(${2})"
+    ],
+    "description": "join() 方法将一个数组（或一个类数组对象）的所有元素连接成一个字符串并返回这个字符串。如果数组只有一个项目，那么将返回该项目而不使用分隔符。\narr.join([separator])"
   },
-  "Array.keys()": {
-    "prefix": "arrkey",
-    "body": "$1.keys()",
-    "description": "keys() 方法返回一个包含数组中每个索引键的Array Iterator对象。"
+  "arr.keys()": {
+    "prefix": "uinkeys",
+    "body": [
+      "${1:uint8clampedarray}.keys()"
+    ],
+    "description": "keys()方法返回新的 Array Iterator 对象，包含数组中每个下标的键。\narr.keys()"
   },
-  "Array.lastIndexOf(searchElement[, fromIndex = arr.length - 1])": {
-    "prefix": "arrlastin",
-    "body": "$1.lastIndexOf($2)",
-    "description": "lastIndexOf() 方法返回指定元素（也即有效的 JavaScript 值或变量）在数组中的最后一个的索引，如果不存在则返回 -1。从数组的后面向前查找，从 fromIndex 处开始。"
+  "arr.lastIndexOf(searchElement[, fromIndex])": {
+    "prefix": "arrlastindexof",
+    "body": [
+      "${1:array}.lastIndexOf(${2})"
+    ],
+    "description": "lastIndexOf() 方法返回指定元素（也即有效的 JavaScript 值或变量）在数组中的最后一个的索引，如果不存在则返回 -1。从数组的后面向前查找，从 fromIndex 处开始。\narr.lastIndexOf(searchElement[, fromIndex])"
   },
-  "Array.map(callback(currentValue[, index[, array]]))": {
+  "var new_array = arr.map(function callback(currentValue[, index[, array]]) {\n // Return element for new_array \n}[, thisArg])": {
     "prefix": "arrmap",
-    "body": "$1.map($2)",
-    "description": "map() 方法创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。"
+    "body": [
+      "${1:array}.map(${2})"
+    ],
+    "description": "map() 方法创建一个新数组，其结果是该数组中的每个元素都调用一次提供的函数后的返回值。\nvar new_array = arr.map(function callback(currentValue[, index[, array]]) {\n // Return element for new_array \n}[, thisArg])"
   },
-  "Array.pop()": {
+  "arr.pop()": {
     "prefix": "arrpop",
-    "body": "$1.pop()",
-    "description": "pop()方法从数组中删除最后一个元素，并返回该元素的值。此方法更改数组的长度。"
+    "body": [
+      "${1:array}.pop()"
+    ],
+    "description": "pop()方法从数组中删除最后一个元素，并返回该元素的值。此方法更改数组的长度。\narr.pop()"
   },
-  "Array.push(element1, ..., elementN)": {
+  "arr.push(element1, ..., elementN)": {
     "prefix": "arrpush",
-    "body": "$1.push($2)",
-    "description": "push() 方法将一个或多个元素添加到数组的末尾，并返回该数组的新长度。"
+    "body": [
+      "${1:array}.push(${2})"
+    ],
+    "description": "push() 方法将一个或多个元素添加到数组的末尾，并返回该数组的新长度。\narr.push(element1, ..., elementN)"
   },
-  "Array.reduce(callback[initialValue])": {
-    "prefix": "arrredu",
-    "body": "$1.reduce($2)",
-    "description": "reduce() 方法对数组中的每个元素执行一个由您提供的reducer函数(升序执行)，将其结果汇总为单个返回值。"
+  "arr.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])": {
+    "prefix": "arrreduce",
+    "body": [
+      "${1:array}.reduce(${2})"
+    ],
+    "description": "reduce() 方法对数组中的每个元素执行一个由您提供的reducer函数(升序执行)，将其结果汇总为单个返回值。\narr.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])"
   },
-  "Array.reduceRight(callback[, initialValue])": {
-    "prefix": "arrredu",
-    "body": "$1.reduceRight($2)",
-    "description": "reduceRight() 方法接受一个函数作为累加器（accumulator）和数组的每个值（从右到左）将其减少为单个值。"
+  "arr.reduceRight(callback(accumulator, currentValue[, index[, array]])[, initialValue])": {
+    "prefix": "arrreduceright",
+    "body": [
+      "${1:array}.reduceRight(${2})"
+    ],
+    "description": "reduceRight() 方法接受一个函数作为累加器（accumulator）和数组的每个值（从右到左）将其减少为单个值。\narr.reduceRight(callback(accumulator, currentValue[, index[, array]])[, initialValue])"
   },
-  "Array.reverse()": {
-    "prefix": "arrrev",
-    "body": "$1.reverse()",
-    "description": "reverse() 方法将数组中元素的位置颠倒。"
+  "arr.reverse()": {
+    "prefix": "arrreverse",
+    "body": [
+      "${1:array}.reverse()"
+    ],
+    "description": "reverse() 方法将数组中元素的位置颠倒，并返回该数组。数组的第一个元素会变成最后一个，数组的最后一个元素变成第一个。该方法会改变原数组。\narr.reverse()"
   },
-  "Array.shift()": {
+  "arr.shift()": {
     "prefix": "arrshift",
-    "body": "$1.shift()",
-    "description": "shift() 方法从数组中删除第一个元素，并返回该元素的值。此方法更改数组的长度。"
+    "body": [
+      "${1:array}.shift()"
+    ],
+    "description": "shift() 方法从数组中删除第一个元素，并返回该元素的值。此方法更改数组的长度。\narr.shift()"
   },
-  "Array.slice(begin, end)": {
+  "arr.slice([begin[, end]])": {
     "prefix": "arrslice",
-    "body": "$1.slice($2,$3)",
-    "description": "slice() 方法返回一个新的数组对象，这一对象是一个由 begin和 end（不包括end）决定的原数组的浅拷贝。原始数组不会被改变。"
+    "body": [
+      "${1:array}.slice(${2})"
+    ],
+    "description": "slice() 方法返回一个新的数组对象，这一对象是一个由 begin 和 end 决定的原数组的浅拷贝（包括 begin，不包括end）。原始数组不会被改变。\narr.slice([begin[, end]])"
   },
-  "Array.some(callback[element[, index[, array]]), thisArg])": {
+  "arr.some(callback(element[, index[, array]])[, thisArg])": {
     "prefix": "arrsome",
-    "body": "$1.some($2)",
-    "description": "some() 方法测试数组中的某些元素是否通过由提供的函数实现的测试。"
+    "body": [
+      "${1:array}.some(${2})"
+    ],
+    "description": "some() 方法测试数组中是不是至少有1个元素通过了被提供的函数测试。它返回的是一个Boolean类型的值。\narr.some(callback(element[, index[, array]])[, thisArg])"
   },
-  "Array.sort([compareFunction])": {
+  "arr.sort([compareFunction])": {
     "prefix": "arrsort",
-    "body": "$1.sort($2)",
-    "description": "sort() 方法用原地算法对数组的元素进行排序，并返回数组。排序算法现在是稳定的。默认排序顺序是根据字符串Unicode码点。"
+    "body": [
+      "${1:array}.sort(${2})"
+    ],
+    "description": "sort() 方法用原地算法对数组的元素进行排序，并返回数组。默认排序顺序是在将元素转换为字符串，然后比较它们的UTF-16代码单元值序列时构建的\narr.sort([compareFunction])"
   },
-  "Array.splice(start[, deleteCount[, item1[, item2[, ...]]]])": {
+  "array.splice(start[, deleteCount[, item1[, item2[, ...]]]])": {
     "prefix": "arrsplice",
-    "body": "$1.splice($1,$2)",
-    "description": "splice()方法通过删除现有元素和/或添加新元素来修改数组,并以数组返回原数组中被修改的内容。"
+    "body": [
+      "${1:array}.splice(${2})"
+    ],
+    "description": "splice() 方法通过删除或替换现有元素或者原地添加新的元素来修改数组,并以数组形式返回被修改的内容。此方法会改变原数组。\narray.splice(start[, deleteCount[, item1[, item2[, ...]]]])"
   },
-  "Array.toLocaleString([locales[,options]])": {
-    "prefix": "arrtolo",
-    "body": "$1.toLocaleString($2)",
-    "description": "toLocaleString() 返回一个字符串表示数组中的元素。数组中的元素将使用各自的 toLocaleString 方法转成字符串，这些字符串将使用一个特定语言环境的字符串（例如一个逗号 ','）隔开。"
+  "arr.toLocaleString([locales[,options]]);": {
+    "prefix": "arrtolocalestring",
+    "body": [
+      "${1:array}.toLocaleString(${2})"
+    ],
+    "description": "toLocaleString() 返回一个字符串表示数组中的元素。数组中的元素将使用各自的 toLocaleString 方法转成字符串，这些字符串将使用一个特定语言环境的字符串（例如一个逗号 \",\"）隔开。\narr.toLocaleString([locales[,options]]);"
   },
-  "Array.toString()": {
+  "arr.toString()": {
     "prefix": "arrtostring",
-    "body": "$1.toString()",
-    "description": "toString() 返回一个字符串，表示指定的数组及其元素。"
+    "body": [
+      "${1:array}.toString()"
+    ],
+    "description": "toString() 返回一个字符串，表示指定的数组及其元素。\narr.toString()"
   },
-  "Array.unshift(element1, ..., elementN)": {
-    "prefix": "arrunsh",
-    "body": "$1.unshift($2)",
-    "description": "unshift() 方法将一个或多个元素添加到数组的开头，并返回该数组的新长度。"
+  "arr.unshift(element1, ..., elementN)": {
+    "prefix": "arrunshift",
+    "body": [
+      "${1:array}.unshift(${2})"
+    ],
+    "description": "unshift() 方法将一个或多个元素添加到数组的开头，并返回该数组的新长度(该方法修改原有数组)。\narr.unshift(element1, ..., elementN)"
   },
-  "Array.values()": {
-    "prefix": "arrvalu",
-    "body": "$1.values()",
-    "description": "values() 方法返回一个新的 Array Iterator 对象，该对象包含数组每个索引的值。"
+  "arr.values()": {
+    "prefix": "uinvalues",
+    "body": [
+      "${1:uint8clampedarray}.values()"
+    ],
+    "description": "values()返回新的 Array Iterator 对象，包含数组中每个下标处的值。\narr.values()"
+  },
+  "ArrayBuffer.isView(value)": {
+    "prefix": "arrisview",
+    "body": [
+      "ArrayBuffer.isView(${2})"
+    ],
+    "description": "ArrayBuffer.isView() 方法用来判断传入的参数值是否是一种 ArrayBuffer 视图（view），比如类型化数组对象（typed array objects）或者数据视图（ DataView）。\nArrayBuffer.isView(value)"
+  },
+  "arraybuffer.slice(begin[, end])": {
+    "prefix": "arrslice",
+    "body": [
+      "${1:arraybuffer}.slice(${2})"
+    ],
+    "description": "slice()方法返回一个新的 ArrayBuffer ，它的内容是这个ArrayBuffer的字节副本，从begin（包括），到end（不包括）。\narraybuffer.slice(begin[, end])"
+  },
+  "Atomics.add(typedArray, index, value)": {
+    "prefix": "atoadd",
+    "body": [
+      "Atomics.add(${2})"
+    ],
+    "description": "Atomics.add() 静态方法会将给定的值加到数组里的某个特定位置上，并返回该位置的旧值。此原子操作保证在写上修改的值之前不会发生其他写操作。\nAtomics.add(typedArray, index, value)"
+  },
+  "Atomics.and(typedArray, index, value)": {
+    "prefix": "atoand",
+    "body": [
+      "Atomics.and(${2})"
+    ],
+    "description": "Atomics.and() 静态方法会将给定的值与数组上的值进行按位与操作，并将结果赋值给数组，然后返回数组该位置上的旧值。此原子操作保证在写上修改的值之前不会发生其他写操作。\nAtomics.and(typedArray, index, value)"
+  },
+  "Atomics.compareExchange(typedArray, index, expectedValue, replacementValue)": {
+    "prefix": "atocompareexchange",
+    "body": [
+      "Atomics.compareExchange(${2})"
+    ],
+    "description": "Atomics.compareExchange() 静态方法会在数组的值与期望值相等的时候，将给定的替换值替换掉数组上的值，然后返回旧值。此原子操作保证在写上修改的值之前不会发生其他写操作。\nAtomics.compareExchange(typedArray, index, expectedValue, replacementValue)"
+  },
+  "Atomics.exchange(typedArray, index, value)": {
+    "prefix": "atoexchange",
+    "body": [
+      "Atomics.exchange(${2})"
+    ],
+    "description": "Atomics.exchange() 静态方法会用给定的值替换掉数组上的值，然后返回数组的旧值。此原子操作保证在写上修改的值之前不会发生其他写操作。\nAtomics.exchange(typedArray, index, value)"
+  },
+  "Atomics.isLockFree(size)": {
+    "prefix": "atoislockfree",
+    "body": [
+      "Atomics.isLockFree(${2})"
+    ],
+    "description": "静态方法 Atomics.isLockFree() 用于校验是否能够使用原子操作的TypedArray的标准字节长度之一. 若该字节长度为可处理的TypedArray标准字节长度之一则返回  true.  TypedArray的标准字节长度参见 BYTES_PER_ELEMENT\nAtomics.isLockFree(size)"
+  },
+  "Atomics.load(typedArray, index)": {
+    "prefix": "atoload",
+    "body": [
+      "Atomics.load(${2})"
+    ],
+    "description": "静态方法 Atomics.load() 返回一个数组当中给定位置的值。\nAtomics.load(typedArray, index)"
+  },
+  "Atomics.notify(typedArray, index, count)": {
+    "prefix": "atonotify",
+    "body": [
+      "Atomics.notify(${2})"
+    ],
+    "description": "静态方法 Atomics.notify() 提醒一些在等待队列中休眠的代理。\nAtomics.notify(typedArray, index, count)"
+  },
+  "Atomics.or(typedArray, index, value)": {
+    "prefix": "atoor",
+    "body": [
+      "Atomics.or(${2})"
+    ],
+    "description": "静态方法 Atomics.or() 用数组中指定位置的值进行一次按位或运算，并返回未计算时数组中指定位置处的值。这个atomic操作保证了在修改后的值被写回之前没有其它的写入操作发生。\nAtomics.or(typedArray, index, value)"
+  },
+  "Atomics.store(typedArray, index, value)": {
+    "prefix": "atostore",
+    "body": [
+      "Atomics.store(${2})"
+    ],
+    "description": "静态的Atomics.store（）方法将给定的值存储在数组中的指定位置，并返回该值。.\nAtomics.store(typedArray, index, value)"
+  },
+  "Atomics.sub(typedArray, index, value)": {
+    "prefix": "atosub",
+    "body": [
+      "Atomics.sub(${2})"
+    ],
+    "description": "The source for this interactive example is stored in a GitHub repository. If you'd like to contribute to the interactive examples project, please clone https://github.com/mdn/interactive-examples and send us a pull request.\nAtomics.sub(typedArray, index, value)"
+  },
+  "Atomics.wait(typedArray, index, value[, timeout])": {
+    "prefix": "atowait",
+    "body": [
+      "Atomics.wait(${2})"
+    ],
+    "description": "静态方法 Atomics.wait() 确保了一个在 Int32Array 数组中给定位置的值没有发生变化、仍然是给定的值时进程将会睡眠，直到被唤醒或超时。该方法返回一个字符串，值为\"ok\", \"not-equal\", 或 \"timed-out\" 之一。\nAtomics.wait(typedArray, index, value[, timeout])"
+  },
+  "Atomics.xor(typedArray, index, value)": {
+    "prefix": "atoxor",
+    "body": [
+      "Atomics.xor(${2})"
+    ],
+    "description": "The source for this interactive example is stored in a GitHub repository. If you'd like to contribute to the interactive examples project, please clone https://github.com/mdn/interactive-examples and send us a pull request.\nAtomics.xor(typedArray, index, value)"
+  },
+  "BigInt.asIntN(width, bigint);": {
+    "prefix": "bigasintn",
+    "body": [
+      "BigInt.asIntN(${2})"
+    ],
+    "description": "BigInt.asIntN 静态方法将 BigInt 值转换为一个 -2width-1 与 2width-1-1 之间的有符号整数。\nBigInt.asIntN(width, bigint);"
+  },
+  "BigInt.asUintN(width, bigint);": {
+    "prefix": "bigasuintn",
+    "body": [
+      "BigInt.asUintN(${2})"
+    ],
+    "description": "BigInt.asUintN 静态方法将 BigInt 转换为一个 0 和 2width-1 之间的无符号整数。\nBigInt.asUintN(width, bigint);"
+  },
+  "bigIntObj.toLocaleString([locales [, options]])": {
+    "prefix": "bigtolocalestring",
+    "body": [
+      "${1:bigint}.toLocaleString(${2})"
+    ],
+    "description": "toLocaleString() 方法返回一个字符串，该字符串具有此 BigInt 的 language-sensitive 表达形式。\nbigIntObj.toLocaleString([locales [, options]])"
+  },
+  "bigIntObj.toString([radix])": {
+    "prefix": "bigtostring",
+    "body": [
+      "${1:bigint}.toString(${2})"
+    ],
+    "description": "toString() 方法返回一个字符串，表示指定 BigInt 对象。 后面的 \"n\" 不是字符串的一部分。\nbigIntObj.toString([radix])"
+  },
+  "bigIntObj.valueOf()": {
+    "prefix": "bigvalueof",
+    "body": [
+      "${1:bigint}.valueOf()"
+    ],
+    "description": "valueOf() 方法返回 BigInt 对象包装的原始值。\nbigIntObj.valueOf()"
+  },
+  "TypedArray.from(source[, mapFn[, thisArg]])": {
+    "prefix": "uinfrom",
+    "body": [
+      "TypedArray.from(${2})"
+    ],
+    "description": "TypedArray.from() 方法 从一个类数组或者可迭代对象中创建一个新类型数组。 这个方法和 Array.from() 类似。\nTypedArray.from(source[, mapFn[, thisArg]])"
+  },
+  "typedarray.copyWithin(target, start[, end = this.length])": {
+    "prefix": "uincopywithin",
+    "body": [
+      "${1:uint8clampedarray}.copyWithin(${2})"
+    ],
+    "description": "copyWithin() 方法将数组中元素的序列复制到以 target 起始的位置。拷贝的副本取自第二个参数（start）和第三个参数 （end）的下标位置。end 参数是可选的，默认为数组长度。该方法与 Array.prototype.copyWithin 的算法相同。 TypedArray 指的是这里的 类型化数组类型 之一。\ntypedarray.copyWithin(target, start[, end = this.length])"
+  },
+  "typedarray.every(callback[, thisArg])": {
+    "prefix": "uinevery",
+    "body": [
+      "${1:uint8clampedarray}.every(${2})"
+    ],
+    "description": "every() 方法测试类型化数组的所有元素是否都能够通过由提供函数实现的测试。这个方法的算法与 Array.prototype.every()相同。 TypedArray 是这里的 类型化数组类型 之一。\ntypedarray.every(callback[, thisArg])"
+  },
+  "typedarray.fill(value[, start = 0[, end = this.length]])": {
+    "prefix": "uinfill",
+    "body": [
+      "${1:uint8clampedarray}.fill(${2})"
+    ],
+    "description": "fill() 方法将类型化数组中的从起始索引到终止索引内的全部元素。这个方法的算法和 Array.prototype.fill() 相同。 TypedArray 是这里的类型化数组类型之一。\ntypedarray.fill(value[, start = 0[, end = this.length]])"
+  },
+  "typedarray.filter(callback[, thisArg])": {
+    "prefix": "uinfilter",
+    "body": [
+      "${1:uint8clampedarray}.filter(${2})"
+    ],
+    "description": "filter()创建新的类型化数组，含有所有通过了测试的元素，测试由提供的函数实现。这个方法的算法和 Array.prototype.filter()相同。 TypedArray 是这里的 类型化数组类型 之一。\ntypedarray.filter(callback[, thisArg])"
+  },
+  "typedarray.find(callback[, thisArg])": {
+    "prefix": "uinfind",
+    "body": [
+      "${1:uint8clampedarray}.find(${2})"
+    ],
+    "description": "如果某个元素满足所提供的测试函数，find()方法返回类型化数组中的 值。否则返回undefined 。 TypedArray 是这里的 类型化数组类型 之一。\ntypedarray.find(callback[, thisArg])"
+  },
+  "typedarray.findIndex(callback[, thisArg])": {
+    "prefix": "uinfindindex",
+    "body": [
+      "${1:uint8clampedarray}.findIndex(${2})"
+    ],
+    "description": "如果某个元素满足所提供的测试函数，findIndex()方法返回类型化数组中的 下标。否则返回 -1。 TypedArray 是这里的 类型化数组类型 之一。\ntypedarray.findIndex(callback[, thisArg])"
+  },
+  "typedarray.forEach(callback[, thisArg])": {
+    "prefix": "uinforeach",
+    "body": [
+      "${1:uint8clampedarray}.forEach(${2})"
+    ],
+    "description": "forEach()方法对类型化数组的每个元素调用提供的函数。 这个方法的算法和 Array.prototype.forEach()相同。 TypedArray 是这里的 类型化数组类型 之一。\ntypedarray.forEach(callback[, thisArg])"
+  },
+  "typedarray.includes(searchElement[, fromIndex]);": {
+    "prefix": "uinincludes",
+    "body": [
+      "${1:uint8clampedarray}.includes(${2})"
+    ],
+    "description": "includes()方法判断类型化数组中是否含有特定元素，并相应返回true 或者false ，这个方法的算法和Array.prototype.includes()相同。 TypedArray 是这里的 类型化数组 之一。\ntypedarray.includes(searchElement[, fromIndex]);"
+  },
+  "typedarray.indexOf(searchElement[, fromIndex = 0])": {
+    "prefix": "uinindexof",
+    "body": [
+      "${1:uint8clampedarray}.indexOf(${2})"
+    ],
+    "description": "indexOf() 方法返回在类型数组中可以找到给定元素的第一个索引，如果不存在，则返回-1。 方法具有与 Array.prototype.indexOf() 相同的算法。 TypedArray是这里的类型化数组类型之一。\ntypedarray.indexOf(searchElement[, fromIndex = 0])"
+  },
+  "typedarray.join([separator = ',']);": {
+    "prefix": "uinjoin",
+    "body": [
+      "${1:uint8clampedarray}.join(${2})"
+    ],
+    "description": "join()方法将数组中所有元素连接为一个字符串。这个方法的算法和Array.prototype.join()相同。 TypedArray 是这里的 类型化数组 之一。\ntypedarray.join([separator = ',']);"
+  },
+  "typedarray.lastIndexOf(searchElement[, fromIndex = typedarray.length])": {
+    "prefix": "uinlastindexof",
+    "body": [
+      "${1:uint8clampedarray}.lastIndexOf(${2})"
+    ],
+    "description": "lastIndexOf() 方法返回在类型数组中可以找到给定元素的最后一个索引，如果不存在，则返回-1。 方法具有与 Array.prototype.lastIndexOf() 相同的算法。 TypedArray是这里的类型化数组类型之一。\ntypedarray.lastIndexOf(searchElement[, fromIndex = typedarray.length])"
+  },
+  "typedarray.map(callback[, thisArg])": {
+    "prefix": "uinmap",
+    "body": [
+      "${1:uint8clampedarray}.map(${2})"
+    ],
+    "description": "map()方法对类型化数组的每个元素调用提供的函数，并使用结果来创建新的类型化数组。 这个方法的算法和 Array.prototype.map()相同。 TypedArray 是这里的 类型化数组类型 之一。\ntypedarray.map(callback[, thisArg])"
+  },
+  "typedarray.reduce(callback[, initialValue])": {
+    "prefix": "uinreduce",
+    "body": [
+      "${1:uint8clampedarray}.reduce(${2})"
+    ],
+    "description": "reduce() 方法接受一个函数作为参数，这个函数作为一个累加器，从左到右遍历整个类型数组，最后返回一个单一的值. 这个方法和Array.prototype.reduce()使用了同样的算法. TypedArray 是一个 类型数组.\ntypedarray.reduce(callback[, initialValue])"
+  },
+  "typedarray.reduceRight(callback[, initialValue])": {
+    "prefix": "uinreduceright",
+    "body": [
+      "${1:uint8clampedarray}.reduceRight(${2})"
+    ],
+    "description": "reduceRight()在累加器和类型化数组的每个元素上（从右到左）调用函数，使其归约为单一的值。这个方法的算法和 Array.prototype.reduceRight()相同。 TypedArray 是这里的类型化数组类型 之一。\ntypedarray.reduceRight(callback[, initialValue])"
+  },
+  "typedarray.reverse();": {
+    "prefix": "uinreverse",
+    "body": [
+      "${1:uint8clampedarray}.reverse()"
+    ],
+    "description": "reverse()方法原地翻转类型化数组。类型化数组的第一个元素变为最后一个，最后一个变为第一个。这个方法的算法和Array.prototype.reverse()相同。 TypedArray 是这里的 类型化数组类型 之一。\ntypedarray.reverse();"
+  },
+  "typedarray.set(array[, offset])\ntypedarray.set(typedarray[, offset])": {
+    "prefix": "uinset",
+    "body": [
+      "${1:uint8clampedarray}.set(${2})"
+    ],
+    "description": "set() 方法用于从指定数组中读取值，并将其存储在类型化数组中。\ntypedarray.set(array[, offset])\ntypedarray.set(typedarray[, offset])"
+  },
+  "typedarray.slice([begin[, end]])": {
+    "prefix": "uinslice",
+    "body": [
+      "${1:uint8clampedarray}.slice(${2})"
+    ],
+    "description": "slice()方法将一个typed array的一部分浅拷贝到一个新的typed array对象中并返回。此方法采用与 Array.prototype.slice()相同的算法。TypedArray指 typed array types中的一员 .\ntypedarray.slice([begin[, end]])"
+  },
+  "typedarray.some(callback[, thisArg])": {
+    "prefix": "uinsome",
+    "body": [
+      "${1:uint8clampedarray}.some(${2})"
+    ],
+    "description": "这个 some() 方法检测 TypedArray 的一些元素是否通过所提供函数的测试. 这个方法和 Array.prototype.some() 相同. TypedArray 是 typed array types 之一.\ntypedarray.some(callback[, thisArg])"
+  },
+  "typedarray.sort([compareFunction])": {
+    "prefix": "uinsort",
+    "body": [
+      "${1:uint8clampedarray}.sort(${2})"
+    ],
+    "description": "sort()方法原地排序类型化数组的元素，并且返回类型化数组。这个方法的算法和Array.prototype.sort()相同。 TypedArray 是这里的 类型化数组类型 之一。\ntypedarray.sort([compareFunction])"
+  },
+  "typedarray.toLocaleString([locales [, options]]);": {
+    "prefix": "uintolocalestring",
+    "body": [
+      "${1:uint8clampedarray}.toLocaleString(${2})"
+    ],
+    "description": "toLocaleString()方法返回一个字符串，表明该类型化数组的元素。这些元素被转化为字符串并由一个区域设置指定的分隔符（例如逗号 “,”）分隔。这个方法与Array.prototype.toLocaleString()拥有相同的算法。同时，由于类型化数组的元素都是数，将每个元素转化为字符串的算法与Number.prototype.toLocaleString()是相同的。（类型化数组）的是typed array types中的其中一个。\ntypedarray.toLocaleString([locales [, options]]);"
+  },
+  "typedarray.toString()": {
+    "prefix": "uintostring",
+    "body": [
+      "${1:uint8clampedarray}.toString()"
+    ],
+    "description": "toString()方法返回一个表示指定数组及其元素的字符串。这个方法的算法和Array.prototype.toString()一样。TypedArray 在这是typed array types 之一。\ntypedarray.toString()"
+  },
+  "bool.toString()": {
+    "prefix": "bootostring",
+    "body": [
+      "${1:boolean}.toString()"
+    ],
+    "description": "toString() 方法返回指定的布尔对象的字符串形式。\nbool.toString()"
+  },
+  "bool.valueOf()": {
+    "prefix": "boovalueof",
+    "body": [
+      "${1:boolean}.valueOf()"
+    ],
+    "description": "valueOf() 方法返回一个Boolean对象的原始值。\nbool.valueOf()"
+  },
+  "Intl.getCanonicalLocales(locales)": {
+    "prefix": "relgetcanonicallocales",
+    "body": [
+      "Intl.getCanonicalLocales(${2})"
+    ],
+    "description": "Intl.getCanonicalLocales() 方法返回一个数组，数组包含规范的区域语言代码，重复的元素将会被去除，每一个元素都会被验证为格式有效的区域语言代码。\nIntl.getCanonicalLocales(locales)"
+  },
+  "dataview.getBigInt64(byteOffset [, littleEndian])": {
+    "prefix": "datgetbigint64",
+    "body": [
+      "${1:dataview}.getBigInt64(${2})"
+    ],
+    "description": "getBigInt64() 方法从 DataView开始获取一个指定偏移量的有符号64位整数 (long long) 。\ndataview.getBigInt64(byteOffset [, littleEndian])"
+  },
+  "dataview.getBigUint64(byteOffset [, littleEndian])": {
+    "prefix": "datgetbiguint64",
+    "body": [
+      "${1:dataview}.getBigUint64(${2})"
+    ],
+    "description": "getBigUint64()方法，从DataView的指定偏移量位置获取一个无符号64位整数(unsigned long long)。\ndataview.getBigUint64(byteOffset [, littleEndian])"
+  },
+  "dataview.getFloat32(byteOffset [, littleEndian])": {
+    "prefix": "datgetfloat32",
+    "body": [
+      "${1:dataview}.getFloat32(${2})"
+    ],
+    "description": "getFloat32()方法从相对于DataView 的起始位置偏移 n 个字节处获取一个32-bit浮点数(单精度浮点数，4个字节).\ndataview.getFloat32(byteOffset [, littleEndian])"
+  },
+  "dataview.getFloat64(byteOffset [, littleEndian])": {
+    "prefix": "datgetfloat64",
+    "body": [
+      "${1:dataview}.getFloat64(${2})"
+    ],
+    "description": "getFloat64()方法从DataView相对于起始位置偏移 n 个字节处开始，获取一个64-bit数(双精度浮点型，8个字节).\ndataview.getFloat64(byteOffset [, littleEndian])"
+  },
+  "dataview.getInt16(byteOffset [, littleEndian])": {
+    "prefix": "datgetint16",
+    "body": [
+      "${1:dataview}.getInt16(${2})"
+    ],
+    "description": "getInt16()方法从DataView相对于起始位置偏移 n 个字节处开始，获取一个16-bit数(短整型，2个字节).\ndataview.getInt16(byteOffset [, littleEndian])"
+  },
+  "dataview.getInt32(byteOffset [, littleEndian])": {
+    "prefix": "datgetint32",
+    "body": [
+      "${1:dataview}.getInt32(${2})"
+    ],
+    "description": "getInt32()方法从DataView相对于起始位置偏移 n 个字节处开始，获取一个32-bit数(长整型，4个字节).\ndataview.getInt32(byteOffset [, littleEndian])"
+  },
+  "dataview.getInt8(byteOffset)": {
+    "prefix": "datgetint8",
+    "body": [
+      "${1:dataview}.getInt8(${2})"
+    ],
+    "description": "getInt8()方法从DataView相对于起始位置偏移 n 个字节处开始，获取一个有符号的 8-bit 整数(一个字节)。\ndataview.getInt8(byteOffset)"
+  },
+  "dataview.getUint16(byteOffset [, littleEndian])": {
+    "prefix": "datgetuint16",
+    "body": [
+      "${1:dataview}.getUint16(${2})"
+    ],
+    "description": "getUint16()方法从DataView相对于起始位置偏移 n 个字节处开始，获取一个16-bit数(无符号短整型，2个字节).\ndataview.getUint16(byteOffset [, littleEndian])"
+  },
+  "dataview.getUint32(byteOffset [, littleEndian])": {
+    "prefix": "datgetuint32",
+    "body": [
+      "${1:dataview}.getUint32(${2})"
+    ],
+    "description": "getUint32()方法从DataView相对于起始位置偏移 n 个字节处开始，获取一个32-bit数(无符号长整型，4个字节).\ndataview.getUint32(byteOffset [, littleEndian])"
+  },
+  "dataview.getUint8(byteOffset)": {
+    "prefix": "datgetuint8",
+    "body": [
+      "${1:dataview}.getUint8(${2})"
+    ],
+    "description": "getUint8()方法从DataView相对于起始位置偏移 n 个字节处开始，获取一个无符号的8-bit整数(一个字节).\ndataview.getUint8(byteOffset)"
+  },
+  "dataview.setBigInt64(byteOffset, value [, littleEndian])": {
+    "prefix": "datsetbigint64",
+    "body": [
+      "${1:dataview}.setBigInt64(${2})"
+    ],
+    "description": "setBigInt64()方法在距DataView 的起始位置的指定字节偏移处存储一个带符号的64位整数（long long类型）值。\ndataview.setBigInt64(byteOffset, value [, littleEndian])"
+  },
+  "dataview.setBigUint64(byteOffset, value [, littleEndian])": {
+    "prefix": "datsetbiguint64",
+    "body": [
+      "${1:dataview}.setBigUint64(${2})"
+    ],
+    "description": "setBigUint64() 方法在距DataView 的起始位置的指定字节偏移处存储一个无符号的64位整数（unsigned  long long类型）值。\ndataview.setBigUint64(byteOffset, value [, littleEndian])"
+  },
+  "dataview.setFloat32(byteOffset, value [, littleEndian])": {
+    "prefix": "datsetfloat32",
+    "body": [
+      "${1:dataview}.setFloat32(${2})"
+    ],
+    "description": "setFloat32()从DataView起始位置以byte为计数的指定偏移量(byteOffset)处储存一个32-bit数(浮点型).\ndataview.setFloat32(byteOffset, value [, littleEndian])"
+  },
+  "dataview.setFloat64(byteOffset, value [, littleEndian])": {
+    "prefix": "datsetfloat64",
+    "body": [
+      "${1:dataview}.setFloat64(${2})"
+    ],
+    "description": "setFloat64()从DataView起始位置以byte为计数的指定偏移量(byteOffset)处储存一个64-bit数(双精度浮点型).\ndataview.setFloat64(byteOffset, value [, littleEndian])"
+  },
+  "dataview.setInt16(byteOffset, value [, littleEndian])": {
+    "prefix": "datsetint16",
+    "body": [
+      "${1:dataview}.setInt16(${2})"
+    ],
+    "description": "setInt16()从DataView起始位置以byte为计数的指定偏移量(byteOffset)处储存一个16-bit数(短整型).\ndataview.setInt16(byteOffset, value [, littleEndian])"
+  },
+  "dataview.setInt32(byteOffset, value [, littleEndian])": {
+    "prefix": "datsetint32",
+    "body": [
+      "${1:dataview}.setInt32(${2})"
+    ],
+    "description": "setInt32()从DataView起始位置以byte为计数的指定偏移量(byteOffset)处储存一个32-bit数(长整型).\ndataview.setInt32(byteOffset, value [, littleEndian])"
+  },
+  "dataview.setInt8(byteOffset, value)": {
+    "prefix": "datsetint8",
+    "body": [
+      "${1:dataview}.setInt8(${2})"
+    ],
+    "description": "setInt8()从DataView起始位置以byte为计数的指定偏移量(byteOffset)处储存一个8-bit数(一个字节).\ndataview.setInt8(byteOffset, value)"
+  },
+  "dataview.setUint16(byteOffset, value [, littleEndian])": {
+    "prefix": "datsetuint16",
+    "body": [
+      "${1:dataview}.setUint16(${2})"
+    ],
+    "description": "setUint16()从DataView起始位置以byte为计数的指定偏移量(byteOffset)处储存一个16-bit数(无符号短整型).\ndataview.setUint16(byteOffset, value [, littleEndian])"
+  },
+  "dataview.setUint32(byteOffset, value [, littleEndian])": {
+    "prefix": "datsetuint32",
+    "body": [
+      "${1:dataview}.setUint32(${2})"
+    ],
+    "description": "setUint32()从DataView起始位置以byte为计数的指定偏移量(byteOffset)处储存一个32-bit数(无符号长整型).\ndataview.setUint32(byteOffset, value [, littleEndian])"
+  },
+  "dataview.setUint8(byteOffset, value)": {
+    "prefix": "datsetuint8",
+    "body": [
+      "${1:dataview}.setUint8(${2})"
+    ],
+    "description": "setUint8()从DataView起始位置以byte为计数的指定偏移量(byteOffset)处储存一个8-bit数(无符号字节).\ndataview.setUint8(byteOffset, value)"
+  },
+  "Date.UTC(year,month[,date[,hrs[,min[,sec[,ms]]]]])": {
+    "prefix": "datutc",
+    "body": [
+      "Date.UTC(${2})"
+    ],
+    "description": "Date.UTC() 方法接受的参数同日期构造函数接受最多参数时一样，返回从1970-1-1 00:00:00 UTC到指定日期的的毫秒数。\nDate.UTC(year,month[,date[,hrs[,min[,sec[,ms]]]]])"
+  },
+  "var timeInMs = Date.now();": {
+    "prefix": "datnow",
+    "body": [
+      "Date.now()"
+    ],
+    "description": "Date.now() 方法返回自 1970 年 1 月 1 日 00:00:00 (UTC) 到当前时间的毫秒数。\nvar timeInMs = Date.now();"
+  },
+  "dateObj.getDate()": {
+    "prefix": "datgetdate",
+    "body": [
+      "${1:date}.getDate()"
+    ],
+    "description": "根据本地时间，返回一个指定的日期对象为一个月中的哪一日（从1--31）。\ndateObj.getDate()"
+  },
+  "dateObj.getDay()": {
+    "prefix": "datgetday",
+    "body": [
+      "${1:date}.getDay()"
+    ],
+    "description": "getDay() 方法根据本地时间，返回一个具体日期中一周的第几天，0 表示星期天。对于某个月中的第几天，参考Date.prototype.getDate().\ndateObj.getDay()"
+  },
+  "dateObj.getFullYear()": {
+    "prefix": "datgetfullyear",
+    "body": [
+      "${1:date}.getFullYear()"
+    ],
+    "description": "getFullYear() 方法根据本地时间返回指定日期的年份。\ndateObj.getFullYear()"
+  },
+  "dateObj.getHours()": {
+    "prefix": "datgethours",
+    "body": [
+      "${1:date}.getHours()"
+    ],
+    "description": "getHours() 方法根据本地时间，返回一个指定的日期对象的小时。\ndateObj.getHours()"
+  },
+  "dateObj.getMilliseconds()": {
+    "prefix": "datgetmilliseconds",
+    "body": [
+      "${1:date}.getMilliseconds()"
+    ],
+    "description": "getMilliseconds() 方法，根据本地时间，返回一个指定的日期对象的毫秒数。\ndateObj.getMilliseconds()"
+  },
+  "dateObj.getMinutes()": {
+    "prefix": "datgetminutes",
+    "body": [
+      "${1:date}.getMinutes()"
+    ],
+    "description": "getMinutes() 方法根据本地时间，返回一个指定的日期对象的分钟数。\ndateObj.getMinutes()"
+  },
+  "dateObj.getMonth()": {
+    "prefix": "datgetmonth",
+    "body": [
+      "${1:date}.getMonth()"
+    ],
+    "description": "根据本地时间，返回一个指定的日期对象的月份，为基于0的值（0表示一年中的第一月）。\ndateObj.getMonth()"
+  },
+  "dateObj.getSeconds()": {
+    "prefix": "datgetseconds",
+    "body": [
+      "${1:date}.getSeconds()"
+    ],
+    "description": "getSeconds() 方法根据本地时间，返回一个指定的日期对象的秒数。\ndateObj.getSeconds()"
+  },
+  "dateObj.getTime()": {
+    "prefix": "datgettime",
+    "body": [
+      "${1:date}.getTime()"
+    ],
+    "description": "getTime() 方法返回一个时间的格林威治时间数值。\ndateObj.getTime()"
+  },
+  "dateObj.getTimezoneOffset()": {
+    "prefix": "datgettimezoneoffset",
+    "body": [
+      "${1:date}.getTimezoneOffset()"
+    ],
+    "description": "getTimezoneOffset() 方法返回协调世界时（UTC）相对于当前时区的时间差值，单位为分钟。\ndateObj.getTimezoneOffset()"
+  },
+  "dateObj.getUTCDate()": {
+    "prefix": "datgetutcdate",
+    "body": [
+      "${1:date}.getUTCDate()"
+    ],
+    "description": "getUTCDate() 方法以世界时为标准，返回一个指定的日期对象为一个月中的第几天\ndateObj.getUTCDate()"
+  },
+  "dateObj.getUTCDay()": {
+    "prefix": "datgetutcday",
+    "body": [
+      "${1:date}.getUTCDay()"
+    ],
+    "description": "getUTCDay() 方法以世界时为标准，返回一个指定的日期对象为一星期中的第几天，其中 0 代表星期天。\ndateObj.getUTCDay()"
+  },
+  "dateObj.getUTCFullYear()": {
+    "prefix": "datgetutcfullyear",
+    "body": [
+      "${1:date}.getUTCFullYear()"
+    ],
+    "description": "getUTCFullYear() 以世界时为标准，返回一个指定的日期对象的年份。\ndateObj.getUTCFullYear()"
+  },
+  "dateObj.getUTCHours()": {
+    "prefix": "datgetutchours",
+    "body": [
+      "${1:date}.getUTCHours()"
+    ],
+    "description": "getUTCHours() 方法以世界时为标准，返回一个指定的日期对象的小时数。\ndateObj.getUTCHours()"
+  },
+  "dateObj.getUTCMilliseconds()": {
+    "prefix": "datgetutcmilliseconds",
+    "body": [
+      "${1:date}.getUTCMilliseconds()"
+    ],
+    "description": "getUTCMilliseconds() 方法以世界时为标准，返回一个指定的日期对象的毫秒数。\ndateObj.getUTCMilliseconds()"
+  },
+  "dateObj.getUTCMinutes()": {
+    "prefix": "datgetutcminutes",
+    "body": [
+      "${1:date}.getUTCMinutes()"
+    ],
+    "description": "getUTCMinutes() 方法以世界时为标准，返回一个指定的日期对象的分钟数。\ndateObj.getUTCMinutes()"
+  },
+  "dateObj.getUTCMonth()": {
+    "prefix": "datgetutcmonth",
+    "body": [
+      "${1:date}.getUTCMonth()"
+    ],
+    "description": "getUTCMonth() 方法以世界时为标准，返回一个指定的日期对象的月份，它是从 0 开始计数的（0 代表一年的第一个月）。\ndateObj.getUTCMonth()"
+  },
+  "dateObj.getUTCSeconds()": {
+    "prefix": "datgetutcseconds",
+    "body": [
+      "${1:date}.getUTCSeconds()"
+    ],
+    "description": "getUTCSeconds() 方法以世界时为标准，返回一个指定的日期对象的秒数。\ndateObj.getUTCSeconds()"
+  },
+  "dateObj.setDate(dayValue)": {
+    "prefix": "datsetdate",
+    "body": [
+      "${1:date}.setDate(${2})"
+    ],
+    "description": "setDate() 方法根据本地时间来指定一个日期对象的天数。\ndateObj.setDate(dayValue)"
+  },
+  "dateObj.setFullYear(yearValue[, monthValue[, dayValue]])": {
+    "prefix": "datsetfullyear",
+    "body": [
+      "${1:date}.setFullYear(${2})"
+    ],
+    "description": "setFullYear() 方法根据本地时间为一个日期对象设置年份。\ndateObj.setFullYear(yearValue[, monthValue[, dayValue]])"
+  },
+  "dateObj.setHours(hoursValue[, minutesValue[, secondsValue[, msValue]]])": {
+    "prefix": "datsethours",
+    "body": [
+      "${1:date}.setHours(${2})"
+    ],
+    "description": "setHours() 方法根据本地时间为一个日期对象设置小时数，返回从1970-01-01 00:00:00 UTC 到更新后的 日期 对象实例所表示时间的毫秒数。\ndateObj.setHours(hoursValue[, minutesValue[, secondsValue[, msValue]]])"
+  },
+  "dateObj.setMilliseconds(millisecondsValue)": {
+    "prefix": "datsetmilliseconds",
+    "body": [
+      "${1:date}.setMilliseconds(${2})"
+    ],
+    "description": "setMilliseconds() 方法会根据本地时间设置一个日期对象的豪秒数。\ndateObj.setMilliseconds(millisecondsValue)"
+  },
+  "dateObj.setMinutes(minutesValue[, secondsValue[, msValue]])": {
+    "prefix": "datsetminutes",
+    "body": [
+      "${1:date}.setMinutes(${2})"
+    ],
+    "description": "setMinutes() 方法根据本地时间为一个日期对象设置分钟数。\ndateObj.setMinutes(minutesValue[, secondsValue[, msValue]])"
+  },
+  "dateObj.setMonth(monthValue[, dayValue])": {
+    "prefix": "datsetmonth",
+    "body": [
+      "${1:date}.setMonth(${2})"
+    ],
+    "description": "setMonth() 方法根据本地时间为一个设置年份的日期对象设置月份。\ndateObj.setMonth(monthValue[, dayValue])"
+  },
+  "dateObj.setSeconds(secondsValue[, msValue])": {
+    "prefix": "datsetseconds",
+    "body": [
+      "${1:date}.setSeconds(${2})"
+    ],
+    "description": "setSeconds() 方法根据本地时间设置一个日期对象的秒数。\ndateObj.setSeconds(secondsValue[, msValue])"
+  },
+  "dateObj.setTime(timeValue)": {
+    "prefix": "datsettime",
+    "body": [
+      "${1:date}.setTime(${2})"
+    ],
+    "description": "setTime() 方法以一个表示从1970-1-1 00:00:00 UTC计时的毫秒数为来为 Date 对象设置时间。\ndateObj.setTime(timeValue)"
+  },
+  "dateObj.setUTCDate(dayValue)": {
+    "prefix": "datsetutcdate",
+    "body": [
+      "${1:date}.setUTCDate(${2})"
+    ],
+    "description": "setUTCDate() 方法就是根据全球时间设置特定date对象的日期。\ndateObj.setUTCDate(dayValue)"
+  },
+  "dateObj.setUTCFullYear(yearValue[, monthValue[, dayValue]])": {
+    "prefix": "datsetutcfullyear",
+    "body": [
+      "${1:date}.setUTCFullYear(${2})"
+    ],
+    "description": "setUTCFullYear() 方法根据世界标准时间为一个具体日期设置年份。\ndateObj.setUTCFullYear(yearValue[, monthValue[, dayValue]])"
+  },
+  "dateObj.setUTCHours(hoursValue[, minutesValue[, secondsValue[, msValue]]])": {
+    "prefix": "datsetutchours",
+    "body": [
+      "${1:date}.setUTCHours(${2})"
+    ],
+    "description": "The setUTCHours() method sets the hour for a specified date according to universal time, and returns the number of milliseconds since 1 January 1970 00:00:00 UTC until the time represented by the updated Date instance.\ndateObj.setUTCHours(hoursValue[, minutesValue[, secondsValue[, msValue]]])"
+  },
+  "dateObj.setUTCMilliseconds(millisecondsValue)": {
+    "prefix": "datsetutcmilliseconds",
+    "body": [
+      "${1:date}.setUTCMilliseconds(${2})"
+    ],
+    "description": "setUTCMilliseconds() 方法会根据世界时来设置指定时间的毫秒数。\ndateObj.setUTCMilliseconds(millisecondsValue)"
+  },
+  "dateObj.setUTCMinutes(minutesValue[, secondsValue[, msValue]])": {
+    "prefix": "datsetutcminutes",
+    "body": [
+      "${1:date}.setUTCMinutes(${2})"
+    ],
+    "description": "setUTCMinutes()方法会根据世界协调时（UTC）来设置指定日期的分钟数。\ndateObj.setUTCMinutes(minutesValue[, secondsValue[, msValue]])"
+  },
+  "dateObj.setUTCMonth(monthValue[, dayValue])": {
+    "prefix": "datsetutcmonth",
+    "body": [
+      "${1:date}.setUTCMonth(${2})"
+    ],
+    "description": "setUTCMonth()方法根据通用的时间来设置一个准确的月份\ndateObj.setUTCMonth(monthValue[, dayValue])"
+  },
+  "dateObj.setUTCSeconds(secondsValue[, msValue])": {
+    "prefix": "datsetutcseconds",
+    "body": [
+      "${1:date}.setUTCSeconds(${2})"
+    ],
+    "description": "此 setUTCSeconds() 方法为一个依据国际通用时间的特定日期设置秒数。\ndateObj.setUTCSeconds(secondsValue[, msValue])"
+  },
+  "dateObj.toDateString()": {
+    "prefix": "dattodatestring",
+    "body": [
+      "${1:date}.toDateString()"
+    ],
+    "description": "toDateString() 方法以美式英语和人类易读的形式返回一个日期对象日期部分的字符串。\ndateObj.toDateString()"
+  },
+  "dateObj.toISOString()": {
+    "prefix": "dattoisostring",
+    "body": [
+      "${1:date}.toISOString()"
+    ],
+    "description": "toISOString() 方法返回一个 ISO（ISO 8601 Extended Format）格式的字符串： YYYY-MM-DDTHH:mm:ss.sssZ。时区总是UTC（协调世界时），加一个后缀“Z”标识。\ndateObj.toISOString()"
+  },
+  "dateObj.toJSON()": {
+    "prefix": "dattojson",
+    "body": [
+      "${1:date}.toJSON()"
+    ],
+    "description": "toJSON() 方法返回 Date 对象的字符串形式。\ndateObj.toJSON()"
+  },
+  "dateObj.toLocaleDateString([locales [, options]])": {
+    "prefix": "dattolocaledatestring",
+    "body": [
+      "${1:date}.toLocaleDateString(${2})"
+    ],
+    "description": "toLocaleDateString() 方法返回该日期对象日期部分的字符串，该字符串格式因不同语言而不同。新增的参数 locales 和 options 使程序能够指定使用哪种语言格式化规则，允许定制该方法的表现（behavior）。在旧版本浏览器中， locales 和 options 参数被忽略，使用的语言环境和返回的字符串格式是各自独立实现的。\ndateObj.toLocaleDateString([locales [, options]])"
+  },
+  "dateObj.toLocaleString([locales [, options]])": {
+    "prefix": "dattolocalestring",
+    "body": [
+      "${1:date}.toLocaleString(${2})"
+    ],
+    "description": "toLocaleString() 方法返回该日期对象的字符串，该字符串格式因不同语言而不同。新增的参数 locales 和 options 使程序能够指定使用哪种语言格式化规则，允许定制该方法的表现（behavior）。在旧版本浏览器中， locales 和 options 参数被忽略，使用的语言环境和返回的字符串格式是各自独立实现的。\ndateObj.toLocaleString([locales [, options]])"
+  },
+  "dateObj.toLocaleTimeString([locales [, options]])": {
+    "prefix": "dattolocaletimestring",
+    "body": [
+      "${1:date}.toLocaleTimeString(${2})"
+    ],
+    "description": "The toLocaleTimeString() 方法返回该日期对象时间部分的字符串，该字符串格式因不同语言而不同。新增的参数 locales 和 options 使程序能够指定使用哪种语言格式化规则，允许定制该方法的表现（behavior）。在旧版本浏览器中， locales 和 options 参数被忽略，使用的语言环境和返回的字符串格式是各自独立实现的。\ndateObj.toLocaleTimeString([locales [, options]])"
+  },
+  "dateObj.toSource()\nDate.toSource()": {
+    "prefix": "dattosource",
+    "body": [
+      "${1:date}.toSource(${2})"
+    ],
+    "description": "toSource() 返回表示源代码的字符串。\ndateObj.toSource()\nDate.toSource()"
+  },
+  "dateObj.toString()": {
+    "prefix": "dattostring",
+    "body": [
+      "${1:date}.toString()"
+    ],
+    "description": "toString() 方法返回一个字符串，表示该Date对象。\ndateObj.toString()"
+  },
+  "dateObj.toTimeString()": {
+    "prefix": "dattotimestring",
+    "body": [
+      "${1:date}.toTimeString()"
+    ],
+    "description": "toTimeString() 方法以人类易读形式返回一个日期对象时间部分的字符串，该字符串以美式英语格式化。\ndateObj.toTimeString()"
+  },
+  "dateObj.toUTCString()": {
+    "prefix": "dattoutcstring",
+    "body": [
+      "${1:date}.toUTCString()"
+    ],
+    "description": "toUTCString() 方法把一个日期转换为一个字符串，使用UTC时区。\ndateObj.toUTCString()"
+  },
+  "dateObj.valueOf()": {
+    "prefix": "datvalueof",
+    "body": [
+      "${1:date}.valueOf()"
+    ],
+    "description": "valueOf() 方法返回一个 Date 对象的原始值。\ndateObj.valueOf()"
+  },
+  "e.toString();": {
+    "prefix": "uritostring",
+    "body": [
+      "${1:urierror}.toString()"
+    ],
+    "description": "toString() 方法返回一个指定的错误对象（Error object）的字符串表示。\ne.toString();"
+  },
+  "func.apply(thisArg, [argsArray])": {
+    "prefix": "funapply",
+    "body": [
+      "${1:function}.apply(${2})"
+    ],
+    "description": "apply() 方法调用一个具有给定this值的函数，以及作为一个数组（或类似数组对象）提供的参数。\nfunc.apply(thisArg, [argsArray])"
+  },
+  "function.bind(thisArg[, arg1[, arg2[, ...]]])": {
+    "prefix": "funbind",
+    "body": [
+      "${1:function}.bind(${2})"
+    ],
+    "description": "bind() 方法创建一个新的函数，在 bind() 被调用时，这个新函数的 this 被指定为 bind() 的第一个参数，而其余参数将作为新函数的参数，供调用时使用。\nfunction.bind(thisArg[, arg1[, arg2[, ...]]])"
+  },
+  "function.call(thisArg, arg1, arg2, ...)": {
+    "prefix": "funcall",
+    "body": [
+      "${1:function}.call(${2})"
+    ],
+    "description": "call() 方法使用一个指定的 this 值和单独给出的一个或多个参数来调用一个函数。\nfunction.call(thisArg, arg1, arg2, ...)"
+  },
+  "function.toString()": {
+    "prefix": "funtostring",
+    "body": [
+      "${1:function}.toString()"
+    ],
+    "description": "toString() 方法返回一个表示当前函数源代码的字符串。\nfunction.toString()"
+  },
+  "gen.next(value)": {
+    "prefix": "gennext",
+    "body": [
+      "${1:generator}.next(${2})"
+    ],
+    "description": "next() 方法返回一个包含属性 done 和 value 的对象。该方法也可以通过接受一个参数用以向生成器传值。\ngen.next(value)"
+  },
+  "gen.return(value)": {
+    "prefix": "genreturn",
+    "body": [
+      "${1:generator}.return(${2})"
+    ],
+    "description": "return() 方法返回给定的值并结束生成器。\ngen.return(value)"
+  },
+  "gen.throw(exception)": {
+    "prefix": "genthrow",
+    "body": [
+      "${1:generator}.throw(${2})"
+    ],
+    "description": "throw() 方法用来向生成器抛出异常，并恢复生成器的执行，返回带有 done 及 value 两个属性的对象。\ngen.throw(exception)"
+  },
+  "JSON.parse(text[, reviver])": {
+    "prefix": "jsoparse",
+    "body": [
+      "JSON.parse(${2})"
+    ],
+    "description": "JSON.parse() 方法用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。提供可选的 reviver 函数用以在返回之前对所得到的对象执行变换(操作)。\nJSON.parse(text[, reviver])"
+  },
+  "JSON.stringify(value[, replacer [, space]])": {
+    "prefix": "jsostringify",
+    "body": [
+      "JSON.stringify(${2})"
+    ],
+    "description": "JSON.stringify() 方法将一个 JavaScript 值（对象或者数组）转换为一个 JSON 字符串，如果指定了 replacer 是一个函数，则可以选择性地替换值，或者如果指定了 replacer 是一个数组，则可选择性地仅包含数组指定的属性。\nJSON.stringify(value[, replacer [, space]])"
+  },
+  "myMap.clear();": {
+    "prefix": "mapclear",
+    "body": [
+      "${1:map}.clear()"
+    ],
+    "description": "clear()方法会移除Map对象中的所有元素。\nmyMap.clear();"
+  },
+  "myMap.delete(key);": {
+    "prefix": "mapdelete",
+    "body": [
+      "${1:map}.delete(${2})"
+    ],
+    "description": "delete() 方法用于移除 Map 对象中指定的元素。\nmyMap.delete(key);"
+  },
+  "myMap.entries()": {
+    "prefix": "mapentries",
+    "body": [
+      "${1:map}.entries()"
+    ],
+    "description": "entries() 方法返回一个新的包含 [key, value] 对的 Iterator 对象，返回的迭代器的迭代顺序与 Map 对象的插入顺序相同。\nmyMap.entries()"
+  },
+  "myMap.forEach(callback[, thisArg])": {
+    "prefix": "mapforeach",
+    "body": [
+      "${1:map}.forEach(${2})"
+    ],
+    "description": "forEach() 方法将会以插入顺序对 Map 对象中的每一个键值对执行一次参数中提供的回调函数。\nmyMap.forEach(callback[, thisArg])"
+  },
+  "myMap.get(key);": {
+    "prefix": "mapget",
+    "body": [
+      "${1:map}.get(${2})"
+    ],
+    "description": "get() 方法返回某个 Map 对象中的一个指定元素。\nmyMap.get(key);"
+  },
+  "myMap.has(key);": {
+    "prefix": "maphas",
+    "body": [
+      "${1:map}.has(${2})"
+    ],
+    "description": "方法has() 返回一个bool值，用来表明map 中是否存在指定元素.\nmyMap.has(key);"
+  },
+  "myMap.keys()": {
+    "prefix": "mapkeys",
+    "body": [
+      "${1:map}.keys()"
+    ],
+    "description": "keys() 返回一个新的 Iterator 对象。它包含按照顺序插入 Map 对象中每个元素的key值。\nmyMap.keys()"
+  },
+  "myMap.set(key, value);": {
+    "prefix": "mapset",
+    "body": [
+      "${1:map}.set(${2})"
+    ],
+    "description": "\nmyMap.set(key, value);"
+  },
+  "myMap.values()": {
+    "prefix": "mapvalues",
+    "body": [
+      "${1:map}.values()"
+    ],
+    "description": "一个新的 Map 可迭代对象.\nmyMap.values()"
+  },
+  "Math.abs(x);": {
+    "prefix": "matabs",
+    "body": [
+      "Math.abs(${2})"
+    ],
+    "description": "Math.abs(x) 函数返回指定数字 “x“ 的绝对值。如下：\nMath.abs(x);"
+  },
+  "Math.acos(x)": {
+    "prefix": "matacos",
+    "body": [
+      "Math.acos(${2})"
+    ],
+    "description": "Math.acos() 返回一个数的反余弦值（单位为弧度），即：\nMath.acos(x)"
+  },
+  "Math.acosh(x)": {
+    "prefix": "matbc",
+    "body": [
+      "Math.acosh(${2})"
+    ],
+    "description": "Math.acosh()返回一个数字的反双曲余弦值，即：\nMath.acosh(x)"
+  },
+  "Math.asin(x)": {
+    "prefix": "matasin",
+    "body": [
+      "Math.asin(${2})"
+    ],
+    "description": "Math.asin() 方法返回一个数值的反正弦（单位为弧度），即：\nMath.asin(x)"
+  },
+  "Math.asinh(x)": {
+    "prefix": "matasinh",
+    "body": [
+      "Math.asinh(${2})"
+    ],
+    "description": "Math.asinh() 返回一个数值的反双曲正弦值，即：\nMath.asinh(x)"
+  },
+  "Math.atan(x)": {
+    "prefix": "matatan",
+    "body": [
+      "Math.atan(${2})"
+    ],
+    "description": "Math.atan() 函数返回一个数值的反正切（以弧度为单位），即：\nMath.atan(x)"
+  },
+  "Math.atan2(y, x)": {
+    "prefix": "matatan2",
+    "body": [
+      "Math.atan2(${2})"
+    ],
+    "description": "Math.atan2() 返回从原点(0,0)到(x,y)点的线段与x轴正方向之间的平面角度(弧度值)，也就是Math.atan2(y,x)\nMath.atan2(y, x)"
+  },
+  "Math.atanh(x)": {
+    "prefix": "matatanh",
+    "body": [
+      "Math.atanh(${2})"
+    ],
+    "description": "Math.atanh() 函数返回一个数值反双曲正切值, 即：\nMath.atanh(x)"
+  },
+  "Math.cbrt(x)": {
+    "prefix": "matcbrt",
+    "body": [
+      "Math.cbrt(${2})"
+    ],
+    "description": "Math.cbrt() 函数返回任意数字的立方根.\nMath.cbrt(x)"
+  },
+  "Math.ceil(x)": {
+    "prefix": "matceil",
+    "body": [
+      "Math.ceil(${2})"
+    ],
+    "description": "Math.ceil() 函数返回大于或等于一个给定数字的最小整数。\nMath.ceil(x)"
+  },
+  "Math.clz32 (x)": {
+    "prefix": "matclz32",
+    "body": [
+      "Math.clz32(${2})"
+    ],
+    "description": "Math.clz32() 函数返回一个数字在转换成 32 无符号整形数字的二进制形式后, 开头的 0 的个数, 比如 1000000 转换成 32 位无符号整形数字的二进制形式后是 00000000000011110100001001000000, 开头的 0 的个数是 12 个, 则 Math.clz32(1000000) 返回 12.\nMath.clz32 (x)"
+  },
+  "Math.cos(x)": {
+    "prefix": "matcos",
+    "body": [
+      "Math.cos(${2})"
+    ],
+    "description": "Math.cos() 函数返回一个数值的余弦值。\nMath.cos(x)"
+  },
+  "Math.cosh(x)": {
+    "prefix": "matcosh",
+    "body": [
+      "Math.cosh(${2})"
+    ],
+    "description": "Math.cosh() 函数返回数值的双曲余弦函数, 可用 constant e 表示:\nMath.cosh(x)"
+  },
+  "Math.exp(x)": {
+    "prefix": "matexp",
+    "body": [
+      "Math.exp(${2})"
+    ],
+    "description": "Math.exp() 函数返回 ex，x 表示参数，e 是欧拉常数（Euler's constant），自然对数的底数。\nMath.exp(x)"
+  },
+  "Math.expm1(x)": {
+    "prefix": "matexpm1",
+    "body": [
+      "Math.expm1(${2})"
+    ],
+    "description": "Math.expm1() 函数返回 Ex - 1, 其中 x 是该函数的参数, E 是自然对数的底数 2.718281828459045.\nMath.expm1(x)"
+  },
+  "Math.floor(x)": {
+    "prefix": "matfloor",
+    "body": [
+      "Math.floor(${2})"
+    ],
+    "description": "Math.floor() 返回小于或等于一个给定数字的最大整数。\nMath.floor(x)"
+  },
+  "Math.fround(doubleFloat)": {
+    "prefix": "matfround",
+    "body": [
+      "Math.fround(${2})"
+    ],
+    "description": "Math.fround() 可以将任意的数字转换为离它最近的单精度浮点数形式的数字。\nMath.fround(doubleFloat)"
+  },
+  "Math.hypot([value1[,value2, ...]])": {
+    "prefix": "mathypot",
+    "body": [
+      "Math.hypot(${2})"
+    ],
+    "description": "Math.hypot() 函数返回它的所有参数的平方和的平方根，即：\nMath.hypot([value1[,value2, ...]])"
+  },
+  "var product = Math.imul(a, b)": {
+    "prefix": "matimul",
+    "body": [
+      "Math.imul(${2})"
+    ],
+    "description": "类似 C 语言 32 位整数相乘的结果。\nvar product = Math.imul(a, b)"
+  },
+  "Math.log(x)": {
+    "prefix": "matlog",
+    "body": [
+      "Math.log(${2})"
+    ],
+    "description": "\nMath.log(x)"
+  },
+  "Math.log10(x)": {
+    "prefix": "matlog10",
+    "body": [
+      "Math.log10(${2})"
+    ],
+    "description": "Math.log10() 函数返回一个数字以 10 为底的对数.\nMath.log10(x)"
+  },
+  "Math.log1p(x)": {
+    "prefix": "matlog1p",
+    "body": [
+      "Math.log1p(${2})"
+    ],
+    "description": "Math.log1p() 函数返回一个数字加1后的自然对数 (底为 E), 既log(x+1).\nMath.log1p(x)"
+  },
+  "Math.log2(x)": {
+    "prefix": "matlog2",
+    "body": [
+      "Math.log2(${2})"
+    ],
+    "description": "Math.log2() 函数返回一个数字以 2 为底的对数.\nMath.log2(x)"
+  },
+  "Math.max(value1[,value2, ...])": {
+    "prefix": "matmax",
+    "body": [
+      "Math.max(${2})"
+    ],
+    "description": "Math.max() 函数返回一组数中的最大值。\nMath.max(value1[,value2, ...])"
+  },
+  "Math.min([value1[,value2, ...]])": {
+    "prefix": "matmin",
+    "body": [
+      "Math.min(${2})"
+    ],
+    "description": "Math.min() 返回零个或更多个数值的最小值。\nMath.min([value1[,value2, ...]])"
+  },
+  "Math.pow(base, exponent)": {
+    "prefix": "matpow",
+    "body": [
+      "Math.pow(${2})"
+    ],
+    "description": "Math.pow() 函数返回基数（base）的指数（exponent）次幂，即 baseexponent。\nMath.pow(base, exponent)"
+  },
+  "Math.random()": {
+    "prefix": "matrandom",
+    "body": [
+      "Math.random()"
+    ],
+    "description": "\nMath.random()"
+  },
+  "Math.round(x)": {
+    "prefix": "matround",
+    "body": [
+      "Math.round(${2})"
+    ],
+    "description": "Math.round() 函数返回一个数字四舍五入后最接近的整数。\nMath.round(x)"
+  },
+  "Math.sign(x);": {
+    "prefix": "matsign",
+    "body": [
+      "Math.sign(${2})"
+    ],
+    "description": "Math.sign() 函数返回一个数字的符号, 指示数字是正数，负数还是零。\nMath.sign(x);"
+  },
+  "Math.sin(x)": {
+    "prefix": "matsin",
+    "body": [
+      "Math.sin(${2})"
+    ],
+    "description": "Math.sin() 函数返回一个数值的正弦值。\nMath.sin(x)"
+  },
+  "Math.sinh(x)": {
+    "prefix": "matsinh",
+    "body": [
+      "Math.sinh(${2})"
+    ],
+    "description": "Math.sinh() 函数返回一个数字(单位为角度)的双曲正弦值.\nMath.sinh(x)"
+  },
+  "Math.sqrt(x)": {
+    "prefix": "matsqrt",
+    "body": [
+      "Math.sqrt(${2})"
+    ],
+    "description": "Math.sqrt() 函数返回一个数的平方根，即：\nMath.sqrt(x)"
+  },
+  "Math.tan(x)": {
+    "prefix": "mattan",
+    "body": [
+      "Math.tan(${2})"
+    ],
+    "description": "Math.tan() 方法返回一个数值的正切值。\nMath.tan(x)"
+  },
+  "Math.tanh(x)": {
+    "prefix": "mattanh",
+    "body": [
+      "Math.tanh(${2})"
+    ],
+    "description": "Math.tanh() 函数将会返回一个数的双曲正切函数值，计算如下:\nMath.tanh(x)"
+  },
+  "Math.trunc(value)": {
+    "prefix": "mattrunc",
+    "body": [
+      "Math.trunc(${2})"
+    ],
+    "description": "Math.trunc() 方法会将数字的小数部分去掉，只保留整数部分。\nMath.trunc(value)"
+  },
+  "Number.isFinite(value)": {
+    "prefix": "numisfinite",
+    "body": [
+      "Number.isFinite(${2})"
+    ],
+    "description": "Number.isFinite() 方法用来检测传入的参数是否是一个有穷数（finite number）。\nNumber.isFinite(value)"
+  },
+  "Number.isInteger(value)": {
+    "prefix": "numisinteger",
+    "body": [
+      "Number.isInteger(${2})"
+    ],
+    "description": "Number.isInteger() 方法用来判断给定的参数是否为整数。\nNumber.isInteger(value)"
+  },
+  "Number.isNaN(value)": {
+    "prefix": "numisnan",
+    "body": [
+      "Number.isNaN(${2})"
+    ],
+    "description": "Number.isNaN() 方法确定传递的值是否为 NaN，并且检查其类型是否为 Number。它是原来的全局 isNaN() 的更稳妥的版本。\nNumber.isNaN(value)"
+  },
+  "Number.isSafeInteger(testValue)": {
+    "prefix": "numissafeinteger",
+    "body": [
+      "Number.isSafeInteger(${2})"
+    ],
+    "description": "Number.isSafeInteger() 方法用来判断传入的参数值是否是一个“安全整数”（safe integer）。\nNumber.isSafeInteger(testValue)"
+  },
+  "Number.parseFloat(string)": {
+    "prefix": "numparsefloat",
+    "body": [
+      "Number.parseFloat(${2})"
+    ],
+    "description": "Number.parseFloat() 方法可以把一个字符串解析成浮点数。该方法与全局的 parseFloat() 函数相同，并且处于 ECMAScript 6 规范中（用于全局变量的模块化）。\nNumber.parseFloat(string)"
+  },
+  "Number.parseInt(string[, radix])": {
+    "prefix": "numparseint",
+    "body": [
+      "Number.parseInt(${2})"
+    ],
+    "description": "Number.parseInt() 方法依据指定基数 [ 参数 radix 的值]，把字符串 [ 参数 string 的值] 解析成整数。\nNumber.parseInt(string[, radix])"
+  },
+  "numObj.toExponential(fractionDigits)": {
+    "prefix": "numtoexponential",
+    "body": [
+      "${1:number}.toExponential(${2})"
+    ],
+    "description": "toExponential() 方法以指数表示法返回该数值字符串表示形式。\nnumObj.toExponential(fractionDigits)"
+  },
+  "numObj.toFixed(digits)": {
+    "prefix": "numtofixed",
+    "body": [
+      "${1:number}.toFixed(${2})"
+    ],
+    "description": "toFixed() 方法使用定点表示法来格式化一个数值。\nnumObj.toFixed(digits)"
+  },
+  "numObj.toLocaleString([locales [, options]])": {
+    "prefix": "numtolocalestring",
+    "body": [
+      "${1:number}.toLocaleString(${2})"
+    ],
+    "description": "toLocaleString() 方法返回这个数字在特定语言环境下的表示字符串。\nnumObj.toLocaleString([locales [, options]])"
+  },
+  "numObj.toPrecision(precision)": {
+    "prefix": "numtoprecision",
+    "body": [
+      "${1:number}.toPrecision(${2})"
+    ],
+    "description": "toPrecision() 方法以指定的精度返回该数值对象的字符串表示。\nnumObj.toPrecision(precision)"
+  },
+  "numObj.toString([radix])": {
+    "prefix": "numtostring",
+    "body": [
+      "${1:number}.toString(${2})"
+    ],
+    "description": "toString() 方法返回指定 Number 对象的字符串表示形式。\nnumObj.toString([radix])"
+  },
+  "numObj.valueOf()": {
+    "prefix": "numvalueof",
+    "body": [
+      "${1:number}.valueOf()"
+    ],
+    "description": "valueOf() 方法返回一个被 Number 对象包装的原始值。\nnumObj.valueOf()"
+  },
+  "Object.assign(target, ...sources)": {
+    "prefix": "objassign",
+    "body": [
+      "Object.assign(${2})"
+    ],
+    "description": "Object.assign() 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。\nObject.assign(target, ...sources)"
+  },
+  "Object.create(proto[, propertiesObject])": {
+    "prefix": "objcreate",
+    "body": [
+      "Object.create(${2})"
+    ],
+    "description": "Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__。 （请打开浏览器控制台以查看运行结果。）\nObject.create(proto[, propertiesObject])"
+  },
+  "Object.defineProperties(obj, props)": {
+    "prefix": "objdefineproperties",
+    "body": [
+      "Object.defineProperties(${2})"
+    ],
+    "description": "Object.defineProperties() 方法直接在一个对象上定义新的属性或修改现有属性，并返回该对象。\nObject.defineProperties(obj, props)"
+  },
+  "Object.defineProperty(obj, prop, descriptor)": {
+    "prefix": "objdefineproperty",
+    "body": [
+      "Object.defineProperty(${2})"
+    ],
+    "description": "Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象。\nObject.defineProperty(obj, prop, descriptor)"
+  },
+  "Object.entries(obj)": {
+    "prefix": "objentries",
+    "body": [
+      "Object.entries(${2})"
+    ],
+    "description": "The source for this interactive example is stored in a GitHub repository. If you'd like to contribute to the interactive examples project, please clone https://github.com/mdn/interactive-examples and send us a pull request.\nObject.entries(obj)"
+  },
+  "Object.freeze(obj)": {
+    "prefix": "objfreeze",
+    "body": [
+      "Object.freeze(${2})"
+    ],
+    "description": "Object.freeze() 方法可以冻结一个对象。一个被冻结的对象再也不能被修改；冻结了一个对象则不能向这个对象添加新的属性，不能删除已有属性，不能修改该对象已有属性的可枚举性、可配置性、可写性，以及不能修改已有属性的值。此外，冻结一个对象后该对象的原型也不能被修改。freeze() 返回和传入的参数相同的对象。\nObject.freeze(obj)"
+  },
+  "Object.fromEntries(iterable);": {
+    "prefix": "objfromentries",
+    "body": [
+      "Object.fromEntries(${2})"
+    ],
+    "description": "Object.fromEntries() 方法把键值对列表转换为一个对象。\nObject.fromEntries(iterable);"
+  },
+  "Object.getOwnPropertyDescriptor(obj, prop)": {
+    "prefix": "objgetownpropertydescriptor",
+    "body": [
+      "Object.getOwnPropertyDescriptor(${2})"
+    ],
+    "description": "Object.getOwnPropertyDescriptor() 方法返回指定对象上一个自有属性对应的属性描述符。（自有属性指的是直接赋予该对象的属性，不需要从原型链上进行查找的属性）\nObject.getOwnPropertyDescriptor(obj, prop)"
+  },
+  "Object.getOwnPropertyDescriptors(obj)": {
+    "prefix": "objgetownpropertydescriptors",
+    "body": [
+      "Object.getOwnPropertyDescriptors(${2})"
+    ],
+    "description": "Object.getOwnPropertyDescriptors() 方法用来获取一个对象的所有自身属性的描述符。\nObject.getOwnPropertyDescriptors(obj)"
+  },
+  "Object.getOwnPropertyNames(obj)": {
+    "prefix": "objgetownpropertynames",
+    "body": [
+      "Object.getOwnPropertyNames(${2})"
+    ],
+    "description": "Object.getOwnPropertyNames()方法返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性但不包括Symbol值作为名称的属性）组成的数组。\nObject.getOwnPropertyNames(obj)"
+  },
+  "Object.getOwnPropertySymbols(obj)": {
+    "prefix": "objgetownpropertysymbols",
+    "body": [
+      "Object.getOwnPropertySymbols(${2})"
+    ],
+    "description": "Object.getOwnPropertySymbols() 方法返回一个给定对象自身的所有 Symbol 属性的数组。\nObject.getOwnPropertySymbols(obj)"
+  },
+  "Object.getPrototypeOf(object)": {
+    "prefix": "objgetprototypeof",
+    "body": [
+      "Object.getPrototypeOf(${2})"
+    ],
+    "description": "Object.getPrototypeOf() 方法返回指定对象的原型（内部[[Prototype]]属性的值）。\nObject.getPrototypeOf(object)"
+  },
+  "Object.is(value1, value2);": {
+    "prefix": "objis",
+    "body": [
+      "Object.is(${2})"
+    ],
+    "description": "Object.is() 方法判断两个值是否是相同的值。\nObject.is(value1, value2);"
+  },
+  "Object.isExtensible(obj)": {
+    "prefix": "objisextensible",
+    "body": [
+      "Object.isExtensible(${2})"
+    ],
+    "description": "Object.isExtensible() 方法判断一个对象是否是可扩展的（是否可以在它上面添加新的属性）。\nObject.isExtensible(obj)"
+  },
+  "Object.isFrozen(obj)": {
+    "prefix": "objisfrozen",
+    "body": [
+      "Object.isFrozen(${2})"
+    ],
+    "description": "Object.isFrozen()方法判断一个对象是否被冻结。\nObject.isFrozen(obj)"
+  },
+  "Object.isSealed(obj)": {
+    "prefix": "objissealed",
+    "body": [
+      "Object.isSealed(${2})"
+    ],
+    "description": "Object.isSealed() 方法判断一个对象是否被密封。\nObject.isSealed(obj)"
+  },
+  "Object.keys(obj)": {
+    "prefix": "objkeys",
+    "body": [
+      "Object.keys(${2})"
+    ],
+    "description": "Object.keys() 方法会返回一个由一个给定对象的自身可枚举属性组成的数组，数组中属性名的排列顺序和使用 for...in 循环遍历该对象时返回的顺序一致 。\nObject.keys(obj)"
+  },
+  "Object.preventExtensions(obj)": {
+    "prefix": "objpreventextensions",
+    "body": [
+      "Object.preventExtensions(${2})"
+    ],
+    "description": "Object.preventExtensions()方法让一个对象变的不可扩展，也就是永远不能再添加新的属性。\nObject.preventExtensions(obj)"
+  },
+  "obj.hasOwnProperty(prop)": {
+    "prefix": "objhasownproperty",
+    "body": [
+      "${1:object}.hasOwnProperty(${2})"
+    ],
+    "description": "hasOwnProperty() 方法会返回一个布尔值，指示对象自身属性中是否具有指定的属性（也就是，是否有指定的键）。\nobj.hasOwnProperty(prop)"
+  },
+  "prototypeObj.isPrototypeOf(object)": {
+    "prefix": "objisprototypeof",
+    "body": [
+      "${1:object}.isPrototypeOf(${2})"
+    ],
+    "description": "isPrototypeOf() 方法用于测试一个对象是否存在于另一个对象的原型链上。\nprototypeObj.isPrototypeOf(object)"
+  },
+  "obj.propertyIsEnumerable(prop)": {
+    "prefix": "objpropertyisenumerable",
+    "body": [
+      "${1:object}.propertyIsEnumerable(${2})"
+    ],
+    "description": "propertyIsEnumerable() 方法返回一个布尔值，表示指定的属性是否可枚举。\nobj.propertyIsEnumerable(prop)"
+  },
+  "obj.toLocaleString();": {
+    "prefix": "objtolocalestring",
+    "body": [
+      "${1:object}.toLocaleString()"
+    ],
+    "description": "toLocaleString() 方法返回一个该对象的字符串表示。此方法被用于派生对象为了特定语言环境的目的（locale-specific purposes）而重载使用。\nobj.toLocaleString();"
+  },
+  "obj.toString()": {
+    "prefix": "objtostring",
+    "body": [
+      "${1:object}.toString()"
+    ],
+    "description": "toString() 方法返回一个表示该对象的字符串。\nobj.toString()"
+  },
+  "object.valueOf()": {
+    "prefix": "objvalueof",
+    "body": [
+      "${1:object}.valueOf()"
+    ],
+    "description": "valueOf() 方法返回指定对象的原始值。\nobject.valueOf()"
+  },
+  "Object.seal(obj)": {
+    "prefix": "objseal",
+    "body": [
+      "Object.seal(${2})"
+    ],
+    "description": "The source for this interactive example is stored in a GitHub repository. If you'd like to contribute to the interactive examples project, please clone https://github.com/mdn/interactive-examples and send us a pull request.\nObject.seal(obj)"
+  },
+  "Object.setPrototypeOf(obj, prototype)": {
+    "prefix": "objsetprototypeof",
+    "body": [
+      "Object.setPrototypeOf(${2})"
+    ],
+    "description": "如果对象的[[Prototype]]被修改成不可扩展(通过 Object.isExtensible()查看)，就会抛出 TypeError异常。如果prototype参数不是一个对象或者null(例如，数字，字符串，boolean，或者 undefined)，则什么都不做。否则，该方法将obj的[[Prototype]]修改为新的值。\nObject.setPrototypeOf(obj, prototype)"
+  },
+  "Object.values(obj)": {
+    "prefix": "objvalues",
+    "body": [
+      "Object.values(${2})"
+    ],
+    "description": "Object.values()方法返回一个给定对象自身的所有可枚举属性值的数组，值的顺序与使用for...in循环的顺序相同 ( 区别在于 for-in 循环枚举原型链中的属性 )。\nObject.values(obj)"
+  },
+  "Promise.all(iterable);": {
+    "prefix": "proall",
+    "body": [
+      "Promise.all(${2})"
+    ],
+    "description": "Promise.all(iterable) 方法返回一个 Promise 实例，此实例在 iterable 参数内所有的 promise 都“完成（resolved）”或参数中不包含 promise 时回调完成（resolve）；如果参数中  promise 有一个失败（rejected），此实例回调失败（reject），失败的原因是第一个失败 promise 的结果。\nPromise.all(iterable);"
+  },
+  "p.catch(onRejected);\n\np.catch(function(reason) {\n   // 拒绝\n});": {
+    "prefix": "procatch",
+    "body": [
+      "${1:promise}.catch(${2})"
+    ],
+    "description": "catch() 方法返回一个Promise，并且处理拒绝的情况。它的行为与调用Promise.prototype.then(undefined, onRejected) 相同。 (事实上, calling obj.catch(onRejected) 内部calls obj.then(undefined, onRejected)).\np.catch(onRejected);\n\np.catch(function(reason) {\n   // 拒绝\n});"
+  },
+  "p.finally(onFinally);\n\np.finally(function() {\n   // 返回状态为(resolved 或 rejected)\n});": {
+    "prefix": "profinally",
+    "body": [
+      "${1:promise}.finally(${2})"
+    ],
+    "description": "返回一个设置了 finally 回调函数的Promise对象。\np.finally(onFinally);\n\np.finally(function() {\n   // 返回状态为(resolved 或 rejected)\n});"
+  },
+  "p.then(onFulfilled[, onRejected]);\n\np.then(value => {\n  // fulfillment\n}, reason => {\n  // rejection\n});": {
+    "prefix": "prothen",
+    "body": [
+      "${1:promise}.then(${2})"
+    ],
+    "description": "then() 方法返回一个 Promise。它最多需要有两个参数：Promise 的成功和失败情况的回调函数。\np.then(onFulfilled[, onRejected]);\n\np.then(value => {\n  // fulfillment\n}, reason => {\n  // rejection\n});"
+  },
+  "Promise.race(iterable);": {
+    "prefix": "prorace",
+    "body": [
+      "Promise.race(${2})"
+    ],
+    "description": "Promise.race(iterable) 方法返回一个 promise，一旦迭代器中的某个promise解决或拒绝，返回的 promise就会解决或拒绝。\nPromise.race(iterable);"
+  },
+  "Promise.reject(reason);": {
+    "prefix": "proreject",
+    "body": [
+      "Promise.reject(${2})"
+    ],
+    "description": "Promise.reject()方法返回一个带有拒绝原因的Promise对象。\nPromise.reject(reason);"
+  },
+  "Promise.resolve(value);": {
+    "prefix": "proresolve",
+    "body": [
+      "Promise.resolve(${2})"
+    ],
+    "description": "The source for this interactive demo is stored in a GitHub repository. If you'd like to contribute to the interactive demo project, please clone https://github.com/mdn/interactive-examples and send us a pull request.\nPromise.resolve(value);"
+  },
+  "Reflect.apply(target, thisArgument, argumentsList)": {
+    "prefix": "refapply",
+    "body": [
+      "Reflect.apply(${2})"
+    ],
+    "description": "静态方法 Reflect.apply() 通过指定的参数列表发起对目标(target)函数的调用。\nReflect.apply(target, thisArgument, argumentsList)"
+  },
+  "Reflect.construct(target, argumentsList[, newTarget])": {
+    "prefix": "refconstruct",
+    "body": [
+      "Reflect.construct(${2})"
+    ],
+    "description": "Reflect.construct() 方法的行为有点像 new 操作符 构造函数 ， 相当于运行 new target(...args).\nReflect.construct(target, argumentsList[, newTarget])"
+  },
+  "Reflect.defineProperty(target, propertyKey, attributes)": {
+    "prefix": "refdefineproperty",
+    "body": [
+      "Reflect.defineProperty(${2})"
+    ],
+    "description": "静态方法 Reflect.defineProperty() 基本等同于 Object.defineProperty() 方法，唯一不同是返回 Boolean 值。\nReflect.defineProperty(target, propertyKey, attributes)"
+  },
+  "Reflect.deleteProperty(target, propertyKey)": {
+    "prefix": "refdeleteproperty",
+    "body": [
+      "Reflect.deleteProperty(${2})"
+    ],
+    "description": "静态方法 Reflect.deleteProperty() 允许用于删除属性。它很像 delete operator ，但它是一个函数。\nReflect.deleteProperty(target, propertyKey)"
+  },
+  "Reflect.get(target, propertyKey[, receiver])": {
+    "prefix": "refget",
+    "body": [
+      "Reflect.get(${2})"
+    ],
+    "description": "Reflect.get()方法与从 对象 (target[propertyKey]) 中读取属性类似，但它是通过一个函数执行来操作的。\nReflect.get(target, propertyKey[, receiver])"
+  },
+  "Reflect.getOwnPropertyDescriptor(target, propertyKey)": {
+    "prefix": "refgetownpropertydescriptor",
+    "body": [
+      "Reflect.getOwnPropertyDescriptor(${2})"
+    ],
+    "description": "静态方法 Reflect.getOwnPropertyDescriptor() 与 Object.getOwnPropertyDescriptor() 方法相似。如果在对象中存在，则返回给定的属性的属性描述符。否则返回 undefined。\nReflect.getOwnPropertyDescriptor(target, propertyKey)"
+  },
+  "Reflect.getPrototypeOf(target)": {
+    "prefix": "refgetprototypeof",
+    "body": [
+      "Reflect.getPrototypeOf(${2})"
+    ],
+    "description": "静态方法 Reflect.getPrototypeOf() 与 Object.getPrototypeOf() 方法几乎是一样的。都是返回指定对象的原型（即内部的 [[Prototype]] 属性的值）。\nReflect.getPrototypeOf(target)"
+  },
+  "Reflect.isExtensible(target)": {
+    "prefix": "refisextensible",
+    "body": [
+      "Reflect.isExtensible(${2})"
+    ],
+    "description": "静态方法 Reflect.isExtensible() 判断一个对象是否可扩展 （即是否能够添加新的属性）。与它 Object.isExtensible() 方法相似，但有一些不同，详情可见 differences。\nReflect.isExtensible(target)"
+  },
+  "Reflect.ownKeys(target)": {
+    "prefix": "refownkeys",
+    "body": [
+      "Reflect.ownKeys(${2})"
+    ],
+    "description": "静态方法 Reflect.ownKeys() 返回一个由目标对象自身的属性键组成的数组。\nReflect.ownKeys(target)"
+  },
+  "Reflect.preventExtensions(target)": {
+    "prefix": "refpreventextensions",
+    "body": [
+      "Reflect.preventExtensions(${2})"
+    ],
+    "description": "静态方法 Reflect.preventExtensions() 方法阻止新属性添加到对象 (例如：防止将来对对象的扩展被添加到对象中)。该方法与 Object.preventExtensions()相似，但有一些不同点。详情可见 differences。\nReflect.preventExtensions(target)"
+  },
+  "Reflect.set(target, propertyKey, value[, receiver])": {
+    "prefix": "refset",
+    "body": [
+      "Reflect.set(${2})"
+    ],
+    "description": "静态方法 Reflect.set() 工作方式就像在一个对象上设置一个属性。\nReflect.set(target, propertyKey, value[, receiver])"
+  },
+  "Reflect.setPrototypeOf(target, prototype)": {
+    "prefix": "refsetprototypeof",
+    "body": [
+      "Reflect.setPrototypeOf(${2})"
+    ],
+    "description": "除了返回类型以外，静态方法 Reflect.setPrototypeOf() 与 Object.setPrototypeOf() 方法是一样的。它可设置对象的原型（即内部的 [[Prototype]] 属性）为另一个对象或 null，如果操作成功返回 true，否则返回 false。\nReflect.setPrototypeOf(target, prototype)"
+  },
+  "regexObj.exec(str)": {
+    "prefix": "regexec",
+    "body": [
+      "${1:regexp}.exec(${2})"
+    ],
+    "description": "exec() 方法在一个指定字符串中执行一个搜索匹配。返回一个结果数组或 null。\nregexObj.exec(str)"
+  },
+  "regexObj.test(str)": {
+    "prefix": "regtest",
+    "body": [
+      "${1:regexp}.test(${2})"
+    ],
+    "description": "test() 方法执行一个检索，用来查看正则表达式与指定的字符串是否匹配。返回 true 或 false。\nregexObj.test(str)"
+  },
+  "regexObj.toString()": {
+    "prefix": "regtostring",
+    "body": [
+      "${1:regexp}.toString()"
+    ],
+    "description": "toString() 返回一个表示该正则表达式的字符串。\nregexObj.toString()"
+  },
+  "mySet.add(value);": {
+    "prefix": "setadd",
+    "body": [
+      "${1:set}.add(${2})"
+    ],
+    "description": "add() 方法用来向一个 Set 对象的末尾添加一个指定的值。\nmySet.add(value);"
+  },
+  "mySet.clear();": {
+    "prefix": "setclear",
+    "body": [
+      "${1:set}.clear()"
+    ],
+    "description": "clear() 方法用来清空一个 Set 对象中的所有元素。\nmySet.clear();"
+  },
+  "mySet.delete(value);": {
+    "prefix": "setdelete",
+    "body": [
+      "${1:set}.delete(${2})"
+    ],
+    "description": "delete() 方法可以从一个 Set 对象中删除指定的元素。\nmySet.delete(value);"
+  },
+  "mySet.entries()": {
+    "prefix": "setentries",
+    "body": [
+      "${1:set}.entries()"
+    ],
+    "description": "entries() 方法返回一个新的迭代器对象 ，这个对象的元素是类似 [value, value] 形式的数组，value 是集合对象中的每个元素，迭代器对象元素的顺序即集合对象中元素插入的顺序。由于集合对象不像 Map 对象那样拥有 key，然而，为了与 Map 对象的 API 形式保持一致，故使得每一个 entry 的 key 和 value 都拥有相同的值，因而最终返回一个 [value, value] 形式的数组。\nmySet.entries()"
+  },
+  "mySet.forEach(callback[, thisArg])": {
+    "prefix": "setforeach",
+    "body": [
+      "${1:set}.forEach(${2})"
+    ],
+    "description": "forEach 方法会根据集合中元素的插入顺序，依次执行提供的回调函数。\nmySet.forEach(callback[, thisArg])"
+  },
+  "mySet.has(value);": {
+    "prefix": "sethas",
+    "body": [
+      "${1:set}.has(${2})"
+    ],
+    "description": "has() 方法返回一个布尔值来指示对应的值value是否存在Set对象中。\nmySet.has(value);"
+  },
+  "mySet.values();": {
+    "prefix": "setvalues",
+    "body": [
+      "${1:set}.values()"
+    ],
+    "description": "values() 方法返回一个 Iterator  对象，该对象按照原Set 对象元素的插入顺序返回其所有元素。\nmySet.values();"
+  },
+  "sab.slice()\nsab.slice(begin)\nsab.slice(begin, end)": {
+    "prefix": "shaslice",
+    "body": [
+      "${1:sharedarraybuffer}.slice(${2})"
+    ],
+    "description": "SharedArrayBuffer.prototype.slice() 方法返回一个新的SharedArrayBuffer 副本，其内容是该SharedArrayBuffer的字节从begin开始(包含begin)，直到end结束(不包含end)。如果begin或end是负的，它指的是从数组末尾开始的索引。此方法与 Array.prototype.slice() 具有相同的算法。\nsab.slice()\nsab.slice(begin)\nsab.slice(begin, end)"
+  },
+  "String.fromCharCode(num1, ..., numN)": {
+    "prefix": "strfromcharcode",
+    "body": [
+      "String.fromCharCode(${2})"
+    ],
+    "description": "静态 String.fromCharCode() 方法返回由指定的UTF-16代码单元序列创建的字符串。\nString.fromCharCode(num1, ..., numN)"
+  },
+  "String.fromCodePoint(num1[, ...[, numN]])": {
+    "prefix": "strfromcodepoint",
+    "body": [
+      "String.fromCodePoint(${2})"
+    ],
+    "description": "String.fromCodePoint() 静态方法返回使用指定的代码点序列创建的字符串。\nString.fromCodePoint(num1[, ...[, numN]])"
+  },
+  "str.charAt(index)": {
+    "prefix": "strcharat",
+    "body": [
+      "${1:string}.charAt(${2})"
+    ],
+    "description": "charAt() 方法从一个字符串中返回指定的字符。\nstr.charAt(index)"
+  },
+  "str.charCodeAt(index)": {
+    "prefix": "strcharcodeat",
+    "body": [
+      "${1:string}.charCodeAt(${2})"
+    ],
+    "description": "charCodeAt() 方法返回0到65535之间的整数，表示给定索引处的UTF-16代码单元 (在 Unicode 编码单元表示一个单一的 UTF-16 编码单元的情况下，UTF-16 编码单元匹配 Unicode 编码单元。但在——例如 Unicode 编码单元 > 0x10000 的这种——不能被一个 UTF-16 编码单元单独表示的情况下，只能匹配 Unicode 代理对的第一个编码单元) 。如果你想要整个代码点的值，使用 codePointAt()。\nstr.charCodeAt(index)"
+  },
+  "str.codePointAt(pos)": {
+    "prefix": "strcodepointat",
+    "body": [
+      "${1:string}.codePointAt(${2})"
+    ],
+    "description": "codePointAt() 方法返回 一个 Unicode 编码点值的非负整数。\nstr.codePointAt(pos)"
+  },
+  "str.concat(string2, string3[, ..., stringN])": {
+    "prefix": "strconcat",
+    "body": [
+      "${1:string}.concat(${2})"
+    ],
+    "description": "concat() 方法将一个或多个字符串与原字符串连接合并，形成一个新的字符串并返回。\nstr.concat(string2, string3[, ..., stringN])"
+  },
+  "str.endsWith(searchString[, length])": {
+    "prefix": "strendswith",
+    "body": [
+      "${1:string}.endsWith(${2})"
+    ],
+    "description": "endsWith()方法用来判断当前字符串是否是以另外一个给定的子字符串“结尾”的，根据判断结果返回 true 或 false。\nstr.endsWith(searchString[, length])"
+  },
+  "str.includes(searchString[, position])": {
+    "prefix": "strincludes",
+    "body": [
+      "${1:string}.includes(${2})"
+    ],
+    "description": "includes() 方法用于判断一个字符串是否包含在另一个字符串中，根据情况返回 true 或 false。\nstr.includes(searchString[, position])"
+  },
+  "str.indexOf(searchValue [, fromIndex])": {
+    "prefix": "strindexof",
+    "body": [
+      "${1:string}.indexOf(${2})"
+    ],
+    "description": "indexOf() 方法返回调用它的 String 对象中第一次出现的指定值的索引，从 fromIndex 处进行搜索。如果未找到该值，则返回 -1。\nstr.indexOf(searchValue [, fromIndex])"
+  },
+  "str.lastIndexOf(searchValue[, fromIndex])": {
+    "prefix": "strlastindexof",
+    "body": [
+      "${1:string}.lastIndexOf(${2})"
+    ],
+    "description": "\nstr.lastIndexOf(searchValue[, fromIndex])"
+  },
+  "referenceStr.localeCompare(compareString[, locales[, options]])": {
+    "prefix": "strlocalecompare",
+    "body": [
+      "${1:string}.localeCompare(${2})"
+    ],
+    "description": "localeCompare() 方法返回一个数字来指示一个参考字符串是否在排序顺序前面或之后或与给定字符串相同。\nreferenceStr.localeCompare(compareString[, locales[, options]])"
+  },
+  "str.match(regexp)": {
+    "prefix": "strmatch",
+    "body": [
+      "${1:string}.match(${2})"
+    ],
+    "description": "match() 方法检索返回一个字符串匹配正则表达式的的结果。\nstr.match(regexp)"
+  },
+  "str.matchAll(regexp)": {
+    "prefix": "strmatchall",
+    "body": [
+      "${1:string}.matchAll(${2})"
+    ],
+    "description": "matchAll() 方法返回一个包含所有匹配正则表达式的结果及分组捕获组的迭代器。\nstr.matchAll(regexp)"
+  },
+  "str.normalize([form])": {
+    "prefix": "strnormalize",
+    "body": [
+      "${1:string}.normalize(${2})"
+    ],
+    "description": "normalize() 方法会按照指定的一种 Unicode 正规形式将当前字符串正规化。（如果该值不是字符串，则首先将其转换为一个字符串）。\nstr.normalize([form])"
+  },
+  "str.padEnd(targetLength [, padString])": {
+    "prefix": "strpadend",
+    "body": [
+      "${1:string}.padEnd(${2})"
+    ],
+    "description": "padEnd()  方法会用一个字符串填充当前字符串（如果需要的话则重复填充），返回填充后达到指定长度的字符串。从当前字符串的末尾（右侧）开始填充。\nstr.padEnd(targetLength [, padString])"
+  },
+  "str.padStart(targetLength [, padString])": {
+    "prefix": "strpadstart",
+    "body": [
+      "${1:string}.padStart(${2})"
+    ],
+    "description": "padStart() 方法用另一个字符串填充当前字符串(重复，如果需要的话)，以便产生的字符串达到给定的长度。填充从当前字符串的开始(左侧)应用的。\nstr.padStart(targetLength [, padString])"
+  },
+  "/** \n * str: String\n * count: Number\n */\n\nlet resultString = str.repeat(count);": {
+    "prefix": "strrepeat",
+    "body": [
+      "${1:string}.repeat(${2})"
+    ],
+    "description": "\n/** \n * str: String\n * count: Number\n */\n\nlet resultString = str.repeat(count);"
+  },
+  "str.replace(regexp|substr, newSubStr|function)": {
+    "prefix": "strreplace",
+    "body": [
+      "${1:string}.replace(${2})"
+    ],
+    "description": "replace() 方法返回一个由替换值（replacement）替换一些或所有匹配的模式（pattern）后的新字符串。模式可以是一个字符串或者一个正则表达式，替换值可以是一个字符串或者一个每次匹配都要调用的回调函数。\nstr.replace(regexp|substr, newSubStr|function)"
+  },
+  "str.search(regexp)": {
+    "prefix": "strsearch",
+    "body": [
+      "${1:string}.search(${2})"
+    ],
+    "description": "search() 方法执行正则表达式和 String 对象之间的一个搜索匹配。\nstr.search(regexp)"
+  },
+  "str.slice(beginIndex[, endIndex])": {
+    "prefix": "strslice",
+    "body": [
+      "${1:string}.slice(${2})"
+    ],
+    "description": "slice() 方法提取某个字符串的一部分，并返回一个新的字符串，且不会改动原字符串。\nstr.slice(beginIndex[, endIndex])"
+  },
+  "str.split([separator[, limit]])": {
+    "prefix": "strsplit",
+    "body": [
+      "${1:string}.split(${2})"
+    ],
+    "description": "split() 方法使用指定的分隔符字符串将一个String对象分割成子字符串数组，以一个指定的分割字串来决定每个拆分的位置。\nstr.split([separator[, limit]])"
+  },
+  "str.startsWith(searchString[, position])": {
+    "prefix": "strstartswith",
+    "body": [
+      "${1:string}.startsWith(${2})"
+    ],
+    "description": "startsWith() 方法用来判断当前字符串是否以另外一个给定的子字符串开头，并根据判断结果返回 true 或 false。\nstr.startsWith(searchString[, position])"
+  },
+  "str.substring(indexStart[, indexEnd])": {
+    "prefix": "strsubstring",
+    "body": [
+      "${1:string}.substring(${2})"
+    ],
+    "description": "substring() 方法返回一个字符串在开始索引到结束索引之间的一个子集, 或从开始索引直到字符串的末尾的一个子集。\nstr.substring(indexStart[, indexEnd])"
+  },
+  "str.toLocaleLowerCase()\nstr.toLocaleLowerCase(locale) \nstr.toLocaleLowerCase([locale, locale, ...])": {
+    "prefix": "strtolocalelowercase",
+    "body": [
+      "${1:string}.toLocaleLowerCase(${2})"
+    ],
+    "description": "toLocaleLowerCase()方法根据任何指定区域语言环境设置的大小写映射，返回调用字符串被转换为小写的格式。\nstr.toLocaleLowerCase()\nstr.toLocaleLowerCase(locale) \nstr.toLocaleLowerCase([locale, locale, ...])"
+  },
+  "str.toLocaleUpperCase()\nstr.toLocaleUpperCase(locale) \nstr.toLocaleUpperCase([locale, locale, ...])": {
+    "prefix": "strtolocaleuppercase",
+    "body": [
+      "${1:string}.toLocaleUpperCase(${2})"
+    ],
+    "description": "The toLocaleUpperCase() method returns the calling string value converted to upper case, according to any locale-specific case mappings.\nstr.toLocaleUpperCase()\nstr.toLocaleUpperCase(locale) \nstr.toLocaleUpperCase([locale, locale, ...])"
+  },
+  "str.toLowerCase()": {
+    "prefix": "strtolowercase",
+    "body": [
+      "${1:string}.toLowerCase()"
+    ],
+    "description": "toLowerCase() 会将调用该方法的字符串值转为小写形式，并返回。\nstr.toLowerCase()"
+  },
+  "str.toString()": {
+    "prefix": "strtostring",
+    "body": [
+      "${1:string}.toString()"
+    ],
+    "description": "toString() 方法返回指定对象的字符串形式。\nstr.toString()"
+  },
+  "str.toUpperCase()": {
+    "prefix": "strtouppercase",
+    "body": [
+      "${1:string}.toUpperCase()"
+    ],
+    "description": "The toUpperCase() method returns the calling string value converted to uppercase (the value will be converted to a string if it isn't one).\nstr.toUpperCase()"
+  },
+  "str.trim()": {
+    "prefix": "strtrim",
+    "body": [
+      "${1:string}.trim()"
+    ],
+    "description": "trim() 方法会从一个字符串的两端删除空白字符。在这个上下文中的空白字符是所有的空白字符 (space, tab, no-break space 等) 以及所有行终止符字符（如 LF，CR等）。\nstr.trim()"
+  },
+  "str.trimEnd();\nstr.trimRight();": {
+    "prefix": "strtrimright",
+    "body": [
+      "${1:string}.trimEnd(${2})"
+    ],
+    "description": "trimEnd() 方法从一个字符串的末端移除空白字符。trimRight() 是这个方法的别名。\nstr.trimEnd();\nstr.trimRight();"
+  },
+  "str.trimStart();\nstr.trimLeft();": {
+    "prefix": "strtrimleft",
+    "body": [
+      "${1:string}.trimStart(${2})"
+    ],
+    "description": "The source for this interactive example is stored in a GitHub repository. If you'd like to contribute to the interactive examples project, please clone https://github.com/mdn/interactive-examples and send us a pull request.\nstr.trimStart();\nstr.trimLeft();"
+  },
+  "str.valueOf()": {
+    "prefix": "strvalueof",
+    "body": [
+      "${1:string}.valueOf()"
+    ],
+    "description": "The valueOf() method returns the primitive value of a String object.\nstr.valueOf()"
+  },
+  "String.raw(callSite, ...substitutions)\n\nString.raw`templateString`": {
+    "prefix": "strraw",
+    "body": [
+      "String.raw(${2})"
+    ],
+    "description": "String.raw() 是一个模板字符串的标签函数，它的作用类似于 Python 中的字符串前缀 r 和 C# 中的字符串前缀 @（还是有点区别的，详见隔壁 Chromium 那边的这个 issue），是用来获取一个模板字符串的原始字符串的，比如说，占位符（例如 ${foo}）会被处理为它所代表的其他字符串，而转义字符（例如 \\n）不会。\nString.raw(callSite, ...substitutions)\n\nString.raw`templateString`"
+  },
+  "Symbol.for(key);": {
+    "prefix": "symfor",
+    "body": [
+      "Symbol.for(${2})"
+    ],
+    "description": "Symbol.for(key) 方法会根据给定的键 key，来从运行时的 symbol 注册表中找到对应的 symbol，如果找到了，则返回它，否则，新建一个与该键关联的 symbol，并放入全局 symbol 注册表中。\nSymbol.for(key);"
+  },
+  "Symbol.keyFor(sym);": {
+    "prefix": "symkeyfor",
+    "body": [
+      "Symbol.keyFor(${2})"
+    ],
+    "description": "Symbol.keyFor(sym) 方法用来获取 symbol 注册表中与某个 symbol 关联的键。\nSymbol.keyFor(sym);"
+  },
+  "Symbol.toSource()\n\nvar sym = Symbol()\nsym.toSource()": {
+    "prefix": "symtosource",
+    "body": [
+      "Symbol.toSource(${2})"
+    ],
+    "description": "toSource() 方法返回代表该对象源码的字符串。\nSymbol.toSource()\n\nvar sym = Symbol()\nsym.toSource()"
+  },
+  "symbol.toString();": {
+    "prefix": "symtostring",
+    "body": [
+      "${1:symbol}.toString()"
+    ],
+    "description": "toString() 方法返回当前 symbol 对象的字符串表示。\nsymbol.toString();"
+  },
+  "symbol.valueOf();": {
+    "prefix": "symvalueof",
+    "body": [
+      "${1:symbol}.valueOf()"
+    ],
+    "description": "valueOf() 方法返回当前 symbol 对象所包含的 symbol 原始值。\nsymbol.valueOf();"
+  },
+  "wm.delete(key);": {
+    "prefix": "weadelete",
+    "body": [
+      "${1:weakmap}.delete(${2})"
+    ],
+    "description": "delete() 方法可以从一个 WeakMap 对象中删除指定的元素。\nwm.delete(key);"
+  },
+  "wm.get(key);": {
+    "prefix": "weaget",
+    "body": [
+      "${1:weakmap}.get(${2})"
+    ],
+    "description": "get() 方法返回  WeakMap 指定的元素。\nwm.get(key);"
+  },
+  "wm.has(key);": {
+    "prefix": "weahas",
+    "body": [
+      "${1:weakmap}.has(${2})"
+    ],
+    "description": "has() 方法根据WeakMap对象的元素中是否存在key键返回一个boolean值。\nwm.has(key);"
+  },
+  "wm.set(key, value);": {
+    "prefix": "weaset",
+    "body": [
+      "${1:weakmap}.set(${2})"
+    ],
+    "description": "set() 方法根据指定的key和value在 WeakMap对象中添加新/更新元素。\nwm.set(key, value);"
+  },
+  "ws.add(value);": {
+    "prefix": "weaadd",
+    "body": [
+      "${1:weakset}.add(${2})"
+    ],
+    "description": "add() 方法在 WeakSet 对象的最后一个元素后添加新的对象。\nws.add(value);"
+  },
+  "ws.delete(value);": {
+    "prefix": "weadelete",
+    "body": [
+      "${1:weakset}.delete(${2})"
+    ],
+    "description": "delete() 方法从 WeakSet 对象中移除指定的元素。\nws.delete(value);"
+  },
+  "ws.has(value);": {
+    "prefix": "weahas",
+    "body": [
+      "${1:weakset}.has(${2})"
+    ],
+    "description": "has() 方法根据 WeakSet 是否存在相应对象返回布尔值。\nws.has(value);"
+  },
+  "Promise<WebAssembly.Module> WebAssembly.compile(bufferSource);": {
+    "prefix": "webcompile",
+    "body": [
+      "WebAssembly.compile(${2})"
+    ],
+    "description": "WebAssembly.compile() 方法编译WebAssembly二进制代码到一个WebAssembly.Module 对象。如果在实例化之前有必要去编译一个模块，那么这个方法是有用的（否则，将会使用WebAssembly.instantiate() 方法）\nPromise<WebAssembly.Module> WebAssembly.compile(bufferSource);"
+  },
+  "Promise<WebAssembly.Module> WebAssembly.compileStreaming(source);": {
+    "prefix": "webcompilestreaming",
+    "body": [
+      "WebAssembly.compileStreaming(${2})"
+    ],
+    "description": "WebAssembly.compileStreaming() 方法用来从一个流式源中直接编译一个 WebAssembly.Module。当模块需要在被实例化前被编译时，这个方法会很有用。如果要从流式源实例化一个模块应采用 WebAssembly.instantiateStreaming() 方法。\nPromise<WebAssembly.Module> WebAssembly.compileStreaming(source);"
+  },
+  "Promise<ResultObject> WebAssembly.instantiateStreaming(source, importObject);": {
+    "prefix": "webinstantiatestreaming",
+    "body": [
+      "WebAssembly.instantiateStreaming(${2})"
+    ],
+    "description": "WebAssembly.instantiateStreaming() 方法直接从流式底层源编译和实例化WebAssembly模块。这是加载wasm代码一种非常有效的优化方式。\nPromise<ResultObject> WebAssembly.instantiateStreaming(source, importObject);"
+  },
+  "WebAssembly.validate(bufferSource);": {
+    "prefix": "webvalidate",
+    "body": [
+      "WebAssembly.validate(${2})"
+    ],
+    "description": "WebAssembly.validate() 方法用于验证包含 WebAssembly 二进制码的一个 typed array 是否合法，返回 true 如果这些字节能构成一个合法的 wasm 模块，否则返回 false。\nWebAssembly.validate(bufferSource);"
   },
   "console.assert()": {
     "prefix": "assert",
@@ -259,7 +2301,7 @@
     "body": [
       "extends"
     ],
-    "description": "Allows declaratively extending another component (could be either a plain options object or a constructor) without having to use Vue.extend. "
+    "description": "允许以声明方式扩展另一个组件（可以是纯选项对象或构造函数），而不必使用Vue.extend。"
   },
   "typeof": {
     "prefix": "typeof",
@@ -403,676 +2445,6 @@
     ],
     "description": "控制语句"
   },
-  "Date.UTC()": {
-    "prefix": "dateutc",
-    "body": "Date.UTC(${1})",
-    "description": "Date - Date.UTC()"
-  },
-  "Date.now()": {
-    "prefix": "datenow",
-    "body": "Date.now(${1})",
-    "description": "Date - Date.now()"
-  },
-  "Date.parse()": {
-    "prefix": "dateparse",
-    "body": "Date.parse(${1})",
-    "description": "Date - Date.parse()"
-  },
-  "Date.prototype.getDate()": {
-    "prefix": "dategetdate",
-    "body": "${1:date}.getDate(${2})",
-    "description": "Date - Date.prototype.getDate()"
-  },
-  "Date.prototype.getDay()": {
-    "prefix": "dategetday",
-    "body": "${1:date}.getDay(${2})",
-    "description": "Date - Date.prototype.getDay()"
-  },
-  "Date.prototype.getFullYear()": {
-    "prefix": "dategetfullyear",
-    "body": "${1:date}.getFullYear(${2})",
-    "description": "Date - Date.prototype.getFullYear()"
-  },
-  "Date.prototype.getHours()": {
-    "prefix": "dategethours",
-    "body": "${1:date}.getHours(${2})",
-    "description": "Date - Date.prototype.getHours()"
-  },
-  "Date.prototype.getMilliseconds()": {
-    "prefix": "dategetmilliseconds",
-    "body": "${1:date}.getMilliseconds(${2})",
-    "description": "Date - Date.prototype.getMilliseconds()"
-  },
-  "Date.prototype.getMinutes()": {
-    "prefix": "dategetminutes",
-    "body": "${1:date}.getMinutes(${2})",
-    "description": "Date - Date.prototype.getMinutes()"
-  },
-  "Date.prototype.getMonth()": {
-    "prefix": "dategetmonth",
-    "body": "${1:date}.getMonth(${2})",
-    "description": "Date - Date.prototype.getMonth()"
-  },
-  "Date.prototype.getSeconds()": {
-    "prefix": "dategetseconds",
-    "body": "${1:date}.getSeconds(${2})",
-    "description": "Date - Date.prototype.getSeconds()"
-  },
-  "Date.prototype.getTime()": {
-    "prefix": "dategettime",
-    "body": "${1:date}.getTime(${2})",
-    "description": "Date - Date.prototype.getTime()"
-  },
-  "Date.prototype.getTimezoneOffset()": {
-    "prefix": "dategettimezoneoffset",
-    "body": "${1:date}.getTimezoneOffset(${2})",
-    "description": "Date - Date.prototype.getTimezoneOffset()"
-  },
-  "Date.prototype.getUTCDate()": {
-    "prefix": "dategetutcdate",
-    "body": "${1:date}.getUTCDate(${2})",
-    "description": "Date - Date.prototype.getUTCDate()"
-  },
-  "Date.prototype.getUTCDay()": {
-    "prefix": "dategetutcday",
-    "body": "${1:date}.getUTCDay(${2})",
-    "description": "Date - Date.prototype.getUTCDay()"
-  },
-  "Date.prototype.getUTCFullYear()": {
-    "prefix": "dategetutcfullyear",
-    "body": "${1:date}.getUTCFullYear(${2})",
-    "description": "Date - Date.prototype.getUTCFullYear()"
-  },
-  "Date.prototype.getUTCHours()": {
-    "prefix": "dategetutchours",
-    "body": "${1:date}.getUTCHours(${2})",
-    "description": "Date - Date.prototype.getUTCHours()"
-  },
-  "Date.prototype.getUTCMilliseconds()": {
-    "prefix": "dategetutcmilliseconds",
-    "body": "${1:date}.getUTCMilliseconds(${2})",
-    "description": "Date - Date.prototype.getUTCMilliseconds()"
-  },
-  "Date.prototype.getUTCMinutes()": {
-    "prefix": "dategetutcminutes",
-    "body": "${1:date}.getUTCMinutes(${2})",
-    "description": "Date - Date.prototype.getUTCMinutes()"
-  },
-  "Date.prototype.getUTCMonth()": {
-    "prefix": "dategetutcmonth",
-    "body": "${1:date}.getUTCMonth(${2})",
-    "description": "Date - Date.prototype.getUTCMonth()"
-  },
-  "Date.prototype.getUTCSeconds()": {
-    "prefix": "dategetutcseconds",
-    "body": "${1:date}.getUTCSeconds(${2})",
-    "description": "Date - Date.prototype.getUTCSeconds()"
-  },
-  "Date.prototype.setDate()": {
-    "prefix": "datesetdate",
-    "body": "${1:date}.setDate(${2})",
-    "description": "Date - Date.prototype.setDate()"
-  },
-  "Date.prototype.setFullYear()": {
-    "prefix": "datesetfullyear",
-    "body": "${1:date}.setFullYear(${2})",
-    "description": "Date - Date.prototype.setFullYear()"
-  },
-  "Date.prototype.setHours()": {
-    "prefix": "datesethours",
-    "body": "${1:date}.setHours(${2})",
-    "description": "Date - Date.prototype.setHours()"
-  },
-  "Date.prototype.setMilliseconds()": {
-    "prefix": "datesetmilliseconds",
-    "body": "${1:date}.setMilliseconds(${2})",
-    "description": "Date - Date.prototype.setMilliseconds()"
-  },
-  "Date.prototype.setMinutes()": {
-    "prefix": "datesetminutes",
-    "body": "${1:date}.setMinutes(${2})",
-    "description": "Date - Date.prototype.setMinutes()"
-  },
-  "Date.prototype.setMonth()": {
-    "prefix": "datesetmonth",
-    "body": "${1:date}.setMonth(${2})",
-    "description": "Date - Date.prototype.setMonth()"
-  },
-  "Date.prototype.setSeconds()": {
-    "prefix": "datesetseconds",
-    "body": "${1:date}.setSeconds(${2})",
-    "description": "Date - Date.prototype.setSeconds()"
-  },
-  "Date.prototype.setTime()": {
-    "prefix": "datesettime",
-    "body": "${1:date}.setTime(${2})",
-    "description": "Date - Date.prototype.setTime()"
-  },
-  "Date.prototype.setUTCDate()": {
-    "prefix": "datesetutcdate",
-    "body": "${1:date}.setUTCDate(${2})",
-    "description": "Date - Date.prototype.setUTCDate()"
-  },
-  "Date.prototype.setUTCFullYear()": {
-    "prefix": "datesetutcfullyear",
-    "body": "${1:date}.setUTCFullYear(${2})",
-    "description": "Date - Date.prototype.setUTCFullYear()"
-  },
-  "Date.prototype.setUTCHours()": {
-    "prefix": "datesetutchours",
-    "body": "${1:date}.setUTCHours(${2})",
-    "description": "Date - Date.prototype.setUTCHours()"
-  },
-  "Date.prototype.setUTCMilliseconds()": {
-    "prefix": "datesetutcmilliseconds",
-    "body": "${1:date}.setUTCMilliseconds(${2})",
-    "description": "Date - Date.prototype.setUTCMilliseconds()"
-  },
-  "Date.prototype.setUTCMinutes()": {
-    "prefix": "datesetutcminutes",
-    "body": "${1:date}.setUTCMinutes(${2})",
-    "description": "Date - Date.prototype.setUTCMinutes()"
-  },
-  "Date.prototype.setUTCMonth()": {
-    "prefix": "datesetutcmonth",
-    "body": "${1:date}.setUTCMonth(${2})",
-    "description": "Date - Date.prototype.setUTCMonth()"
-  },
-  "Date.prototype.setUTCSeconds()": {
-    "prefix": "datesetutcseconds",
-    "body": "${1:date}.setUTCSeconds(${2})",
-    "description": "Date - Date.prototype.setUTCSeconds()"
-  },
-  "Date.prototype.toDateString()": {
-    "prefix": "datetodatestring",
-    "body": "${1:date}.toDateString(${2})",
-    "description": "Date - Date.prototype.toDateString()"
-  },
-  "Date.prototype.toISOString()": {
-    "prefix": "datetoisostring",
-    "body": "${1:date}.toISOString(${2})",
-    "description": "Date - Date.prototype.toISOString()"
-  },
-  "Date.prototype.toJSON()": {
-    "prefix": "datetojson",
-    "body": "${1:date}.toJSON(${2})",
-    "description": "Date - Date.prototype.toJSON()"
-  },
-  "Date.prototype.toLocaleDateString()": {
-    "prefix": "datetolocaledatestring",
-    "body": "${1:date}.toLocaleDateString(${2})",
-    "description": "Date - Date.prototype.toLocaleDateString()"
-  },
-  "Date.prototype.toLocaleString()": {
-    "prefix": "datetolocalestring",
-    "body": "${1:date}.toLocaleString(${2})",
-    "description": "Date - Date.prototype.toLocaleString()"
-  },
-  "Date.prototype.toLocaleTimeString()": {
-    "prefix": "datetolocaletimestring",
-    "body": "${1:date}.toLocaleTimeString(${2})",
-    "description": "Date - Date.prototype.toLocaleTimeString()"
-  },
-  "Date.prototype.toSource()": {
-    "prefix": "datetosource",
-    "body": "${1:date}.toSource(${2})",
-    "description": "Date - Date.prototype.toSource()"
-  },
-  "Date.prototype.toString()": {
-    "prefix": "datetostring",
-    "body": "${1:date}.toString(${2})",
-    "description": "Date - Date.prototype.toString()"
-  },
-  "Date.prototype.toTimeString()": {
-    "prefix": "datetotimestring",
-    "body": "${1:date}.toTimeString(${2})",
-    "description": "Date - Date.prototype.toTimeString()"
-  },
-  "Date.prototype.toUTCString()": {
-    "prefix": "datetoutcstring",
-    "body": "${1:date}.toUTCString(${2})",
-    "description": "Date - Date.prototype.toUTCString()"
-  },
-  "Date.prototype.valueOf()": {
-    "prefix": "datevalueof",
-    "body": "${1:date}.valueOf(${2})",
-    "description": "Date - Date.prototype.valueOf()"
-  },
-  "JSON.parse(text[, reviver])": {
-    "prefix": "jsonpar",
-    "body": "JSON.parse($1)",
-    "description": "JSON.parse() 方法用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。提供可选的reviver函数用以在返回之前对所得到的对象执行变换(操作)。"
-  },
-  "JSON.stringify(value[, replacer [, space]])": {
-    "prefix": "jsonstr",
-    "body": "JSON.stringify($1);$0",
-    "description": "JSON.stringify() 方法是将一个JavaScript值(对象或者数组)转换为一个 JSON字符串，如果指定了replacer是一个函数，则可以替换值，或者如果指定了replacer是一个数组，可选的仅包括指定的属性。"
-  },
-  "Map.prototype.clear()": {
-    "prefix": "mapclear",
-    "body": "${1:map}.clear(${2})",
-    "description": "Map - Map.prototype.clear()"
-  },
-  "Map.prototype.delete()": {
-    "prefix": "mapdelete",
-    "body": "${1:map}.delete(${2})",
-    "description": "Map - Map.prototype.delete()"
-  },
-  "Map.prototype.entries()": {
-    "prefix": "mapentries",
-    "body": "${1:map}.entries(${2})",
-    "description": "Map - Map.prototype.entries()"
-  },
-  "Map.prototype.forEach()": {
-    "prefix": "mapforeach",
-    "body": "${1:map}.forEach(${2})",
-    "description": "Map - Map.prototype.forEach()"
-  },
-  "Map.prototype.get()": {
-    "prefix": "mapget",
-    "body": "${1:map}.get(${2})",
-    "description": "Map - Map.prototype.get()"
-  },
-  "Map.prototype.has()": {
-    "prefix": "maphas",
-    "body": "${1:map}.has(${2})",
-    "description": "Map - Map.prototype.has()"
-  },
-  "Map.prototype.keys()": {
-    "prefix": "mapkeys",
-    "body": "${1:map}.keys(${2})",
-    "description": "Map - Map.prototype.keys()"
-  },
-  "Map.prototype.set()": {
-    "prefix": "mapset",
-    "body": "${1:map}.set(${2})",
-    "description": "Map - Map.prototype.set()"
-  },
-  "Map.prototype.values()": {
-    "prefix": "mapvalues",
-    "body": "${1:map}.values(${2})",
-    "description": "Map - Map.prototype.values()"
-  },
-  "Math.abs()": {
-    "prefix": "mathabs",
-    "body": "Math.abs(${1})",
-    "description": "Math - Math.abs()"
-  },
-  "Math.acos()": {
-    "prefix": "mathacos",
-    "body": "Math.acos(${1})",
-    "description": "Math - Math.acos()"
-  },
-  "Math.acosh()": {
-    "prefix": "mathacosh",
-    "body": "Math.acosh(${1})",
-    "description": "Math - Math.acosh()"
-  },
-  "Math.asin()": {
-    "prefix": "mathasin",
-    "body": "Math.asin(${1})",
-    "description": "Math - Math.asin()"
-  },
-  "Math.asinh()": {
-    "prefix": "mathasinh",
-    "body": "Math.asinh(${1})",
-    "description": "Math - Math.asinh()"
-  },
-  "Math.atan()": {
-    "prefix": "mathatan",
-    "body": "Math.atan(${1})",
-    "description": "Math - Math.atan()"
-  },
-  "Math.atan2()": {
-    "prefix": "mathatan2",
-    "body": "Math.atan2(${1})",
-    "description": "Math - Math.atan2()"
-  },
-  "Math.atanh()": {
-    "prefix": "mathatanh",
-    "body": "Math.atanh(${1})",
-    "description": "Math - Math.atanh()"
-  },
-  "Math.cbrt()": {
-    "prefix": "mathcbrt",
-    "body": "Math.cbrt(${1})",
-    "description": "Math - Math.cbrt()"
-  },
-  "Math.ceil()": {
-    "prefix": "mathceil",
-    "body": "Math.ceil(${1})",
-    "description": "Math - Math.ceil()"
-  },
-  "Math.clz32()": {
-    "prefix": "mathclz32",
-    "body": "Math.clz32(${1})",
-    "description": "Math - Math.clz32()"
-  },
-  "Math.cos()": {
-    "prefix": "mathcos",
-    "body": "Math.cos(${1})",
-    "description": "Math - Math.cos()"
-  },
-  "Math.cosh()": {
-    "prefix": "mathcosh",
-    "body": "Math.cosh(${1})",
-    "description": "Math - Math.cosh()"
-  },
-  "Math.exp()": {
-    "prefix": "mathexp",
-    "body": "Math.exp(${1})",
-    "description": "Math - Math.exp()"
-  },
-  "Math.expm1()": {
-    "prefix": "mathexpm1",
-    "body": "Math.expm1(${1})",
-    "description": "Math - Math.expm1()"
-  },
-  "Math.floor()": {
-    "prefix": "mathfloor",
-    "body": "Math.floor(${1})",
-    "description": "Math - Math.floor()"
-  },
-  "Math.fround()": {
-    "prefix": "mathfround",
-    "body": "Math.fround(${1})",
-    "description": "Math - Math.fround()"
-  },
-  "Math.hypot()": {
-    "prefix": "mathhypot",
-    "body": "Math.hypot(${1})",
-    "description": "Math - Math.hypot()"
-  },
-  "Math.imul()": {
-    "prefix": "mathimul",
-    "body": "Math.imul(${1})",
-    "description": "Math - Math.imul()"
-  },
-  "Math.log()": {
-    "prefix": "mathlog",
-    "body": "Math.log(${1})",
-    "description": "Math - Math.log()"
-  },
-  "Math.log10()": {
-    "prefix": "mathlog10",
-    "body": "Math.log10(${1})",
-    "description": "Math - Math.log10()"
-  },
-  "Math.log1p()": {
-    "prefix": "mathlog1p",
-    "body": "Math.log1p(${1})",
-    "description": "Math - Math.log1p()"
-  },
-  "Math.log2()": {
-    "prefix": "mathlog2",
-    "body": "Math.log2(${1})",
-    "description": "Math - Math.log2()"
-  },
-  "Math.max()": {
-    "prefix": "mathmax",
-    "body": "Math.max(${1})",
-    "description": "Math - Math.max()"
-  },
-  "Math.min()": {
-    "prefix": "mathmin",
-    "body": "Math.min(${1})",
-    "description": "Math - Math.min()"
-  },
-  "Math.pow()": {
-    "prefix": "mathpow",
-    "body": "Math.pow(${1})",
-    "description": "Math - Math.pow()"
-  },
-  "Math.random()": {
-    "prefix": "mathrandom",
-    "body": "Math.random()",
-    "description": "Math - Math.random()"
-  },
-  "Math.round()": {
-    "prefix": "mathround",
-    "body": "Math.round(${1})",
-    "description": "Math - Math.round()"
-  },
-  "Math.sign()": {
-    "prefix": "mathsign",
-    "body": "Math.sign(${1})",
-    "description": "Math - Math.sign()"
-  },
-  "Math.sin()": {
-    "prefix": "mathsin",
-    "body": "Math.sin(${1})",
-    "description": "Math - Math.sin()"
-  },
-  "Math.sinh()": {
-    "prefix": "mathsinh",
-    "body": "Math.sinh(${1})",
-    "description": "Math - Math.sinh()"
-  },
-  "Math.sqrt()": {
-    "prefix": "mathsqrt",
-    "body": "Math.sqrt(${1})",
-    "description": "Math - Math.sqrt()"
-  },
-  "Math.tan()": {
-    "prefix": "mathtan",
-    "body": "Math.tan(${1})",
-    "description": "Math - Math.tan()"
-  },
-  "Math.tanh()": {
-    "prefix": "mathtanh",
-    "body": "Math.tanh(${1})",
-    "description": "Math - Math.tanh()"
-  },
-  "Math.trunc()": {
-    "prefix": "mathtrunc",
-    "body": "Math.trunc(${1})",
-    "description": "Math - Math.trunc()"
-  },
-  "Number.isFinite()": {
-    "prefix": "numisfinite",
-    "body": "Number.isFinite(${1})",
-    "description": "Number - Number.isFinite()"
-  },
-  "Number.isInteger()": {
-    "prefix": "numisinteger",
-    "body": "Number.isInteger(${1})",
-    "description": "Number - Number.isInteger()"
-  },
-  "Number.isNaN()": {
-    "prefix": "numisnan",
-    "body": "Number.isNaN(${1})",
-    "description": "Number - Number.isNaN()"
-  },
-  "Number.isSafeInteger()": {
-    "prefix": "numissafeinteger",
-    "body": "Number.isSafeInteger(${1})",
-    "description": "Number - Number.isSafeInteger()"
-  },
-  "Number.parseFloat()": {
-    "prefix": "numparsefloat",
-    "body": "Number.parseFloat(${1})",
-    "description": "Number - Number.parseFloat()"
-  },
-  "Number.parseInt()": {
-    "prefix": "numparseint",
-    "body": "Number.parseInt(${1})",
-    "description": "Number - Number.parseInt()"
-  },
-  "Number.prototype.toExponential()": {
-    "prefix": "numtoexponential",
-    "body": "${1:number}.toExponential(${2})",
-    "description": "Number - Number.prototype.toExponential()"
-  },
-  "Number.prototype.toFixed()": {
-    "prefix": "numtofixed",
-    "body": "${1:number}.toFixed(${2})",
-    "description": "Number - Number.prototype.toFixed()"
-  },
-  "Number.prototype.toLocaleString()": {
-    "prefix": "numtolocalestring",
-    "body": "${1:number}.toLocaleString(${2})",
-    "description": "Number - Number.prototype.toLocaleString()"
-  },
-  "Number.prototype.toPrecision()": {
-    "prefix": "numtoprecision",
-    "body": "${1:number}.toPrecision(${2})",
-    "description": "Number - Number.prototype.toPrecision()"
-  },
-  "Number.prototype.toSource()": {
-    "prefix": "numtosource",
-    "body": "${1:number}.toSource(${2})",
-    "description": "Number - Number.prototype.toSource()"
-  },
-  "Number.prototype.toString()": {
-    "prefix": "numtostring",
-    "body": "${1:number}.toString(${2})",
-    "description": "Number - Number.prototype.toString()"
-  },
-  "Number.prototype.valueOf()": {
-    "prefix": "numvalueof",
-    "body": "${1:number}.valueOf(${2})",
-    "description": "Number - Number.prototype.valueOf()"
-  },
-  "Object.prototype": {
-    "prefix": "objpro",
-    "body": "Object.prototype=$0",
-    "description": "Object.prototype 属性表示 Object 的原型对象,可以为所有 Object 类型的对象添加属性。"
-  },
-  "Object.assign(target, ...sources)": {
-    "prefix": "objassign",
-    "body": "Object.assign(${1},${2})",
-    "description": "Object.assign() 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。"
-  },
-  "Object.create(proto[, propertiesObject])": {
-    "prefix": "objcreate",
-    "body": "Object.create(${1})",
-    "description": "Object.create() 方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__。"
-  },
-  "Object.defineProperties(obj, props)": {
-    "prefix": "objdefineproperties",
-    "body": "Object.defineProperties(${1},${2})",
-    "description": "Object.defineProperties() 方法直接在一个对象上定义新的属性或修改现有属性，并返回该对象。"
-  },
-  "Object.defineProperty(obj, prop, descriptor)": {
-    "prefix": "objdefineproperty",
-    "body": "Object.defineProperty(${1},${2},${3})",
-    "description": "Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象。"
-  },
-  "Object.entries(obj)": {
-    "prefix": "objentries",
-    "body": "Object.entries(${1})",
-    "description": "Object.entries()方法返回一个给定对象自身可枚举属性的键值对数组，其排列与使用 for...in 循环遍历该对象时返回的顺序一致（区别在于 for-in 循环还会枚举原型链中的属性）。"
-  },
-  "Object.freeze(obj)": {
-    "prefix": "objfreeze",
-    "body": "Object.freeze(${1})",
-    "description": "Object.freeze() 方法可以冻结一个对象。一个被冻结的对象再也不能被修改；冻结了一个对象则不能向这个对象添加新的属性，不能删除已有属性，不能修改该对象已有属性的可枚举性、可配置性、可写性，以及不能修改已有属性的值。此外，冻结一个对象后该对象的原型也不能被修改。freeze() 返回和传入的参数相同的对象。"
-  },
-  "Object.fromEntries(iterable)": {
-    "prefix": "objfromentries",
-    "body": "Object.fromEntries(${1})",
-    "description": "Object.fromEntries() 方法把键值对列表转换为一个对象。"
-  },
-  "Object.getOwnPropertyDescriptor(obj, prop)": {
-    "prefix": "objgetownpropertydescriptor",
-    "body": "Object.getOwnPropertyDescriptor(${1},${2})",
-    "description": "Object.getOwnPropertyDescriptor() 方法返回指定对象上一个自有属性对应的属性描述符。"
-  },
-  "Object.getOwnPropertyDescriptors(obj)": {
-    "prefix": "objgetownpropertydescriptors",
-    "body": "Object.getOwnPropertyDescriptors(${1})",
-    "description": "Object.getOwnPropertyDescriptors() 方法用来获取一个对象的所有自身属性的描述符。"
-  },
-  "Object.getOwnPropertyNames(obj)": {
-    "prefix": "objgetownpropertynames",
-    "body": "Object.getOwnPropertyNames(${1})",
-    "description": "Object.getOwnPropertyNames()方法返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性但不包括Symbol值作为名称的属性）组成的数组。"
-  },
-  "Object.getOwnPropertySymbols(obj)": {
-    "prefix": "objgetownpropertysymbols",
-    "body": "Object.getOwnPropertySymbols(${1})",
-    "description": "Object.getOwnPropertySymbols() 方法返回一个给定对象自身的所有 Symbol 属性的数组。"
-  },
-  "Object.getPrototypeOf(object)": {
-    "prefix": "objgetprototypeof",
-    "body": "Object.getPrototypeOf(${1})",
-    "description": "Object.getPrototypeOf() 方法返回指定对象的原型（内部[[Prototype]]属性的值）。"
-  },
-  "Object.is(value1, value2)": {
-    "prefix": "objis",
-    "body": "Object.is(${1},${2})",
-    "description": "Object.is() 方法判断两个值是否是相同的值。"
-  },
-  "Object.isExtensible(obj)": {
-    "prefix": "objisextensible",
-    "body": "Object.isExtensible(${1})",
-    "description": "Object.isExtensible() 方法判断一个对象是否是可扩展的（是否可以在它上面添加新的属性）。"
-  },
-  "Object.isFrozen(obj)": {
-    "prefix": "objisfrozen",
-    "body": "Object.isFrozen(${1})",
-    "description": "Object.isFrozen()方法判断一个对象是否被冻结。"
-  },
-  "Object.isSealed(obj)": {
-    "prefix": "objissealed",
-    "body": "Object.isSealed(${1})",
-    "description": "Object.isSealed() 方法判断一个对象是否被密封。"
-  },
-  "Object.keys(obj)": {
-    "prefix": "objkeys",
-    "body": "Object.keys(${1})",
-    "description": "Object.keys() 方法会返回一个由一个给定对象的自身可枚举属性组成的数组，数组中属性名的排列顺序和使用 for...in 循环遍历该对象时返回的顺序一致 。"
-  },
-  "Object.preventExtensions(obj)": {
-    "prefix": "objpreventextensions",
-    "body": "Object.preventExtensions(${1})",
-    "description": "Object.preventExtensions()方法让一个对象变的不可扩展，也就是永远不能再添加新的属性。"
-  },
-  "Object.prototype.hasOwnProperty(prop)": {
-    "prefix": "objhasownproperty",
-    "body": "${1:object}.hasOwnProperty(${2})",
-    "description": "hasOwnProperty() 方法会返回一个布尔值，指示对象自身属性中是否具有指定的属性（也就是，是否有指定的键）。"
-  },
-  "Object.prototype.isPrototypeOf(object)": {
-    "prefix": "objisprototypeof",
-    "body": "${1:object}.isPrototypeOf(${2})",
-    "description": "isPrototypeOf() 方法用于测试一个对象是否存在于另一个对象的原型链上。"
-  },
-  "Object.prototype.propertyIsEnumerable(prop)": {
-    "prefix": "objpropertyisenumerable",
-    "body": "${1:object}.propertyIsEnumerable(${2})",
-    "description": "propertyIsEnumerable() 方法返回一个布尔值，表示指定的属性是否可枚举。"
-  },
-  "Object.prototype.toLocaleString()": {
-    "prefix": "objtolocalestring",
-    "body": "${1:object}.toLocaleString()",
-    "description": "toLocaleString() 方法返回一个该对象的字符串表示。此方法被用于派生对象为了特定语言环境的目的（locale-specific purposes）而重载使用。"
-  },
-  "Object.prototype.toString()": {
-    "prefix": "objtostring",
-    "body": "${1:object}.toString()",
-    "description": "toString() 方法返回一个表示该对象的字符串。"
-  },
-  "Object.prototype.valueOf()": {
-    "prefix": "objvalueof",
-    "body": "${1:object}.valueOf()",
-    "description": "valueOf() 方法返回指定对象的原始值。"
-  },
-  "Object.seal(obj)": {
-    "prefix": "objseal",
-    "body": "Object.seal(${1})",
-    "description": "Object.seal()方法封闭一个对象，阻止添加新属性并将所有现有属性标记为不可配置。当前属性的值只要原来是可写的就可以改变。"
-  },
-  "Object.setPrototypeOf(obj, prototype)": {
-    "prefix": "objsetprototypeof",
-    "body": "Object.setPrototypeOf(${1},${2})",
-    "description": "Object.setPrototypeOf() 方法设置一个指定的对象的原型 ( 即, 内部[[Prototype]]属性）到另一个对象或  null。"
-  },
-  "Object.values(obj)": {
-    "prefix": "objvalues",
-    "body": "Object.values(${1})",
-    "description": "Object.values()方法返回一个给定对象自身的所有可枚举属性值的数组，值的顺序与使用for...in循环的顺序相同 ( 区别在于 for-in 循环枚举原型链中的属性 )。"
-  },
   "decodeURI()": {
     "prefix": "decodeuri",
     "body": "decodeURI(${1})",
@@ -1123,294 +2495,82 @@
     "body": "parseInt(${1})",
     "description": "parseInt()"
   },
-  "Promise.all()": {
-    "prefix": "promall",
-    "body": "Promise.all(${1})",
-    "description": "Promise - Promise.all()"
-  },
-  "Promise.allSettled()": {
-    "prefix": "promallSettled",
-    "body": "Promise.allSettled(${1})",
-    "description": "Promise - Promise.allSettled()"
-  },
-  "Promise.race()": {
-    "prefix": "promrace",
-    "body": "Promise.race(${1})",
-    "description": "Promise - Promise.race()"
-  },
-  "Promise.reject()": {
-    "prefix": "promreject",
-    "body": "Promise.reject(${1})",
-    "description": "Promise - Promise.reject()"
-  },
-  "Promise.resolve()": {
-    "prefix": "promresolve",
-    "body": "Promise.resolve(${1})",
-    "description": "Promise - Promise.resolve()"
-  },
-  "Promise.prototype.catch()": {
-    "prefix": "promcatch",
-    "body": "${1:promise}.catch(${2})",
-    "description": "Promise - Promise.prototype.catch()"
-  },
-  "Promise.prototype.finally()": {
-    "prefix": "promfinally",
-    "body": "${1:promise}.finally(${2})",
-    "description": "Promise - Promise.prototype.finally()"
-  },
-  "Promise.prototype.then()": {
-    "prefix": "promthen",
-    "body": "${1:promise}.then(${2})",
-    "description": "Promise - Promise.prototype.then()"
-  },
-  "Set.prototype.add()": {
-    "prefix": "setadd",
-    "body": "${1:set}.add(${2})",
-    "description": "Set - Set.prototype.add()"
-  },
-  "Set.prototype.clear()": {
-    "prefix": "setclear",
-    "body": "${1:set}.clear(${2})",
-    "description": "Set - Set.prototype.clear()"
-  },
-  "Set.prototype.delete()": {
-    "prefix": "setdelete",
-    "body": "${1:set}.delete(${2})",
-    "description": "Set - Set.prototype.delete()"
-  },
-  "Set.prototype.entries()": {
-    "prefix": "setentries",
-    "body": "${1:set}.entries(${2})",
-    "description": "Set - Set.prototype.entries()"
-  },
-  "Set.prototype.forEach()": {
-    "prefix": "setforEach",
-    "body": "${1:set}.forEach(${2})",
-    "description": "Set - Set.prototype.forEach()"
-  },
-  "Set.prototype.has()": {
-    "prefix": "sethas",
-    "body": "${1:set}.has(${2})",
-    "description": "Set - Set.prototype.has()"
-  },
-  "Set.prototype.values()": {
-    "prefix": "setvalues",
-    "body": "${1:set}.values(${2})",
-    "description": "Set - Set.prototype.values()"
-  },
-  "export module": {
-    "prefix": "modex",
-    "body": "module.exports = ${1:name};",
-    "description": "[Nodejs]模块暴露接口"
-  },
   "new Promise": {
-    "prefix": "newprom",
+    "prefix": "newpromise",
     "body": [
-      "new Promise((resolve, reject)=> {",
-      "\t$1",
-      "});$0"
+      "new Promise((resolve,reject)=>{${1}})"
     ],
-    "description": "对象的状态不受外界影响。Promise 对象代表一个异步操作，有三种状态：Pending（进行中）、Resolved（已完成，又称 Fulfilled）和 Rejected（已失败）。只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。这也是 Promise 这个名字的由来，它的英语意思就是「承诺」，表示其他手段无法改变。"
+    "description": "创建Promise对象"
   },
-  "CommonJS require": {
-    "prefix": "require",
-    "body": "const ${1:module} = require('${1:module}');",
-    "description": "导入文件到对象"
+  "new Proxy()": {
+    "prefix": "newproxy",
+    "body": "new Proxy(${1:object}, ${2:option})",
+    "description": "创建Proxy对象。\n    new Proxy(target, {\n      apply: function(target, thisArg, argumentsList) {},\n      ...\n    });"
   },
-  "Class": {
-    "prefix": "class",
-    "body": [
-      "class ${1:ClassName} {",
-      "\tconstructor($2) {",
-      "\t\t$3",
-      "\t}",
-      "}"
-    ],
-    "description": "创建Class类对象"
+  "handler.apply()": {
+    "prefix": "proapply",
+    "body": "apply: function(target, thisArg, argumentsList) {${1}}",
+    "description": "handler.apply() 方法用于拦截函数的调用。\n    var p = new Proxy(target, {\n      apply: function(target, thisArg, argumentsList) {\n      }\n    });"
   },
-  "export function": {
-    "prefix": "expfun",
-    "body": [
-      "exports.${1:functionName} = function ($2) {",
-      "\t${3:// body...}",
-      "};"
-    ],
-    "description": "[ES6]对外接口"
+  "handler.construct()": {
+    "prefix": "proconstruct",
+    "body": "construct: function(target, argumentsList, newTarget) {${1}}",
+    "description": "handler.construct() 方法用于拦截new 操作符. 为了使new操作符在生成的Proxy对象上生效，用于初始化代理的目标对象自身必须具有[[Construct]]内部方法（即 new target 必须是有效的）。\n    var p = new Proxy(target, {\n      construct: function(target, argumentsList, newTarget) {\n      }\n    });"
   },
-  "class constructor (ES6)": {
-    "prefix": "constructor",
-    "body": "constructor(${1:arguments}) {\n\tsuper(${1:arguments});${0}\n}",
-    "description": "[ES6]Class构造函数"
+  "handler.defineProperty()": {
+    "prefix": "prodefineproperty",
+    "body": "defineProperty: function(target, property, descriptor) {${1}}",
+    "description": "handler.defineProperty() 用于拦截对对象的 Object.defineProperty() 操作。\n    var p = new Proxy(target, {\n      defineProperty: function(target, property, descriptor) {\n      }\n    });"
   },
-  "export default (ES6)": {
-    "prefix": "expd",
-    "body": "export default ${1:member};",
-    "description": "[ES6]对外接口"
+  "handler.deleteProperty()": {
+    "prefix": "prodeleteproperty",
+    "body": "deleteProperty: function(target, property) {${1}}",
+    "description": "handler.deleteProperty() 方法用于拦截对对象属性的 delete 操作。\n    var p = new Proxy(target, {\n      deleteProperty: function(target, property) {\n      }\n    });"
   },
-  "String.fromCharCode(num1, ..., numN) ": {
-    "prefix": "strfromcharcode",
-    "body": "${1:str}.fromCharCode($2)",
-    "description": "静态 String.fromCharCode() 方法返回使用指定的Unicode值序列创建的字符串。"
+  "handler.get()": {
+    "prefix": "proget",
+    "body": "get: function(target, property, receiver) {${1}}",
+    "description": "handler.get() 方法用于拦截对象的读取属性操作。\n    var p = new Proxy(target, {\n      get: function(target, property, receiver) {\n      }\n    });"
   },
-  "String.fromCodePoint(num1[, ...[, numN]])": {
-    "prefix": "strfromcodepoint",
-    "body": "${1:str}.fromCodePoint($2)",
-    "description": "String.fromCodePoint() 静态方法返回使用指定的代码点序列创建的字符串。"
+  "handler.getOwnPropertyDescriptor()": {
+    "prefix": "progetownpropertydescriptor",
+    "body": "getOwnPropertyDescriptor: function(target, prop) {${1}}",
+    "description": "handler.getOwnPropertyDescriptor() 方法是 Object.getOwnPropertyDescriptor()  的钩子。\n    var p = new Proxy(target, {\n      getOwnPropertyDescriptor: function(target, prop) {\n      }\n    });"
   },
-  "String.charAt(index)": {
-    "prefix": "strcharat",
-    "body": "${1:str}.charAt($2)",
-    "description": "charAt() 方法从一个字符串中返回指定的字符。"
+  "handler.getPrototypeOf()": {
+    "prefix": "progetprototypeof",
+    "body": "getPrototypeOf(target) {${1}}",
+    "description": "handler.getPrototypeOf() 是一个代理（Proxy）方法，当读取代理对象的原型时，该方法就会被调用。\n    const p = new Proxy(obj, {\n      getPrototypeOf(target) {\n      ...\n      }\n    });"
   },
-  "String.charCodeAt(index)": {
-    "prefix": "strcharcodeat",
-    "body": "${1:str}.charCodeAt($2)",
-    "description": "charCodeAt() 方法返回0到65535之间的整数，表示给定索引处的UTF-16代码单元 (在 Unicode 编码单元表示一个单一的 UTF-16 编码单元的情况下，UTF-16 编码单元匹配 Unicode 编码单元。但在——例如 Unicode 编码单元 > 0x10000 的这种——不能被一个 UTF-16 编码单元单独表示的情况下，只能匹配 Unicode 代理对的第一个编码单元) 。如果你想要整个代码点的值，使用 codePointAt()。"
+  "handler.has()": {
+    "prefix": "prohas",
+    "body": "has: function(target, prop) {${1}}",
+    "description": "handler.has() 方法是针对 in 操作符的代理方法。\n    var p = new Proxy(target, {\n      has: function(target, prop) {\n      }\n    });"
   },
-  "String.codePointAt(pos)": {
-    "prefix": "strcodepointat",
-    "body": "${1:str}.codePointAt($2)",
-    "description": "codePointAt() 方法返回 一个 Unicode 编码点值的非负整数。"
+  "handler.isExtensible()": {
+    "prefix": "proisextensible",
+    "body": "isExtensible: function(target) {${1}}",
+    "description": "handler.isExtensible() 方法用于拦截对对象的Object.isExtensible()。\n    var p = new Proxy(target, {\n      isExtensible: function(target) {\n      }\n    });"
   },
-  "String.concat(string2, string3[, ..., stringN])": {
-    "prefix": "strconcat",
-    "body": "${1:str}.concat($2)",
-    "description": "concat() 方法将一个或多个字符串与原字符串连接合并，形成一个新的字符串并返回。"
+  "handler.ownKeys()": {
+    "prefix": "proownkeys",
+    "body": "ownKeys: function(target) {${1}}",
+    "description": "handler.ownKeys() 方法用于拦截 Reflect.ownKeys().\n    var p = new Proxy(target, {\n      ownKeys: function(target) {\n      }\n    });"
   },
-  "String.endsWith(searchString [, position]);": {
-    "prefix": "strendswith",
-    "body": "${1:str}.endsWith($2)",
-    "description": "endsWith()方法用来判断当前字符串是否是以另外一个给定的子字符串“结尾”的，根据判断结果返回 true 或 false。"
+  "handler.preventExtensions()": {
+    "prefix": "propreventextensions",
+    "body": "preventExtensions: function(target) {${1}}",
+    "description": "handler.preventExtensions() 方法用于设置对Object.preventExtensions()的拦截\n    var p = new Proxy(target, {\n      preventExtensions: function(target) {\n      }\n    });"
   },
-  "String.includes(searchString[, position])": {
-    "prefix": "strincludes",
-    "body": "${1:str}.includes($2)",
-    "description": "includes() 方法用于判断一个字符串是否包含在另一个字符串中，根据情况返回 true 或 false。"
+  "handler.set()": {
+    "prefix": "proset",
+    "body": "set: function(target, property, value, receiver) {${1}}",
+    "description": "handler.set() 方法是设置属性值操作的捕获器。\n    const p = new Proxy(target, {\n      set: function(target, property, value, receiver) {\n      }\n    });"
   },
-  "String.indexOf(searchValue[, fromIndex])": {
-    "prefix": "strindexof",
-    "body": "${1:str}.indexOf($2)",
-    "description": "indexOf() 方法返回调用  String 对象中第一次出现的指定值的索引，开始在 fromIndex进行搜索。如果未找到该值，则返回- 1。"
-  },
-  "String.lastIndexOf(searchValue[, fromIndex])": {
-    "prefix": "strlastindexof",
-    "body": "${1:str}.lastIndexOf($2)",
-    "description": "lastIndexOf() 方法返回指定值在调用该方法的字符串中最后出现的位置，如果没找到则返回 -1。从该字符串的后面向前查找，从 fromIndex 处开始。"
-  },
-  "String.localeCompare(compareString[, locales[, options]])": {
-    "prefix": "strlocalecompare",
-    "body": "${1:str}.localeCompare($2)",
-    "description": "localeCompare() 方法返回一个数字来指示一个参考字符串是否在排序顺序前面或之后或与给定字符串相同。"
-  },
-  "String.match(regexp);": {
-    "prefix": "strmatch",
-    "body": "${1:str}.match($2)",
-    "description": "当一个字符串与一个正则表达式匹配时， match()方法检索匹配项。"
-  },
-  "String.matchAll(regexp);": {
-    "prefix": "strmatchall",
-    "body": "${1:str}.matchAll($2)",
-    "description": "matchAll() 方法返回一个包含所有匹配正则表达式的结果及分组捕获组的迭代器。"
-  },
-  "String.normalize([form]);": {
-    "prefix": "strnormalize",
-    "body": "${1:str}.normalize($2)",
-    "description": "normalize() 方法会按照指定的一种 Unicode 正规形式将当前字符串正规化."
-  },
-  "String.padEnd(targetLength [, padString])": {
-    "prefix": "strpadend",
-    "body": "${1:str}.padEnd($2)",
-    "description": "padEnd()  方法会用一个字符串填充当前字符串（如果需要的话则重复填充），返回填充后达到指定长度的字符串。从当前字符串的末尾（右侧）开始填充。"
-  },
-  "String.padStart(targetLength [, padString])": {
-    "prefix": "strpadstart",
-    "body": "${1:str}.padStart($2)",
-    "description": "padStart() 方法用另一个字符串填充当前字符串(重复，如果需要的话)，以便产生的字符串达到给定的长度。填充从当前字符串的开始(左侧)应用的。"
-  },
-  "String.repeat(count)": {
-    "prefix": "strrepeat",
-    "body": "${1:str}.repeat($2)",
-    "description": "repeat() 构造并返回一个新字符串，该字符串包含被连接在一起的指定数量的字符串的副本。"
-  },
-  "String.replace(regexp|substr, newSubStr|function)": {
-    "prefix": "strreplace",
-    "body": "${1:str}.replace($2)",
-    "description": "replace() 方法返回一个由替换值替换一些或所有匹配的模式后的新字符串。模式可以是一个字符串或者一个正则表达式, 替换值可以是一个字符串或者一个每次匹配都要调用的函数。"
-  },
-  "String.search(regexp)": {
-    "prefix": "strsearch",
-    "body": "${1:str}.search($2)",
-    "description": "search() 方法执行正则表达式和 String对象之间的一个搜索匹配。"
-  },
-  "String.slice(beginSlice[, endSlice])": {
-    "prefix": "strslice",
-    "body": "${1:str}.slice($2)",
-    "description": "slice() 方法提取一个字符串的一部分，并返回一新的字符串。"
-  },
-  "String.split([separator[, limit]])": {
-    "prefix": "strsplit",
-    "body": "${1:str}.split($2)",
-    "description": "split() 方法使用指定的分隔符字符串将一个String对象分割成字符串数组，以将字符串分隔为子字符串，以确定每个拆分的位置。 "
-  },
-  "String.startsWith(searchString [, position]);": {
-    "prefix": "strstartswith",
-    "body": "${1:str}.startsWith($2)",
-    "description": "startsWith()方法用来判断当前字符串是否是以另外一个给定的子字符串“开头”的，根据判断结果返回 true 或 false。"
-  },
-  "String.substring(indexStart[, indexEnd])": {
-    "prefix": "strsubstring",
-    "body": "${1:str}.substring($2)",
-    "description": "substring() 方法返回一个字符串在开始索引到结束索引之间的一个子集, 或从开始索引直到字符串的末尾的一个子集。"
-  },
-  "String.toLocaleLowerCase()": {
-    "prefix": "strtolocalelowercase",
-    "body": "${1:str}.toLocaleLowerCase()",
-    "description": "toLocaleLowerCase()方法根据任何特定于语言环境的案例映射，返回调用字符串值转换为小写的值。"
-  },
-  "String.toLocaleUpperCase()": {
-    "prefix": "strtolocaleuppercase",
-    "body": "${1:str}.toLocaleUpperCase()",
-    "description": "toLocaleUpperCase() 使用本地化（locale-specific）的大小写映射规则将输入的字符串转化成大写形式并返回结果字符串。"
-  },
-  "String.toLowerCase()": {
-    "prefix": "strtolowercase",
-    "body": "${1:str}.toLowerCase()",
-    "description": "toLowerCase() 会将调用该方法的字符串值转为小写形式，并返回。"
-  },
-  "String.toString()": {
-    "prefix": "strtostring",
-    "body": "${1:str}.toString()",
-    "description": "toString() 方法返回指定对象的字符串形式。"
-  },
-  "String.toUpperCase()": {
-    "prefix": "strtouppercase",
-    "body": "${1:str}.toUpperCase()",
-    "description": "toUpperCase() 将调用该方法的字符串值转换为大写形式，并返回。"
-  },
-  "String.trim()": {
-    "prefix": "strtrim",
-    "body": "${1:str}.trim()",
-    "description": "trim() 方法会从一个字符串的两端删除空白字符。在这个上下文中的空白字符是所有的空白字符 (space, tab, no-break space 等) 以及所有行终止符字符（如 LF，CR）。"
-  },
-  "String.trimEnd()": {
-    "prefix": "strtrimend",
-    "body": "${1:str}.trimEnd()",
-    "description": "trimEnd() 方法从一个字符串的末端移除空白字符。trimRight() 是这个方法的别名。"
-  },
-  "String.trimStart()": {
-    "prefix": "strtrimstart",
-    "body": "${1:str}.trimStart()",
-    "description": "trimStart() 方法从字符串的开头删除空格。trimLeft() 是此方法的别名。"
-  },
-  "String.valueOf()": {
-    "prefix": "strvalueof",
-    "body": "${1:str}.valueOf()",
-    "description": "valueOf() 方法返回一个String对象的原始值（primitive value）。"
-  },
-  "String.raw(callSite, ...substitutions)": {
-    "prefix": "strraw",
-    "body": "${1:str}.raw(${2:callSite})",
-    "description": "String.raw() 是一个模板字符串的标签函数，它的作用类似于 Python 中的字符串前缀 r 和 C# 中的字符串前缀 @（还是有点区别的，详见隔壁 Chromium 那边的这个 issue），是用来获取一个模板字符串的原始字符串的，比如说，占位符（例如 ${foo}）会被处理为它所代表的其他字符串，而转义字符（例如 \n）不会。"
+  "handler.setPrototypeOf()": {
+    "prefix": "prosetprototypeof",
+    "body": "setPrototypeOf: function(target, prototype) {${1}}",
+    "description": "handler.setPrototypeOf() 方法主要用来拦截 Object.setPrototypeOf().\n    var p = new Proxy(target, {\n      setPrototypeOf: function(target, prototype) {\n      }\n    });"
   },
   "alert": {
     "prefix": "alert",
@@ -1465,81 +2625,6 @@
     ],
     "description": "setTimeout() 方法用于在指定的毫秒数后调用函数或计算表达式。"
   },
-  "message": {
-    "prefix": "elmessage",
-    "body": [
-      "this.\\$message({",
-      "\tmessage: '${1:text}',",
-      "\ttype: '${2:info}'",
-      "});"
-    ],
-    "description": "message"
-  },
-  "msgbox-alert": {
-    "prefix": "elalert",
-    "body": [
-      "this.\\$alert('${1:content}', '${2:title}', {",
-      "\tconfirmButtonText: '${3:confirm}',",
-      "\tcallback: ${4:action} => {",
-      "\t\t",
-      "\t}",
-      "});"
-    ],
-    "description": "alert"
-  },
-  "msgbox-confirm": {
-    "prefix": "elconfirm",
-    "body": [
-      "this.\\$confirm('${1:content}', '${2:title}', {",
-      "\tconfirmButtonText: '${3:confirm}',",
-      "\tcancelButtonText: '${4:cancel}',",
-      "\ttype: '${5:warning}'",
-      "}).then(() => {",
-      "\t",
-      "}).catch(() => {});"
-    ],
-    "description": "confirm"
-  },
-  "msgbox-prompt": {
-    "prefix": "elprompt",
-    "body": [
-      "this.\\$prompt('${1:content}', '${2:title}', {",
-      "\tconfirmButtonText: '${3:confirm}',",
-      "\tcancelButtonText: '${4:cancel}',",
-      "\tinputPattern: /${5:regExp}/,",
-      "\tinputErrorMessage: '${6:errormsg}'",
-      "}).then(({ value }) => {",
-      "\t",
-      "}).catch(() => {});"
-    ],
-    "description": "prompt"
-  },
-  "msgbox": {
-    "prefix": "elbox",
-    "body": [
-      "this.\\$msgbox({",
-      "\ttitle: '${1:title}',",
-      "\tmessage: '${2:string|VNode}',",
-      "\tshowCancelButton: ${3:true},",
-      "\tconfirmButtonText: '${4:confirm}',",
-      "\tcancelButtonText: '${5:cancel}',",
-      "\tbeforeClose: (action, instance, done) => {}",
-      "}).then(action => {",
-      "\t",
-      "});"
-    ],
-    "description": "msgbox"
-  },
-  "notification": {
-    "prefix": "elnotify",
-    "body": [
-      "this.\\$notify({",
-      "\ttitle: '${1:title}',",
-      "\tmessage: '${2:string|VNode}'",
-      "});"
-    ],
-    "description": "notify"
-  },
   "newrouter": {
     "prefix": "newrouter",
     "body": [
@@ -1552,63 +2637,63 @@
     "body": [
       "router.app"
     ],
-    "description": "[router]The root Vue instance the router was injected into."
+    "description": "路由器注入的根Vue实例。"
   },
   "router.mode": {
     "prefix": "roumode",
     "body": [
       "router.mode"
     ],
-    "description": "[router]The mode the router is using."
+    "description": "路由器使用的模式。"
   },
   "router.currentRoute": {
     "prefix": "roucurrentroute",
     "body": [
       "router.currentRoute"
     ],
-    "description": "[router]The current route represented as a Route Object."
+    "description": "当前路线表示为路线对象。"
   },
   "router.beforeEach": {
     "prefix": "roubeforeeach",
     "body": [
       "router.beforeEach((to, from, next) => {\n\t${1://to and from are Route Object,next() must be called to resolve the hook}\n\t$0\n})"
     ],
-    "description": "[router] register global before guards"
+    "description": " 在警卫人员之前注册全球"
   },
   "router.beforeResolve": {
     "prefix": "roubeforeresolve",
     "body": [
       "router.beforeResolve((to, from, next) => {\n\t${1://to and from are Route Object,next() must be called to resolve the hook}\n\t$0\n})"
     ],
-    "description": "[router] 全局解析守卫"
+    "description": " 整体解析守卫"
   },
   "router.afterEach": {
     "prefix": "rouaftereach",
     "body": [
       "router.afterEach( ${1:route} => {\n\t${1://these hooks do not get a next function and cannot affect the navigation}\n\t$0\n})"
     ],
-    "description": "[router] register global after guards"
+    "description": " 在全球范围内注册后卫"
   },
   "router.push": {
     "prefix": "roupush",
     "body": [
       "router.push(${1:path})"
     ],
-    "description": "[router]To navigate to a different URL.(This method pushes a new entry into the history stack)"
+    "description": "导航到另一个URL。（此方法将新条目推入历史记录堆栈）"
   },
   "router.replace": {
     "prefix": "roureplace",
     "body": [
       "router.replace(${1:path})"
     ],
-    "description": "[router]To replaces the current URL."
+    "description": "用于替换当前URL。"
   },
   "router.go": {
     "prefix": "rougo",
     "body": [
       "router.go(${1:number})"
     ],
-    "description": "[router]This method takes a single integer as parameter that indicates by how many steps to go forwards or go backwards in the history stack, similar to window.history.go(n)"
+    "description": "此方法采用单个整数作为参数，该参数指示在历史记录堆栈中前进或后退多少步，类似于window.history.go（n）"
   },
   "router.back": {
     "prefix": "rouback",
@@ -1629,98 +2714,98 @@
     "body": [
       "router.getMatchedComponents(${1:path})"
     ],
-    "description": "[router]Returns an Array of the components (definition/constructor, not instances) matched by the provided location or the current route."
+    "description": "返回与提供的位置或当前路线匹配的组件（定义/构造函数，而不是实例）的数组。"
   },
   "router.resolve": {
     "prefix": "rouresolve",
     "body": [
       "router.resolve(${1:path})"
     ],
-    "description": "[router]Reverse URL resolving. Given location in form same as used in <router-link/>, returns object with the following resolved properties:"
+    "description": "反向URL解析。给定位置的格式与<router-link />中使用的格式相同，将返回具有以下已解析属性的对象："
   },
   "router.addRoutes": {
     "prefix": "rouaddroutes",
     "body": [
       "router.addRoutes(${1:routes})"
     ],
-    "description": "动态添加更多的路由规则。参数必须是一个符合 routes 选项要求的数组。"
+    "description": "动态添加更多的路由规则。参数必须是一个符合路由选项要求的数组。"
   },
   "router.onReady": {
     "prefix": "rouonready",
     "body": [
       "router.onReady(${1:callback},${2:errorCallback})"
     ],
-    "description": "该方法把一个回调排队，在路由完成初始导航时调用，这意味着它可以解析所有的异步进入钩子和路由初始化相关联的异步组件。"
+    "description": "该方法把一个初始调度，在路由完成初始导航时调用，这意味着它可以解析所有的初始化进入钩子和路由初始化相关联的异步组件。"
   },
   "router.onError": {
     "prefix": "rouonerror",
     "body": [
       "router.onError(${1:callback})"
     ],
-    "description": "注册一个回调，该回调会在路由导航过程中出错时被调用"
+    "description": "注册一个名义，该干预会在路由导航过程中出错时被调用"
   },
   "$route.path": {
     "prefix": "vmroupath",
     "body": [
       "${1:this}.\\$route.path"
     ],
-    "description": "[router]A string that equals the path of the current route, always resolved as an absolute path. "
+    "description": "等于当前路径路径的字符串，始终解析为绝对路径。"
   },
   "$route.params": {
     "prefix": "vmrouparams",
     "body": [
       "${1:this}.\\$route.params"
     ],
-    "description": "[router]An object that contains key/value pairs of dynamic segments and star segments. If there are no params the value will be an empty object."
+    "description": "包含动态分段和星形分段的键/值对的对象。如果没有参数，则该值将为空对象。"
   },
   "$route.query": {
     "prefix": "vmrouquery",
     "body": [
       "${1:this}.\\$route.query"
     ],
-    "description": "[router]An object that contains key/value pairs of the query string. "
+    "description": "包含查询字符串的键/值对的对象。"
   },
   "$route.hash": {
     "prefix": "vmrouhash",
     "body": [
       "${1:this}.\\$route.hash"
     ],
-    "description": "[router]The hash of the current route (without #), if it has one. If no hash is present the value will be an empty string."
+    "description": "当前路由的散列（不带＃）（如果有）。如果没有哈希，则该值为空字符串。"
   },
   "$route.fullPath": {
     "prefix": "vmroufullpath",
     "body": [
       "${1:this}.\\$route.fullPath"
     ],
-    "description": "[router]The full resolved URL including query and hash."
+    "description": "完整的解析URL，包括查询和哈希。"
   },
   "$route.matched": {
     "prefix": "vmroumatched",
     "body": [
       "${1:this}.\\$route.matched"
     ],
-    "description": "[router]An Array containing route records for all nested path segments of the current route. Route records are the copies of the objects in the routes configuration Array"
+    "description": "包含当前记录的所有嵌套路径段的记录的数组。路由记录是路由配置数组中对象的副本"
   },
   "$route.name": {
     "prefix": "vmrouname",
     "body": [
       "${1:this}.\\$route.name"
     ],
-    "description": "[router]The name of the current route, if it has one."
+    "description": "当前路由的名称（如果有）。"
   },
   "$router.push": {
     "prefix": "vmroupush",
     "body": [
       "${1:this}.\\$router.push(${1:path})"
     ],
-    "description": "[router]To navigate to a different URL.(This method pushes a new entry into the history stack)"
+    "description": "导航到另一个URL。（此方法将新条目推入历史记录堆栈）"
   },
   "$router.go": {
     "prefix": "vmrougo",
     "body": [
       "${1:this}.\\$router.go(${1:number})"
     ],
-    "description": "[router]This method takes a single integer as parameter that indicates by how many steps to go forwards or go backwards in the history stack, similar to window.history.go(n)"
+    "description": "此方法采用单个整数作为参数，该参数指示在历史记录堆栈中前进或后退多少步，类似于window.history.go（n）"
   },
   "$router.back": {
     "prefix": "vmrouback",
@@ -1741,91 +2826,91 @@
     "body": [
       "${1:this}.\\$router.resolve(${1:path})"
     ],
-    "description": "[router]Reverse URL resolving. Given location in form same as used in <router-link/>, returns object with the following resolved properties:"
+    "description": "反向URL解析。给定位置的格式与<router-link />中使用的格式相同，将返回具有以下已解析属性的对象："
   },
   "$router.addRoutes": {
     "prefix": "vmrouaddroutes",
     "body": [
       "${1:this}.\\$router.addRoutes(${1:routes})"
     ],
-    "description": "动态添加更多的路由规则。参数必须是一个符合 routes 选项要求的数组。"
+    "description": "动态添加更多的路由规则。参数必须是一个符合路由选项要求的数组。"
   },
   "beforeRouteEnter": {
     "prefix": "roubeforerouteenter",
     "body": [
       "beforeRouteEnter((to, from, next) => {\n\t${1://does NOT have access to `this` component instance}\n\t$0\n})"
     ],
-    "description": "[router]define beforeEnter guards directly on a route's configuration object:"
+    "description": "在路由的配置对象上直接定义beforeEnter防护："
   },
   "beforeRouteUpdate": {
     "prefix": "roubeforerouteupdate",
     "body": [
       "beforeRouteUpdate((to, from, next) => {\n\t${1://has access to `this` component instance}\n\t$0\n})"
     ],
-    "description": "[router]在当前路由改变，但是该组件被复用时调用"
+    "description": "在当前路由更改，但是该组件被替换时调用"
   },
   "beforeRouteLeave": {
     "prefix": "roubeforerouteleave",
     "body": [
       "beforeRouteLeave((to, from, next) => {\n\t${1://has access to `this` component instance}\n\t$0\n})"
     ],
-    "description": "[router]define beforeEnter guards directly on a route's configuration object:"
+    "description": "在路由的配置对象上直接定义beforeEnter防护："
   },
   "routerItemm": {
     "prefix": "rouitempath",
     "body": [
       "{ path: '$1', component: ${1:2:component} }"
     ],
-    "description": "[router]Basic Routes"
+    "description": "基本路线"
   },
   "pathNamed": {
     "prefix": "rouitempathname",
     "body": [
       "{ path: '$1', name: '$2', component: ${1:3:component} }"
     ],
-    "description": "[router]Named Routes"
+    "description": "命名路线"
   },
   "pathAsync": {
     "prefix": "rouitempathnameasync",
     "body": [
       "{ path: '$1', name: '$2', component: resolve => require(['$3'], resolve) }"
     ],
-    "description": "[router] Async Component Routes"
+    "description": " 异步组件路由"
   },
   "pathChildren": {
     "prefix": "rouitempathnamechildren",
     "body": [
       "{ path: '$1', name: '$2', component: ${1:3:component},\n\tchildren: [\n\t\t$4\n\t]\n}"
     ],
-    "description": "[router]Nested Routes"
+    "description": "嵌套路线"
   },
   "scrollBehavior": {
     "prefix": "rouscrollbehavior",
     "body": [
       "scrollBehavior (to, from, savedPosition){\n\t${1://return desired position}\n\t$0\n}"
     ],
-    "description": "[router]Scroll Behavior(this feature only works in HTML5 history mode)"
+    "description": "滚动行为（此功能仅在HTML5历史记录模式下有效）"
   },
   "alias": {
     "prefix": "roualias",
     "body": [
       "alias: $0"
     ],
-    "description": "[router]alias"
+    "description": "别名"
   },
   "redirect": {
     "prefix": "rouredirect",
     "body": [
       "redirect: $0"
     ],
-    "description": "[router]redirect"
+    "description": "重新导向"
   },
   "meta": {
     "prefix": "roumeta",
     "body": [
       "meta: { ${1:options} }"
     ],
-    "description": "[router]Route Meta Fields"
+    "description": "路由元字段"
   },
   "newvue": {
     "prefix": "newvue",
@@ -1844,140 +2929,140 @@
     "body": [
       "Vue.config.silent = ${1:true}"
     ],
-    "description": "Suppress all Vue logs and warnings."
+    "description": "禁止显示所有Vue日志和警告。"
   },
   "optionMergeStrategies": {
     "prefix": "vueconfigoptionmergestrategies",
     "body": [
       "Vue.config.optionMergeStrategies$0"
     ],
-    "description": "Define custom merging strategies for options.The merge strategy receives the value of that option defined on the parent and child instances as the first and second arguments, respectively. The context Vue instance is passed as the third argument."
+    "description": "为选项定义自定义合并策略。合并策略将分别在父实例和子实例上定义的该选项的值作为第一个和第二个参数。上下文Vue实例作为第三个参数传递。"
   },
   "devtools": {
     "prefix": "vxdevtools",
     "body": [
       "devtools: ${1:true}"
     ],
-    "description": "[vuex]store devtools"
+    "description": "商店devtools"
   },
   "errorHandler": {
     "prefix": "vueconfigerrorhandler",
     "body": [
       "Vue.config.errorHandler = function (err, vm) {\n\t${1:// handle error}\n\t$0\n}"
     ],
-    "description": "Assign a handler for uncaught errors during component render and watchers. The handler gets called with the error and the Vue instance."
+    "description": "为组件渲染和观察者期间未捕获的错误分配处理程序。将通过错误和Vue实例调用处理程序。"
   },
   "ignoredElements": {
     "prefix": "vueconfigignoredelements",
     "body": [
       "Vue.config.ignoredElements = [$0]"
     ],
-    "description": "Make Vue ignore custom elements defined outside of Vue (e.g., using the Web Components APIs). Otherwise, it will throw a warning about an Unknown custom element, assuming that you forgot to register a global component or misspelled a component name."
+    "description": "使Vue忽略在Vue之外定义的自定义元素（例如，使用Web组件API）。否则，假定您忘记注册全局组件或拼写错误的组件名称，它将引发有关Unknown自定义元素的警告。"
   },
   "keyCodes": {
     "prefix": "vueconfigkeycodes",
     "body": [
       "Vue.config.keyCodes = {$0}"
     ],
-    "description": "Define custom key alias(es) for v-on."
+    "description": "为v-on定义自定义密钥别名。"
   },
   "extend": {
     "prefix": "vueextend",
     "body": [
       "Vue.extend({\n\ttemplate: ${1:template}\n})"
     ],
-    "description": "Create a “subclass” of the base Vue constructor. The argument should be an object containing component options."
+    "description": "创建基础Vue构造函数的“子类”。参数应为包含组件选项的对象。"
   },
   "nextTick": {
     "prefix": "vuenexttick",
     "body": [
       "Vue.nextTick({\n\t$1\n})"
     ],
-    "description": "Defer the callback to be executed after the next DOM update cycle. Use it immediately after you’ve changed some data to wait for the DOM update."
+    "description": "推迟下一个DOM更新周期后执行的回调。更改一些数据以等待DOM更新后，请立即使用它。"
   },
   "set": {
     "prefix": "vueset",
     "body": [
       "Vue.set({${1:object}, ${1:key}, ${1:value})"
     ],
-    "description": "Set a property on an object. If the object is reactive, ensure the property is created as a reactive property and trigger view updates. This is primarily used to get around the limitation that Vue cannot detect property additions."
+    "description": "在对象上设置属性。如果对象是反应式的，请确保将该属性创建为反应式属性并触发视图更新。这主要用于解决Vue无法检测到属性添加的限制。"
   },
   "delete": {
     "prefix": "vuedelete",
     "body": [
       "Vue.delete(${1:object}, ${1:key})"
     ],
-    "description": "Delete a property on an object. If the object is reactive, ensure the deletion triggers view updates. This is primarily used to get around the limitation that Vue cannot detect property deletions, but you should rarely need to use it."
+    "description": "删除对象的属性。如果对象是反应性的，请确保删除触发视图更新。这主要是为了解决Vue无法检测到属性删除的限制，但是您几乎不需要使用它。"
   },
   "directive": {
     "prefix": "vuedirective",
     "body": [
       "Vue.directive(${1:id}, ${1:[definition]})"
     ],
-    "description": "Register or retrieve a global directive."
+    "description": "注册或检索全局指令。"
   },
   "filter": {
     "prefix": "vuefilter",
     "body": [
       "Vue.filter(${1:id}, ${1:[definition]})"
     ],
-    "description": "Register or retrieve a global filter"
+    "description": "注册或检索全局过滤器"
   },
   "component": {
     "prefix": "vuecomponent",
     "body": [
       "Vue.component(${1:id}, ${1:[definition]})"
     ],
-    "description": "Register or retrieve a global component. Registration also automatically sets the component’s name with the given id"
+    "description": "注册或检索全局组件。注册还会自动使用给定的ID设置组件名称"
   },
   "use": {
     "prefix": "vueuse",
     "body": [
       "Vue.use(${1:plugin})"
     ],
-    "description": "Install a Vue.js plugin. If the plugin is an Object, it must expose an install method. If it is a function itself, it will be treated as the install method. The install method will be called with Vue as the argument"
+    "description": "安装Vue.js插件。如果插件是对象，则必须公开安装方法。如果它本身是一个函数，它将被视为安装方法。将以Vue作为参数调用install方法"
   },
   "mixin": {
     "prefix": "vuemixin",
     "body": [
       "Vue.mixin(${1:mixin})"
     ],
-    "description": "Apply a mixin globally, which affects every Vue instance created afterwards. This can be used by plugin authors to inject custom behavior into components. Not recommended in application code"
+    "description": "全局应用mixin，这会影响以后创建的每个Vue实例。插件作者可以使用此方法将自定义行为注入组件。不建议在应用程式程式码中"
   },
   "compile": {
     "prefix": "vuecompile",
     "body": [
       "Vue.compile(${1:template})"
     ],
-    "description": "Compiles a template string into a render function. Only available in the standalone build."
+    "description": "将模板字符串编译为渲染函数。仅在独立版本中可用。"
   },
   "observable": {
     "prefix": "vueobservable",
     "body": [
       "Vue.observable(${1:Object})"
     ],
-    "description": "让一个对象可响应。Vue 内部会用它来处理 data 函数返回的对象。"
+    "description": "让一个对象可响应。Vue内部会用它来处理data函数返回的对象。"
   },
   "version": {
     "prefix": "vueversion",
     "body": [
       "Vue.version"
     ],
-    "description": "提供字符串形式的 Vue 安装版本号。这对社区的插件和组件来说非常有用，你可以根据不同的版本号采取不同的策略。"
+    "description": "提供串口形式的Vue安装版本号。这对社区的插件和组件来说非常有用，你可以根据不同的版本号采用不同的策略。"
   },
   "data": {
     "prefix": "vuedata",
     "body": [
       "data () {\n\treturn {\n\t\t$0\n\t}\n}"
     ],
-    "description": "The data object for the Vue instance. Vue will recursively convert its properties into getter/setters to make it “reactive”. The object must be plain: native objects such as browser API objects and prototype properties are ignored. A rule of thumb is that data should just be data - it is not recommended to observe objects with its own stateful behavior."
+    "description": "Vue实例的数据对象。 Vue将以递归方式将其属性转换为getter / setter，以使其“具有反应性”。该对象必须是普通对象：诸如浏览器API对象和原型属性之类的本机对象将被忽略。一条经验法则是，数据应该只是数据-不建议观察具有自身状态行为的对象。"
   },
   "props": {
     "prefix": "vueprops",
     "body": [
       "props: {\n}"
     ],
-    "description": "A list/hash of attributes that are exposed to accept data from the parent component. It has a simple Array-based syntax and an alternative Object-based syntax that allows advanced configurations such as type checking, custom validation and default values"
+    "description": "公开以接受来自父组件的数据的属性列表/哈希。它具有简单的基于数组的语法和可选的基于对象的语法，这些语法允许进行高级配置，例如类型检查，自定义验证和默认值"
   },
   "propsitem": {
     "prefix": "vuepropsitem",
@@ -1995,196 +3080,196 @@
     "body": [
       "propsData:{\n}"
     ],
-    "description": "Pass props to an instance during its creation. This is primarily intended to make unit testing easier"
+    "description": "在创建实例时将道具传递给实例。这主要是为了简化单元测试"
   },
   "computed": {
     "prefix": "vuecomputed",
     "body": [
       "computed: {\n\t$0\n}"
     ],
-    "description": "Computed properties to be mixed into the Vue instance. All getters and setters have their this context automatically bound to the Vue instance."
+    "description": "计算的属性将被混合到Vue实例中。所有获取器和设置器的此上下文都自动绑定到Vue实例。"
   },
   "methods": {
     "prefix": "vuemethods",
     "body": [
       "methods: {\n\t$0\n}"
     ],
-    "description": "Methods to be mixed into the Vue instance. You can access these methods directly on the VM instance, or use them in directive expressions. All methods will have their this context automatically bound to the Vue instance"
+    "description": "要混合到Vue实例中的方法。您可以直接在VM实例上访问这些方法，也可以在指令表达式中使用它们。所有方法的上下文都将自动绑定到Vue实例"
   },
   "watch": {
     "prefix": "vuewatch",
     "body": [
       "watch: {\n\t$0\n}"
     ],
-    "description": "An object where keys are expressions to watch and values are the corresponding callbacks. The value can also be a string of a method name, or an Object that contains additional options. The Vue instance will call $watch() for each entry in the object at instantiation"
+    "description": "一个对象，其中键是要监视的表达式，值是相应的回调。该值也可以是方法名称的字符串，也可以是包含其他选项的对象。 Vue实例将在实例化时为对象中的每个条目调用$ watch（）"
   },
   "el": {
     "prefix": "vueel",
     "body": [
       "el"
     ],
-    "description": "Provide the Vue instance an existing DOM element to mount on. It can be a CSS selector string or an actual HTMLElement."
+    "description": "向Vue实例提供要安装的现有DOM元素。它可以是CSS选择器字符串或实际的HTMLElement。"
   },
   "template": {
     "prefix": "vuetemplate",
     "body": [
       "<template>\n\t$0\n</template>"
     ],
-    "description": "A string template to be used as the markup for the Vue instance. The template will replace the mounted element. Any existing markup inside the mounted element will be ignored, unless content distribution slots are present in the template"
+    "description": "用作Vue实例的标记的字符串模板。模板将替换已安装的元素。除非模板中存在内容分发槽，否则将忽略已安装元素内部的任何现有标记。"
   },
   "render": {
     "prefix": "vuerender",
     "body": [
       "render: function (${1:createElement}, ${1:context}) {\n\t$0\n}"
     ],
-    "description": "An alternative to string templates allowing you to leverage the full programmatic power of JavaScript. The render function receives a createElement method as it’s first argument used to create VNodes."
+    "description": "字符串模板的替代方法，使您可以利用JavaScript的全部编程功能。渲染函数将使用createElement方法作为用于创建VNode的第一个参数。"
   },
   "renderError": {
     "prefix": "vuerendererror",
     "body": [
       "renderError: function (${1:createElement}, ${1:error}) {\n\t$0\n}"
     ],
-    "description": "当 render 函数遭遇错误时，提供另外一种渲染输出。其错误将会作为第二个参数传递到 renderError。这个功能配合 hot-reload 非常实用"
+    "description": "当render函数遇到错误时，提供另外一种渲染输出。其错误将会作为第二个参数传递到renderError。这个功能配合hot-reload非常实用"
   },
   "beforeCreate": {
     "prefix": "vuebeforecreate",
     "body": [
       "beforeCreate () {\n\t$0\n}"
     ],
-    "description": "Called synchronously after the instance has just been initialized, before data observation and event/watcher setup."
+    "description": "在实例初始化之后，数据观察和事件/观察者设置之前同步调用。"
   },
   "created": {
     "prefix": "vuecreated",
     "body": [
       "created () {\n\t$0\n}"
     ],
-    "description": "Called synchronously after the instance is created. At this stage, the instance has finished processing the options which means the following have been set up: data observation, computed properties, methods, watch/event callbacks. However, the mounting phase has not been started, and the $el property will not be available yet"
+    "description": "创建实例后同步调用。在此阶段，实例已完成对选项的处理，这意味着已设置以下内容：数据观察，计算的属性，方法，监视/事件回调。但是，安装阶段尚未开始，并且$ el属性尚不可用"
   },
   "beforeMount": {
     "prefix": "vuebeforemount",
     "body": [
       "beforeMount () {\n\t$0\n}"
     ],
-    "description": "Called right before the mounting begins: the render function is about to be called for the first time."
+    "description": "在安装开始之前立即被调用：render函数将被首次调用。"
   },
   "mounted": {
     "prefix": "vuemounted",
     "body": [
       "mounted () {\n\t$0\n}"
     ],
-    "description": "Called after the instance has just been mounted where el is replaced by the newly created vm.$el. If the root instance is mounted to an in-document element, vm.$el will also be in-document when mounted is called."
+    "description": "在实例刚刚装入后调用，其中el被新创建的vm。$ el替换。如果将根实例安装到文档中元素，则在调用安装时，vm。$ el也将是文档中。"
   },
   "beforeUpdate": {
     "prefix": "vuebeforeupdate",
     "body": [
       "beforeUpdate () {\n\t$0\n}"
     ],
-    "description": "Called when the data changes, before the virtual DOM is re-rendered and patched.(This hook is not called during server-side rendering.)"
+    "description": "在数据更改时调用，在重新渲染和修补虚拟DOM之前调用（在服务器端渲染期间不调用此钩子。）"
   },
   "updated": {
     "prefix": "vueupdated",
     "body": [
       "updated () {\n\t$0\n}"
     ],
-    "description": "Called after a data change causes the virtual DOM to be re-rendered and patched.(This hook is not called during server-side rendering.)"
+    "description": "在数据更改导致虚拟DOM被重新渲染和修补后调用（在服务器端渲染期间不调用此挂钩）。"
   },
   "activated": {
     "prefix": "vueactivated",
     "body": [
       "activated () {\n\t$0\n}"
     ],
-    "description": "Called when a kept-alive component is activated.(This hook is not called during server-side rendering.)"
+    "description": "在激活保持活动的组件时调用（在服务器端渲染期间不调用此钩子。）"
   },
   "deactivated": {
     "prefix": "vuedeactivated",
     "body": [
       "deactivated () {\n\t$0\n}"
     ],
-    "description": "Called when a kept-alive component is deactivated.(This hook is not called during server-side rendering.)"
+    "description": "在停用保持活动的组件时调用（在服务器端渲染期间不调用此挂钩。）"
   },
   "beforeDestroy": {
     "prefix": "vuebeforedestroy",
     "body": [
       "beforeDestroy () {\n\t$0\n}"
     ],
-    "description": "Called right before a Vue instance is destroyed. At this stage the instance is still fully functional.(This hook is not called during server-side rendering.)"
+    "description": "在销毁Vue实例之前立即调用。在此阶段，实例仍然可以正常运行（在服务器端渲染期间不会调用此钩子。）"
   },
   "destroyed": {
     "prefix": "vuedestroyed",
     "body": [
       "destroyed () {\n\t$0\n}"
     ],
-    "description": "Called after a Vue instance has been destroyed. When this hook is called, all directives of the Vue instance have been unbound, all event listeners have been removed, and all child Vue instances have also been destroyed.(This hook is not called during server-side rendering.)"
+    "description": "在Vue实例被销毁后调用。调用此挂钩时，Vue实例的所有指令均已解除绑定，所有事件侦听器已被删除，所有子Vue实例也已被销毁（在服务器端渲染期间不会调用此挂钩）。"
   },
   "errorCaptured": {
     "prefix": "vueerrorcaptured",
     "body": [
       "errorCaptured (err, vm, info) {\n\t$0\n}"
     ],
-    "description": "当捕获一个来自子孙组件的错误时被调用。此钩子会收到三个参数：错误对象、发生错误的组件实例以及一个包含错误来源信息的字符串。此钩子可以返回 false 以阻止该错误继续向上传播。"
+    "description": "当钩子会收到三个参数：错误对象，发生错误的组件实例以及一个包含错误源信息的字符串。此钩子可以返回false以阻止该错误继续向上传播。"
   },
   "directives": {
     "prefix": "vuedirectives",
     "body": [
       "directives: {\n\t$0\n}"
     ],
-    "description": "A hash of directives to be made available to the Vue instance."
+    "description": "指令的哈希值可用于Vue实例。"
   },
   "filters": {
     "prefix": "vuefilters",
     "body": [
       "filters: {\n\t$0\n}"
     ],
-    "description": "A hash of filters to be made available to the Vue instance."
+    "description": "可供Vue实例使用的过滤器哈希。"
   },
   "components": {
     "prefix": "vuecomponents",
     "body": [
       "components: {\n\t$0\n}"
     ],
-    "description": "A hash of components to be made available to the Vue instance."
+    "description": "要使Vue实例可用的组件的哈希。"
   },
   "parent": {
     "prefix": "vueparent",
     "body": [
       "parent"
     ],
-    "description": "Specify the parent instance for the instance to be created. Establishes a parent-child relationship between the two. "
+    "description": "为要创建的实例指定父实例。在两者之间建立父子关系。"
   },
   "mixins": {
     "prefix": "vuemixins",
     "body": [
       "mixins: [$0]"
     ],
-    "description": "The mixins option accepts an array of mixin objects. These mixin objects can contain instance options just like normal instance objects, and they will be merged against the eventual options using the same option merging logic in Vue.extend()."
+    "description": "mixins选项接受一个混合对象数组。这些混合对象可以像普通实例对象一样包含实例选项，并且它们将使用Vue.extend（）中相同的选项合并逻辑与最终选项进行合并。"
   },
   "provide": {
     "prefix": "vueprovide",
     "body": [
       "provide:{\n${1}}"
     ],
-    "description": "这对选项需要一起使用，以允许一个祖先组件向其所有子孙后代注入一个依赖，不论组件层次有多深，并在起上下游关系成立的时间里始终生效。"
+    "description": "这对选项需要一起使用，以允许一个祖先组件向其所有子孙后代注入一个依赖，本身组件层次有多深，并在开始上下游关系成立的时间里始终有效。"
   },
   "inject": {
     "prefix": "vueinject",
     "body": [
       "inject:[${1}]"
     ],
-    "description": "这对选项需要一起使用，以允许一个祖先组件向其所有子孙后代注入一个依赖，不论组件层次有多深，并在起上下游关系成立的时间里始终生效。"
+    "description": "这对选项需要一起使用，以允许一个祖先组件向其所有子孙后代注入一个依赖，本身组件层次有多深，并在开始上下游关系成立的时间里始终有效。"
   },
   "delimiters": {
     "prefix": "vuedelimiters",
     "body": [
       "delimiters"
     ],
-    "description": "Change the plain text interpolation delimiters. This option is only available in the standalone build."
+    "description": "更改纯文本插值定界符。此选项仅在独立版本中可用。"
   },
   "functional": {
     "prefix": "vuefunctional",
     "body": [
       "functional"
     ],
-    "description": "Causes a component to be stateless (no data) and instanceless (no this context)."
+    "description": "使组件为无状态（无数据）和无实例（无此上下文）。"
   },
   "model": {
     "prefix": "vuemodel",
@@ -2194,91 +3279,91 @@
       "event: '${2:input}'",
       "}"
     ],
-    "description": "允许一个自定义组件在使用 v-model 时定制 prop 和 event。默认情况下，一个组件上的 v-model 会把 value 用作 prop 且把 input 用作 event，但是一些输入类型比如单选框和复选框按钮可能想使用 value prop 来达到不同的目的。使用 model 选项可以回避这些情况产生的冲突。"
+    "description": "允许一个自定义组件在使用v-model时定制道具和事件。在其他情况下，一个组件上的v-model会把值放在使用道具并把输入利用事件上，但是一些输入类型选中单选框和复选框按钮可能想使用值道具来达到不同的目的。使用模型选项可以回避这些情况产生的冲突。"
   },
   "inheritAttrs": {
     "prefix": "vueinheritattrs",
     "body": [
       "inheritAttrs:${1:false}"
     ],
-    "description": "默认情况下父作用域的不被认作 props 的 attribute 绑定 (attribute bindings) 将会“回退”且作为普通的 HTML attribute 应用在子组件的根元素上。当撰写包裹一个目标元素或另一个组件的组件时，这可能不会总是符合预期行为。通过设置 inheritAttrs 到 false，这些默认行为将会被去掉。而通过 (同样是 2.4 新增的) 实例属性 $attrs 可以让这些 attribute 生效，且可以通过 v-bind 显性的绑定到非根元素上。"
+    "description": "默认情况下父作用域的不被认作props的属性绑定（属性绑定）将成为“回退”且作为普通的HTML属性应用在子组件的根元素上。当撰写包裹一个目标元素或另一个时组件的组件时，这可能不会总是符合预期行为。通过设置InheritAttrs到false，这些替代行为将会被掉掉。而通过（同样是2.4补充的）实例属性$ attrs可以让这些属性发挥作用，且可以通过v-bind显性的绑定到非根元素上。"
   },
   "comments": {
     "prefix": "vuecomments",
     "body": [
       "comments:${1:true}"
     ],
-    "description": "当设为 true 时，将会保留且渲染模板中的 HTML 注释。默认行为是舍弃它们。"
+    "description": "当设为true时，将会保留并且渲染模板中的HTML注释。替代行为是舍弃它们。"
   },
   "vm.$data": {
     "prefix": "vmdata",
     "body": [
       "${1:this}.\\$data"
     ],
-    "description": "The data object that the Vue instance is observing. The Vue instance proxies access to the properties on its data object."
+    "description": "Vue实例正在观察的数据对象。 Vue实例代理访问其数据对象上的属性。"
   },
   "vm.$el": {
     "prefix": "vmel",
     "body": [
       "${1:this}.\\$el"
     ],
-    "description": "The root DOM element that the Vue instance is managing."
+    "description": "Vue实例正在管理的根DOM元素。"
   },
   "vm.$options": {
     "prefix": "vmoptions",
     "body": [
       "${1:this}.\\$options"
     ],
-    "description": "The instantiation options used for the current Vue instance. This is useful when you want to include custom properties in the options"
+    "description": "用于当前Vue实例的实例化选项。当您要在选项中包括自定义属性时，这很有用"
   },
   "vm.$parent": {
     "prefix": "vmparent",
     "body": [
       "${1:this}.\\$parent"
     ],
-    "description": "The parent instance, if the current instance has one."
+    "description": "父实例（如果当前实例有一个）。"
   },
   "vm.$root": {
     "prefix": "vmroot",
     "body": [
       "${1:this}.\\$root"
     ],
-    "description": "The root Vue instance of the current component tree. If the current instance has no parents this value will be itself."
+    "description": "当前组件树的根Vue实例。如果当前实例没有父对象，则该值为自身。"
   },
   "vm.$children": {
     "prefix": "vmchildren",
     "body": [
       "${1:this}.\\$children"
     ],
-    "description": "The direct child components of the current instance. (Note there’s no order guarantee for $children, and it is not reactive.)"
+    "description": "当前实例的直接子组件。 （请注意，没有为$ children提供订单保证，它也没有反应性。）"
   },
   "vm.$slots": {
     "prefix": "vmslots",
     "body": [
       "${1:this}.\\$slots"
     ],
-    "description": "Used to programmatically access content distributed by slots. Each named slot has its own corresponding property"
+    "description": "用于以编程方式访问插槽分配的内容。每个命名的插槽都有其对应的属性"
   },
   "vm.$scopedSlots": {
     "prefix": "vmscopedslots",
     "body": [
       "${1:this}.\\$scopedSlots"
     ],
-    "description": "Used to programmatically access scoped slots. For each slot, including the default one, the object contains a corresponding function that returns VNodes."
+    "description": "用于以编程方式访问作用域插槽。对于每个插槽（包括默认插槽），该对象均包含一个返回VNodes的对应函数。"
   },
   "vm.$refs": {
     "prefix": "vmrefs",
     "body": [
       "${1:this}.\\$refs"
     ],
-    "description": "An object that holds child components that have ref registered."
+    "description": "一个对象，具有已注册引用的子组件。"
   },
   "vm.$isServer": {
     "prefix": "vmisserver",
     "body": [
       "${1:this}.\\$isServer"
     ],
-    "description": "Whether the current Vue instance is running on the server."
+    "description": "当前Vue实例是否正在服务器上运行。"
   },
   "vm.$attrs": {
     "prefix": "vmattrs",
@@ -2299,77 +3384,77 @@
     "body": [
       "${1:this}.\\$watch(${1:expOrFn}, ${1:callback}, { ${1:options} }$0)"
     ],
-    "description": "Watch an expression or a computed function on the Vue instance for changes. The callback gets called with the new value and the old value. "
+    "description": "在Vue实例上观看表达式或计算函数以了解更改。使用新值和旧值调用回调。"
   },
   "vm.$set": {
     "prefix": "vmset",
     "body": [
       "${1:this}.\\$set(${1:object}, ${1:key}, ${1:value})"
     ],
-    "description": "This is the alias of the global Vue.set."
+    "description": "这是全局Vue.set的别名。"
   },
   "vm.$delete": {
     "prefix": "vmdelete",
     "body": [
       "${1:this}.\\$delete(${1:object}, ${1:key})"
     ],
-    "description": "This is the alias of the global Vue.delete."
+    "description": "这是全局Vue.delete的别名。"
   },
   "vm.$on": {
     "prefix": "vmon",
     "body": [
       "${1:this}.\\$on(${1:event}, ${1:callback})"
     ],
-    "description": "Listen for a custom event on the current vm. Events can be triggered by vm.$emit. The callback will receive all the additional arguments passed into these event-triggering methods."
+    "description": "侦听当前虚拟机上的自定义事件。可以通过vm。$ emit触发事件。回调将接收传递给这些事件触发方法的所有其他参数。"
   },
   "vm.$once": {
     "prefix": "vmonce",
     "body": [
       "${1:this}.\\$once(${1:event}, ${1:callback})"
     ],
-    "description": "Listen for a custom event, but only once. The listener will be removed once it triggers for the first time."
+    "description": "收听自定义事件，但仅一次。首次触发时，监听器将被删除。"
   },
   "vm.$off": {
     "prefix": "vmoff",
     "body": [
       "${1:this}.\\$off(${1:event}, ${1:callback})"
     ],
-    "description": "Remove event listener(s)."
+    "description": "删除事件侦听器。"
   },
   "vm.$emit": {
     "prefix": "vmemit",
     "body": [
       "${1:this}.\\$emit(${1:event}, ${1:[…args]})"
     ],
-    "description": "Trigger an event on the current instance. Any additional arguments will be passed into the listener’s callback function."
+    "description": "在当前实例上触发事件。任何其他参数都将传递到侦听器的回调函数中。"
   },
   "vm.$mount": {
     "prefix": "vmmount",
     "body": [
       "${1:this}.\\$mount(${1:elementOrSelector})"
     ],
-    "description": "If a Vue instance didn’t receive the el option at instantiation, it will be in “unmounted” state, without an associated DOM element. vm.$mount() can be used to manually start the mounting of an unmounted Vue instance."
+    "description": "如果Vue实例在实例化时未收到el选项，则它将处于“已卸载”状态，并且没有关联的DOM元素。 vm。$ mount（）可用于手动启动未安装的Vue实例的安装。"
   },
   "vm.$forceUpdate": {
     "prefix": "vmforceupdate",
     "body": [
       "${1:this}.\\$forceUpdate()"
     ],
-    "description": "Force the Vue instance to re-render. Note it does not affect all child components, only the instance itself and child components with inserted slot content."
+    "description": "强制Vue实例重新渲染。请注意，它不会影响所有子组件，只会影响实例本身和插入了插槽内容的子组件。"
   },
   "vm.$nextTick": {
     "prefix": "vmnexttick",
     "body": [
       "${1:this}.\\$nextTick(${1:callback})"
     ],
-    "description": "Defer the callback to be executed after the next DOM update cycle. "
+    "description": "推迟下一个DOM更新周期后执行的回调。"
   },
   "vm.$destroy": {
     "prefix": "vmdestroy",
     "body": [
       "${1:this}.\\$destroy()"
     ],
-    "description": "Completely destroy a vm. Clean up its connections with other existing vms, unbind all its directives, turn off all event listeners."
+    "description": "完全销毁虚拟机。清理其与其他现有vm的连接，解除其所有指令的绑定，关闭所有事件侦听器。"
   },
   "newvuex": {
     "prefix": "newvuex",
@@ -2383,154 +3468,154 @@
     "body": [
       "namespaced: true"
     ],
-    "description": "[vuex]If you want your modules to be more self-contained or reusable, you can mark it as namespaced with namespaced: true. When the module is registered, all of its getters, actions and mutations will be automatically namespaced based on the path the module is registered at"
+    "description": "如果希望模块更加独立或可重用，则可以使用命名空间：true将其标记为命名空间。注册模块后，将根据模块在其上注册的路径自动为其所有的获取，操作和突变命名空间"
   },
   "state": {
     "prefix": "vxstate",
     "body": [
       "state: {\n\t$0\n}"
     ],
-    "description": "[vuex]The application level state"
+    "description": "应用程序级别状态"
   },
   "mutations": {
     "prefix": "vxmutations",
     "body": [
       "mutations: {\n\t$0\n}"
     ],
-    "description": "[vuex]The only way to actually change state in a Vuex store"
+    "description": "在Vuex商店中实际更改状态的唯一方法"
   },
   "actions": {
     "prefix": "vxactions",
     "body": [
       "actions: {\n\t$0\n}"
     ],
-    "description": "[vuex]actions commit mutations,it can contain arbitrary asynchronous operations"
+    "description": "操作提交突变，它可以包含任意异步操作"
   },
   "getters": {
     "prefix": "vxgetters",
     "body": [
       "getters: {\n\t$0\n}"
     ],
-    "description": "[vuex]computed properties for stores"
+    "description": "商店的计算属性"
   },
   "modules": {
     "prefix": "vxmodules",
     "body": [
       "modules: {\n\t$0\n}"
     ],
-    "description": "[vuex]store modules"
+    "description": "存储模块"
   },
   "plugins": {
     "prefix": "vxplugins",
     "body": [
       "plugins: [\n\t$0\n]"
     ],
-    "description": "[vuex]store plugins"
+    "description": "商店插件"
   },
   "strict": {
     "prefix": "vxstrict",
     "body": [
       "strict: ${1:true}"
     ],
-    "description": "[vuex]store strict"
+    "description": "严格存储"
   },
   "store.commit": {
     "prefix": "vxstorecommit",
     "body": [
       "store.commit('${1:MUTATIONS}', ${1:payload})"
     ],
-    "description": "[vuex]Commit a mutation"
+    "description": "提交突变"
   },
   "store.dispatch": {
     "prefix": "vxstoredispatch",
     "body": [
       "store.dispatch('${1:action}', ${1:payload})"
     ],
-    "description": "[vuex]Dispatch an action."
+    "description": "调度一个动作。"
   },
   "store.replaceState": {
     "prefix": "vxstorereplacestate",
     "body": [
       "store.replaceState(${1:state})"
     ],
-    "description": "[vuex]Replace the store's root state. Use this only for state hydration / time-travel purposes."
+    "description": "替换存储的根状态。仅将其用于状态水合/时间旅行目的。"
   },
   "store.watch": {
     "prefix": "vxstorewatch",
     "body": [
       "store.watch(${1:getter}, ${1:handler})"
     ],
-    "description": "[vuex]Reactively watch a getter function's return value, and call the callback when the value changes. "
+    "description": "被动地观察getter函数的返回值，并在值更改时调用回调。"
   },
   "store.subscribe": {
     "prefix": "vxstoresubscribe",
     "body": [
       "store.subscribe(${1:handler})"
     ],
-    "description": "[vuex]Subscribe to store mutations. The handler is called after every mutation and receives the mutation descriptor and post-mutation state as arguments:"
+    "description": "订阅存储突变。每次突变后都会调用处理程序，并接收突变描述符和突变后状态作为参数："
   },
   "store.registerModule": {
     "prefix": "vxstoreregistermodule",
     "body": [
       "store.registerModule(${1:string}, ${1:Module})"
     ],
-    "description": "[vuex]Register a dynamic module"
+    "description": "注册动态模块"
   },
   "store.unregisterModule": {
     "prefix": "vxstoreunregistermodule",
     "body": [
       "store.unregisterModule(${1:string})"
     ],
-    "description": "[vuex]Unregister a dynamic module"
+    "description": "注销动态模块"
   },
   "store.hotUpdate": {
     "prefix": "vxstorehotupdate",
     "body": [
       "store.hotUpdate({$0})"
     ],
-    "description": "[vuex]Hot swap new actions and mutations. "
+    "description": "热插拔新动作和突变。"
   },
   "mapState": {
     "prefix": "vxmapstate",
     "body": [
       "mapState('${1:modulePath}', ${1:[]|{\\}})"
     ],
-    "description": "[vuex]Create component computed options that return the sub tree of the Vuex store. "
+    "description": "创建组件计算的选项，这些选项返回Vuex存储的子树。"
   },
   "mapGetters": {
     "prefix": "vxmapgetters",
     "body": [
       "mapGetters('${1:modulePath}', ${1:[]|{\\}})"
     ],
-    "description": "[vuex]Create component computed options that return the evaluated value of a getter."
+    "description": "创建组件计算的选项，这些选项返回吸气剂的评估值。"
   },
   "mapActions": {
     "prefix": "vxmapactions",
     "body": [
       "mapActions('${1:modulePath}', ${1:[]|{\\}})"
     ],
-    "description": "[vuex]Create component methods options that dispatch an action."
+    "description": "创建分派动作的组件方法选项。"
   },
   "mapMutations": {
     "prefix": "vxmapmutations",
     "body": [
       "mapMutations('${1:modulePath}', ${1:[]|{\\}})"
     ],
-    "description": "[vuex]Create component methods options that commit a mutation"
+    "description": "创建提交突变的组件方法选项"
   },
   "$store.getters": {
     "prefix": "vmvxgetters",
     "body": [
       "${1:this}.\\$store.getters"
     ],
-    "description": "[vuex]computed properties for stores"
+    "description": "商店的计算属性"
   },
   "$store.state": {
     "prefix": "vmvxstate",
     "body": [
       "${1:this}.\\$store.state"
     ],
-    "description": "[vuex]The application level state"
+    "description": "应用程序级别状态"
   },
   "$store": {
     "prefix": "vmvxstore",
@@ -2544,13 +3629,13 @@
     "body": [
       "${1:this}.\\$store.commit('${1:MUTATIONS}', ${1:payload})"
     ],
-    "description": "[vuex]Commit a mutation"
+    "description": "提交突变"
   },
   "$store.dispatch": {
     "prefix": "vmvxdispatch",
     "body": [
       "${1:this}.\\$store.dispatch('${1:action}', ${1:payload})"
     ],
-    "description": "[vuex]Dispatch an action."
+    "description": "调度一个动作。"
   }
 }
