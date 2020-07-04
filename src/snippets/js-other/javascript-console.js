@@ -11,6 +11,11 @@ module.exports = {
     body: "console.log($1);$0",
     description: "向 Web 控制台输出一条消息"
   },
+  "console.log(arguments)": {
+    prefix: "loga",
+    body: "console.log(arguments);$1",
+    description: "向控制台输出函数的所有参数"
+  },
   "console.warn()": {
     prefix: "warn",
     body: "console.warn($1);$0",
