@@ -25,6 +25,10 @@
 - 累积更新 JavaScript ES5 代码段,同步于 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript
 - 因 vscode 内置的 HTML 代码段可以满足正常的开发需求，故去除 HTML 代码段
 
-### v0.0.7 - 2020/07/11
+### v0.1.0 - 2020/07/11
 
 - 规范触发代码段的输入格式 [对象的前三位]+方法名
+
+### v0.1.1 - 2020/07/11
+
+- 修改说明文档

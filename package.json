@@ -2,7 +2,7 @@
   "name": "web-dev-snippets",
   "displayName": "Web Dev Snippets",
   "description": "Web 开发常用的代码片段。",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "SunRising",
   "icon": "asset/logo.png",
   "scripts": {
