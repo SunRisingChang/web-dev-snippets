@@ -2,7 +2,7 @@
   "name": "web-dev-snippets",
   "displayName": "Web Dev Snippets",
   "description": "Web 开发常用的代码片段。",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "publisher": "SunRising",
   "icon": "asset/logo.png",
   "scripts": {
@@ -10,6 +10,7 @@
     "build": "vsce package",
     "update": "node src/update-snippets.js"
   },
+  "repository": "https://github.com/SunRisingChang/web-dev-snippets",
   "engines": {
     "vscode": "^1.30.0"
   },

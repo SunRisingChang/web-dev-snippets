@@ -158,13 +158,13 @@ module.exports = {
       "渲染一个“元组件”为动态组件。依 is 的值，来决定哪个组件被渲染。"
   },
   "router-link": {
-    prefix: "router-link",
+    prefix: "routerlink",
     body: ['<router-link to="${1:path}"></router-link>'],
     description:
       "<router-link> 组件支持用户在具有路由功能的应用中 (点击) 导航。 通过 to 属性指定目标地址，默认渲染成带有正确链接的 <a> 标签，可以通过配置 tag 属性生成别的标签.。另外，当目标路由成功激活时，链接元素自动设置一个表示激活的 CSS 类名。"
   },
   "router-view": {
-    prefix: "router-view",
+    prefix: "routerview",
     body: ['<router-view name="${1:path}"></router-view>'],
     description:
       "<router-view> 组件是一个 functional 组件，渲染路径匹配到的视图组件。<router-view> 渲染的组件还可以内嵌自己的 <router-view>，根据嵌套路径，渲染嵌套组件。"

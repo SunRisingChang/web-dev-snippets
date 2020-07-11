@@ -2,84 +2,75 @@
 
 >这是一个 VSCode 的扩展插件，包含前端开发中常见的代码片段.
 
-- HTML
 - Vue2
 - Vue Router
 - Vuex
-- Element UI
-- JavaScript ES5/ES6 (部分)
+- JavaScript ES5/ES6
 
 ## Using
 
-#### HTML
+#### Vue2-HTML
 
 ```
-abbr      -->     <abbr title="$1">$2</abbr>$3
-a         -->     <a href="$1">$2</a>$3
-button    -->     <button type="$1">$2</button>$3
+vtext             -->     v-text="${1:msg}"
+routerview        -->     <router-view name="${1:path}"></router-view>
+routerlink        -->     <router-link to="${1:path}"></router-link>
+slot              -->     <slot name="$1">$2</slot>
+transitiongroup   -->     <transition-group tag="$1" name="$2">\n\t$0\n</transition-group>
+key               -->     :key="$1"'
 ...
 ```
 
-#### Vue2
+#### Vue2-Javascript
 
 ```
-vtext     -->     v-text="${1:msg}"
-slotname  -->     <slot name="$1"></slot>'
-keepalive -->     <keep-alive include="$1">\n\t$0\n</keep-alive>
-vueconf   -->     Vue.config.devtools = ${1:true}
-vuenext   -->     Vue.nextTick({\n\t$1\n})
-vmrefs    -->     ${1:this}.\\$refs
+vueconfigsilent   -->     Vue.config.silent = ${1:true}
+vuenexttick       -->     Vue.nextTick({\n\t$1\n})
+vueset            -->     Vue.set({${1:object}, ${1:key}, ${1:value})
+vuemounted        -->     mounted () {\n\t$0\n}
+vuedata           -->     data () {\n\treturn {\n\t\t$0\n\t}\n}
+vueprops          -->     props: {\n}
 ...
 ```
 
 #### Vue Router
 
 ```
-roupush -->  router.push(${1:path})
-roubef  -->  router.beforeEach((to, from, next) => {\n\t${1://to and from are Route Object,next() must be called to resolve the hook}\n\t$0\n})
-vmroufullpath --> ${1:this}.\\$route.fullPath
+roumode           -->     router.mode
+roupush           -->     router.push(${1:path})
+rougo             -->     router.go(${1:number})
+rouaddroutes      -->     router.addRoutes(${1:routes})
+vmrouquery        -->     ${1:this}.\\$route.query
+rouitempathname   -->     { path: '$1', name: '$2', component: ${1:3:component} }
+rouitempath       -->     { path: '$1', component: ${1:2:component} }
+...
 ```
 
 #### Vuex
 
 ```
-vxstate     -->    state: {\n\t$0\n}
-vxstoreco   -->    store.commit('${1:MUTATIONS}', ${1:payload})
-vxmapstate  -->    mapState('${1:modulePath}', ${1:[]|{\\}})
+vxstate           -->     state: {\n\t$0\n}
+vxmutations       -->     mutations: {\n\t$0\n}
+vxstorecommit     -->     store.commit('${1:MUTATIONS}', ${1:payload})
+vxstoredispatch   -->     store.dispatch('${1:action}', ${1:payload})
+vxmapgetters      -->     mapGetters('${1:modulePath}', ${1:[]|{\\}})
+vmvxgetters       -->     ${1:this}.\\$store.getters
+vmvxcommit        -->     ${1:this}.\\$store.commit('${1:MUTATIONS}', ${1:payload})
 ...
-```
-
-#### Element UI
-
-```
-elmessage  -->    "this.\\$message({",
-      "\tmessage: '${1:text}',",
-      "\ttype: '${2:info}'",
-      "});"
-
-elalert    -->    "this.\\$alert('${1:content}', '${2:title}', {",
-      "\tconfirmButtonText: '${3:confirm}',",
-      "\tcallback: ${4:action} => {",
-      "\t\t",
-      "\t}",
-      "});"
-
-elnotify   -->    "this.\\$notify({",
-      "\ttitle: '${1:title}',",
-      "\tmessage: '${2:string|VNode}'",
-      "});"
 ```
 
 #### JavaScript ES5/ES6
 
+> ES5 的语法提示同步于 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript , 出发提示的规律 [对象的前三位]+方法名
+
 ```
-arrcopy       -->     $1.copyWithin($2)
-log           -->     console.log($1);$0
-dategetday    -->     ${1:date}.getDay(${2})
-jsonpar       -->     JSON.parse($1)
-maphas        -->     ${1:map}.has(${2})
-mathceil      -->     Math.ceil(${1})
-numparsefloat -->     Number.parseFloat(${1})
-objentries    -->     Object.entries(${1})
+arrfrom       -->     Array.from(${2})
+arrconcat           -->    ${1:array}.concat(${2})
+datgetdate    -->     ${1:date}.getDate()
+datgethours       -->     ${1:date}.getHours()
+numisfinite        -->     Number.isFinite(${2})
+numisnan      -->     Number.isNaN(${2})
+proall -->     Promise.all(${2})
+procatch    -->     ${1:promise}.catch(${2})
 ...
 ```
