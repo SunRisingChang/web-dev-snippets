@@ -1,4 +1,4 @@
-# Web-Dev-Snippets
+# Web Dev Snippets
 
 >这是一个 VSCode 的扩展插件，包含前端开发中常见的代码片段.
 
